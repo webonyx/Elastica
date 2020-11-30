@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Document;
-use Elastica\Index;
-use Elastica\Query;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class TransportBenchmarkTest extends BaseTest
 {
@@ -28,7 +28,7 @@ class TransportBenchmarkTest extends BaseTest
     /**
      * @param array $config
      *
-     * @return \Elastica\Type
+     * @return \Webonyx\Elastica3x\Type
      */
     protected function getType(array $config)
     {
@@ -82,8 +82,8 @@ class TransportBenchmarkTest extends BaseTest
         for ($i = 0; $i < $this->_max; ++$i) {
             $test = rand(1, $this->_max);
             $query = new Query();
-            $query->setQuery(new \Elastica\Query\MatchAll());
-            $query->setPostFilter(new \Elastica\Filter\Term(['test' => $test]));
+            $query->setQuery(new \Webonyx\Elastica3x\Query\MatchAll());
+            $query->setPostFilter(new \Webonyx\Elastica3x\Filter\Term(['test' => $test]));
             $result = $type->search($query);
             $times[] = $result->getResponse()->getQueryTime();
         }
@@ -131,7 +131,7 @@ class TransportBenchmarkTest extends BaseTest
         $type = $index->getType('mappingTest');
 
         // Define mapping
-        $mapping = new \Elastica\Type\Mapping();
+        $mapping = new \Webonyx\Elastica3x\Type\Mapping();
         $mapping->setParam('_boost', ['name' => '_boost', 'null_value' => 1.0]);
         $mapping->setProperties([
             'id' => ['type' => 'integer', 'include_in_all' => false],
@@ -153,7 +153,7 @@ class TransportBenchmarkTest extends BaseTest
 
         $times = [];
         for ($i = 0; $i < $this->_max; ++$i) {
-            $response = $type->request('_mapping', \Elastica\Request::GET);
+            $response = $type->request('_mapping', \Webonyx\Elastica3x\Request::GET);
             $times[] = $response->getQueryTime();
         }
         self::logResults('get mapping', $transport, $times);

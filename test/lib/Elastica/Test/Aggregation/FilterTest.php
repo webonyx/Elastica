@@ -1,15 +1,15 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Avg;
-use Elastica\Aggregation\Filter;
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Range;
-use Elastica\Filter\Term;
-use Elastica\Query;
-use Elastica\Query\Range as RangeQuery;
-use Elastica\Query\Term as TermQuery;
+use Webonyx\Elastica3x\Aggregation\Avg;
+use Webonyx\Elastica3x\Aggregation\Filter;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Range;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Range as RangeQuery;
+use Webonyx\Elastica3x\Query\Term as TermQuery;
 
 class FilterTest extends BaseAggregationTest
 {
@@ -31,7 +31,7 @@ class FilterTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testConstructorFilterInvalid()
     {
@@ -53,15 +53,15 @@ class FilterTest extends BaseAggregationTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Aggregation\Filter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
-                'Deprecated: Elastica\Aggregation\Filter\setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Aggregation\Filter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Aggregation\Filter\setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetFilterInvalid()
     {
@@ -86,7 +86,7 @@ class FilterTest extends BaseAggregationTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Aggregation\Filter\setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Aggregation\Filter\setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }

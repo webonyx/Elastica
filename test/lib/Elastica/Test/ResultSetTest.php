@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Result;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Result;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ResultSetTest extends BaseTest
 {
@@ -24,7 +24,7 @@ class ResultSetTest extends BaseTest
 
         $resultSet = $type->search('elastica search');
 
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSet);
         $this->assertEquals(3, $resultSet->getTotalHits());
         $this->assertGreaterThan(0, $resultSet->getMaxScore());
         $this->assertInternalType('array', $resultSet->getResults());
@@ -48,10 +48,10 @@ class ResultSetTest extends BaseTest
 
         $resultSet = $type->search('elastica search');
 
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSet);
-        $this->assertInstanceOf('Elastica\Result', $resultSet[0]);
-        $this->assertInstanceOf('Elastica\Result', $resultSet[1]);
-        $this->assertInstanceOf('Elastica\Result', $resultSet[2]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Result', $resultSet[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Result', $resultSet[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Result', $resultSet[2]);
 
         $this->assertFalse(isset($resultSet[3]));
     }
@@ -73,22 +73,22 @@ class ResultSetTest extends BaseTest
 
         $resultSet = $type->search('elastica search');
 
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSet);
 
         $documents = $resultSet->getDocuments();
 
         $this->assertInternalType('array', $documents);
         $this->assertEquals(3, count($documents));
-        $this->assertInstanceOf('Elastica\Document', $documents[0]);
-        $this->assertInstanceOf('Elastica\Document', $documents[1]);
-        $this->assertInstanceOf('Elastica\Document', $documents[2]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Document', $documents[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Document', $documents[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Document', $documents[2]);
         $this->assertFalse(isset($documents[3]));
         $this->assertEquals('elastica search', $documents[0]->get('name'));
     }
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidOffsetCreation()
     {
@@ -107,7 +107,7 @@ class ResultSetTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidOffsetGet()
     {

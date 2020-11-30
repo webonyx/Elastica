@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Connection\Strategy;
+namespace Webonyx\Elastica3x\Test\Connection\Strategy;
 
-use Elastica\Connection\Strategy\StrategyInterface;
+use Webonyx\Elastica3x\Connection\Strategy\StrategyInterface;
 
 /**
  * Description of EmptyStrategy.

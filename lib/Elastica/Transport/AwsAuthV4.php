@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
 use Aws\Credentials\CredentialProvider;
 use Aws\Credentials\Credentials;
 use Aws\Signature\SignatureV4;
-use Elastica\Connection;
+use Webonyx\Elastica3x\Connection;
 use GuzzleHttp;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;

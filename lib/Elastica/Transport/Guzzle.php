@@ -1,20 +1,20 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
-use Elastica\Connection;
-use Elastica\Exception\Connection\GuzzleException;
-use Elastica\Exception\PartialShardFailureException;
-use Elastica\Exception\ResponseException;
-use Elastica\JSON;
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Exception\Connection\GuzzleException;
+use Webonyx\Elastica3x\Exception\PartialShardFailureException;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Uri;
 
 /**
- * Elastica Guzzle Transport object.
+ * Webonyx\Elastica3x Guzzle Transport object.
  *
  * @author Milan Magudia <milan@magudia.com>
  */
@@ -39,14 +39,14 @@ class Guzzle extends AbstractTransport
      *
      * All calls that are made to the server are done through this function
      *
-     * @param \Elastica\Request $request
+     * @param \Webonyx\Elastica3x\Request $request
      * @param array             $params  Host, Port, ...
      *
-     * @throws \Elastica\Exception\ConnectionException
-     * @throws \Elastica\Exception\ResponseException
-     * @throws \Elastica\Exception\Connection\HttpException
+     * @throws \Webonyx\Elastica3x\Exception\ConnectionException
+     * @throws \Webonyx\Elastica3x\Exception\ResponseException
+     * @throws \Webonyx\Elastica3x\Exception\Connection\HttpException
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function exec(Request $request, array $params)
     {
@@ -164,7 +164,7 @@ class Guzzle extends AbstractTransport
     /**
      * Builds the base url for the guzzle connection.
      *
-     * @param \Elastica\Connection $connection
+     * @param \Webonyx\Elastica3x\Connection $connection
      *
      * @return string
      */
@@ -190,7 +190,7 @@ class Guzzle extends AbstractTransport
     /**
      * Builds the action path url for each request.
      *
-     * @param \Elastica\Request $request
+     * @param \Webonyx\Elastica3x\Request $request
      *
      * @return string
      */

@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Script\Script;
-use Elastica\Script\ScriptFields;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Script\ScriptFields;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ScriptFieldsTest extends BaseTest
 {
@@ -57,7 +57,7 @@ class ScriptFieldsTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testNameException()
     {

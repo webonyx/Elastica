@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
 /**
  * Base test for test deprecated classes. Supress deprecated error during run test case.

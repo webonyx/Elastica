@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Bulk\Action;
+namespace Webonyx\Elastica3x\Bulk\Action;
 
 class CreateDocument extends IndexDocument
 {

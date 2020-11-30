@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Tool;
+namespace Webonyx\Elastica3x\Test\Tool;
 
-use Elastica\Document;
-use Elastica\Test\Base;
-use Elastica\Tool\CrossIndex;
-use Elastica\Type;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Test\Base;
+use Webonyx\Elastica3x\Tool\CrossIndex;
+use Webonyx\Elastica3x\Type;
 
 class CrossIndexTest extends Base
 {
@@ -21,7 +21,7 @@ class CrossIndexTest extends Base
         $newIndex = $this->_createIndex(null, true, 2);
 
         $this->assertInstanceOf(
-            'Elastica\Index',
+            'Webonyx\Elastica3x\Index',
             CrossIndex::reindex($oldIndex, $newIndex)
         );
 
@@ -58,7 +58,7 @@ class CrossIndexTest extends Base
 
         $newIndex = $this->_createIndex(null, true, 2);
 
-        // \Elastica\Type
+        // \Webonyx\Elastica3x\Type
         CrossIndex::reindex($oldIndex, $newIndex, [
             CrossIndex::OPTION_TYPE => $type1,
         ]);
@@ -104,7 +104,7 @@ class CrossIndexTest extends Base
 
         // mapping
         $this->assertInstanceOf(
-            'Elastica\Index',
+            'Webonyx\Elastica3x\Index',
             CrossIndex::copy($oldIndex, $newIndex)
         );
 

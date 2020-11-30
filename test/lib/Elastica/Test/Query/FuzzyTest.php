@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\Fuzzy;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\Fuzzy;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class FuzzyTest extends BaseTest
 {
@@ -74,7 +74,7 @@ class FuzzyTest extends BaseTest
     public function testNeedSetFieldBeforeOption()
     {
         $fuzzy = new Fuzzy();
-        $this->setExpectedException('Elastica\Exception\InvalidException', 'No field has been set');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\InvalidException', 'No field has been set');
         $fuzzy->setFieldOption('boost', 1.0);
     }
 
@@ -112,7 +112,7 @@ class FuzzyTest extends BaseTest
      */
     public function testAddSingleField()
     {
-        $this->setExpectedException('Elastica\Exception\InvalidException', 'Fuzzy query can only support a single field.');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\InvalidException', 'Fuzzy query can only support a single field.');
         $fuzzy = new Fuzzy();
 
         $this->hideDeprecated();
@@ -145,7 +145,7 @@ class FuzzyTest extends BaseTest
     {
         $fuzzy = new Fuzzy();
         $fuzzy->setField('name', 'value');
-        $this->setExpectedException('Elastica\Exception\InvalidException', 'Fuzzy query can only support a single field.');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\InvalidException', 'Fuzzy query can only support a single field.');
         $fuzzy->setField('name1', 'value1');
     }
 
@@ -155,7 +155,7 @@ class FuzzyTest extends BaseTest
     public function testFieldNameMustBeString()
     {
         $fuzzy = new Fuzzy();
-        $this->setExpectedException('Elastica\Exception\InvalidException', 'The field and value arguments must be of type string.');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\InvalidException', 'The field and value arguments must be of type string.');
         $fuzzy->setField(['name'], 'value');
     }
 
@@ -165,7 +165,7 @@ class FuzzyTest extends BaseTest
     public function testValueMustBeString()
     {
         $fuzzy = new Fuzzy();
-        $this->setExpectedException('Elastica\Exception\InvalidException', 'The field and value arguments must be of type string.');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\InvalidException', 'The field and value arguments must be of type string.');
         $fuzzy->setField('name', ['value']);
     }
 
@@ -179,6 +179,6 @@ class FuzzyTest extends BaseTest
         $fuzzy->addField('user', ['value' => 'Nicolas', 'boost' => 1.0]);
         $this->finishCollectErrors();
 
-        $errorCollector->assertOnlyOneDeprecatedError('Query\Fuzzy::addField is deprecated. Use setField and setFieldOption instead. This method will be removed in further Elastica releases');
+        $errorCollector->assertOnlyOneDeprecatedError('Query\Fuzzy::addField is deprecated. Use setField and setFieldOption instead. This method will be removed in further Webonyx\Elastica3x releases');
     }
 }

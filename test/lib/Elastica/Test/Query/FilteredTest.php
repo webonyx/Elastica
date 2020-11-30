@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Term;
-use Elastica\Query\Filtered;
-use Elastica\Query\QueryString;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Query\Filtered;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class FilteredTest extends BaseTest
 {
@@ -19,13 +19,13 @@ class FilteredTest extends BaseTest
 
         $this->assertFileDeprecated(
             $reflection->getFileName(),
-            'Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Elastica releases.'
+            'Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Webonyx\Elastica3x releases.'
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testConstructInvalid()
     {
@@ -47,15 +47,15 @@ class FilteredTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetFilterInvalid()
     {
@@ -80,7 +80,7 @@ class FilteredTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
@@ -145,7 +145,7 @@ class FilteredTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testFilteredWithoutArgumentsShouldRaiseException()
     {

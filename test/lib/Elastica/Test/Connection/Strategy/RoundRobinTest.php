@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Connection\Strategy;
+namespace Webonyx\Elastica3x\Test\Connection\Strategy;
 
-use Elastica\Connection;
-use Elastica\Connection\Strategy\RoundRobin;
-use Elastica\Exception\ConnectionException;
-use Elastica\Response;
-use Elastica\Test\Base;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Connection\Strategy\RoundRobin;
+use Webonyx\Elastica3x\Exception\ConnectionException;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\Test\Base;
 
 /**
  * Description of RoundRobinTest.
@@ -47,7 +47,7 @@ class RoundRobinTest extends Base
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\ConnectionException
+     * @expectedException \Webonyx\Elastica3x\Exception\ConnectionException
      */
     public function testFailConnection()
     {
@@ -118,7 +118,7 @@ class RoundRobinTest extends Base
     {
         $strategy = $client->getConnectionStrategy();
 
-        $this->assertInstanceOf('Elastica\Connection\Strategy\RoundRobin', $strategy);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\Strategy\RoundRobin', $strategy);
     }
 
     protected function _checkResponse($response)

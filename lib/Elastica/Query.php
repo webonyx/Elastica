@@ -1,19 +1,19 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Aggregation\AbstractAggregation;
-use Elastica\Exception\InvalidException;
-use Elastica\Exception\NotImplementedException;
-use Elastica\Filter\AbstractFilter;
-use Elastica\Query\AbstractQuery;
-use Elastica\Query\MatchAll;
-use Elastica\Query\QueryString;
-use Elastica\Script\AbstractScript;
-use Elastica\Script\ScriptFields;
-use Elastica\Suggest\AbstractSuggest;
+use Webonyx\Elastica3x\Aggregation\AbstractAggregation;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
+use Webonyx\Elastica3x\Query\AbstractQuery;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Script\AbstractScript;
+use Webonyx\Elastica3x\Script\ScriptFields;
+use Webonyx\Elastica3x\Suggest\AbstractSuggest;
 
 /**
- * Elastica query object.
+ * Webonyx\Elastica3x query object.
  *
  * Creates different types of queries
  *
@@ -33,7 +33,7 @@ class Query extends Param
     /**
      * Creates a query object.
      *
-     * @param array|\Elastica\Query\AbstractQuery $query OPTIONAL Query object (default = null)
+     * @param array|\Webonyx\Elastica3x\Query\AbstractQuery $query OPTIONAL Query object (default = null)
      */
     public function __construct($query = null)
     {
@@ -53,7 +53,7 @@ class Query extends Param
      *
      * @param mixed $query
      *
-     * @throws \Elastica\Exception\NotImplementedException
+     * @throws \Webonyx\Elastica3x\Exception\NotImplementedException
      *
      * @return self
      */
@@ -65,7 +65,7 @@ class Query extends Param
             case $query instanceof AbstractQuery:
                 return new self($query);
             case $query instanceof AbstractFilter:
-                trigger_error('Deprecated: Elastica\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
+                trigger_error('Deprecated: Webonyx\Elastica3x\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
                 $newQuery = new self();
                 $newQuery->setPostFilter($query);
 
@@ -105,7 +105,7 @@ class Query extends Param
     /**
      * Sets the query.
      *
-     * @param \Elastica\Query\AbstractQuery $query Query object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $query Query object
      *
      * @return $this
      */
@@ -117,7 +117,7 @@ class Query extends Param
     /**
      * Gets the query object.
      *
-     * @return \Elastica\Query\AbstractQuery
+     * @return \Webonyx\Elastica3x\Query\AbstractQuery
      **/
     public function getQuery()
     {
@@ -127,22 +127,22 @@ class Query extends Param
     /**
      * Set Filter.
      *
-     * @param \Elastica\Query\AbstractQuery $filter Filter object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $filter Filter object
      *
      * @return $this
      *
      * @link    https://github.com/elasticsearch/elasticsearch/issues/7422
-     * @deprecated Use Elastica\Query::setPostFilter() instead, this method will be removed in further Elastica releases
+     * @deprecated Use Webonyx\Elastica3x\Query::setPostFilter() instead, this method will be removed in further Webonyx\Elastica3x releases
      */
     public function setFilter($filter)
     {
         if ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Query::setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            trigger_error('Deprecated: Webonyx\Elastica3x\Query::setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }
 
-        trigger_error('Deprecated: Elastica\Query::setFilter() is deprecated and will be removed in further Elastica releases. Use Elastica\Query::setPostFilter() instead.', E_USER_DEPRECATED);
+        trigger_error('Deprecated: Webonyx\Elastica3x\Query::setFilter() is deprecated and will be removed in further Webonyx\Elastica3x releases. Use Webonyx\Elastica3x\Query::setPostFilter() instead.', E_USER_DEPRECATED);
 
         return $this->setPostFilter($filter);
     }
@@ -231,7 +231,7 @@ class Query extends Param
     /**
      * Alias for setSize.
      *
-     * @deprecated Use the setSize() method, this method will be removed in further Elastica releases
+     * @deprecated Use the setSize() method, this method will be removed in further Webonyx\Elastica3x releases
      *
      * @param int $limit OPTIONAL Maximal number of results for query (default = 10)
      *
@@ -239,7 +239,7 @@ class Query extends Param
      */
     public function setLimit($limit = 10)
     {
-        trigger_error('Deprecated: Elastica\Query::setLimit() is deprecated. Use setSize method instead. This method will be removed in further Elastica releases.', E_USER_DEPRECATED);
+        trigger_error('Deprecated: Webonyx\Elastica3x\Query::setLimit() is deprecated. Use setSize method instead. This method will be removed in further Webonyx\Elastica3x releases.', E_USER_DEPRECATED);
 
         return $this->setSize($limit);
     }
@@ -305,7 +305,7 @@ class Query extends Param
     /**
      * Set script fields.
      *
-     * @param array|\Elastica\Script\ScriptFields $scriptFields Script fields
+     * @param array|\Webonyx\Elastica3x\Script\ScriptFields $scriptFields Script fields
      *
      * @return $this
      *
@@ -324,7 +324,7 @@ class Query extends Param
      * Adds a Script to the query.
      *
      * @param string                          $name
-     * @param \Elastica\Script\AbstractScript $script Script object
+     * @param \Webonyx\Elastica3x\Script\AbstractScript $script Script object
      *
      * @return $this
      */
@@ -386,7 +386,7 @@ class Query extends Param
      *
      * @param float $minScore Minimum score to filter documents by
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -402,7 +402,7 @@ class Query extends Param
     /**
      * Add a suggest term.
      *
-     * @param \Elastica\Suggest $suggest suggestion object
+     * @param \Webonyx\Elastica3x\Suggest $suggest suggestion object
      *
      * @return $this
      */
@@ -454,7 +454,7 @@ class Query extends Param
     /**
      * Sets post_filter argument for the query. The filter is applied after the query has executed.
      *
-     * @param array|\Elastica\Query\AbstractQuery $filter
+     * @param array|\Webonyx\Elastica3x\Query\AbstractQuery $filter
      *
      * @return $this
      *
@@ -463,9 +463,9 @@ class Query extends Param
     public function setPostFilter($filter)
     {
         if (is_array($filter)) {
-            trigger_error('Deprecated: Elastica\Query::setPostFilter() passing filter as array is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            trigger_error('Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as array is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            trigger_error('Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }

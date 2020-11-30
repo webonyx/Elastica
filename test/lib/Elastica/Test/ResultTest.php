@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Result;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Result;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class ResultTest extends BaseTest
 {
@@ -33,8 +33,8 @@ class ResultTest extends BaseTest
 
         $result = $resultSet->current();
 
-        $this->assertInstanceOf('Elastica\Result', $result);
-        $this->assertInstanceOf('Elastica\Document', $result->getDocument());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Result', $result);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Document', $result->getDocument());
         $this->assertEquals($index->getName(), $result->getIndex());
         $this->assertEquals($typeName, $result->getType());
         $this->assertEquals($docId, $result->getId());
@@ -77,7 +77,7 @@ class ResultTest extends BaseTest
         $result = $resultSet->current();
 
         $this->assertEquals([], $result->getSource());
-        $this->assertInstanceOf('Elastica\Result', $result);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Result', $result);
         $this->assertEquals($indexName, $result->getIndex());
         $this->assertEquals($typeName, $result->getType());
         $this->assertEquals($docId, $result->getId());

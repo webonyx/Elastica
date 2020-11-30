@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Multi;
+namespace Webonyx\Elastica3x\Multi;
 
-use Elastica\Response;
-use Elastica\ResultSet as BaseResultSet;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\ResultSet as BaseResultSet;
 
 /**
- * Elastica multi search result set
+ * Webonyx\Elastica3x multi search result set
  * List of result sets for each search request.
  *
  * @author munkie
@@ -15,7 +15,7 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     /**
      * Result Sets.
      *
-     * @var array|\Elastica\ResultSet[] Result Sets
+     * @var array|\Webonyx\Elastica3x\ResultSet[] Result Sets
      */
     protected $_resultSets = [];
 
@@ -29,14 +29,14 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     /**
      * Response.
      *
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
     /**
      * Constructs ResultSet object.
      *
-     * @param \Elastica\Response $response
+     * @param \Webonyx\Elastica3x\Response $response
      * @param BaseResultSet[]
      */
     public function __construct(Response $response, $resultSets)
@@ -46,7 +46,7 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     }
 
     /**
-     * @return array|\Elastica\ResultSet[]
+     * @return array|\Webonyx\Elastica3x\ResultSet[]
      */
     public function getResultSets()
     {
@@ -56,7 +56,7 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     /**
      * Returns response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {
@@ -80,7 +80,7 @@ class ResultSet implements \Iterator, \ArrayAccess, \Countable
     }
 
     /**
-     * @return bool|\Elastica\ResultSet
+     * @return bool|\Webonyx\Elastica3x\ResultSet
      */
     public function current()
     {

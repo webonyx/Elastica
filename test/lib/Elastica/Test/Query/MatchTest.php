@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\Match;
-use Elastica\Query\MatchPhrase;
-use Elastica\Query\MatchPhrasePrefix;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\Match;
+use Webonyx\Elastica3x\Query\MatchPhrase;
+use Webonyx\Elastica3x\Query\MatchPhrasePrefix;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class MatchTest extends BaseTest
 {

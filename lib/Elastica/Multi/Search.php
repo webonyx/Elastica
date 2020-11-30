@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Multi;
+namespace Webonyx\Elastica3x\Multi;
 
-use Elastica\Client;
-use Elastica\JSON;
-use Elastica\Request;
-use Elastica\Search as BaseSearch;
+use Webonyx\Elastica3x\Client;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Search as BaseSearch;
 
 /**
- * Elastica multi search.
+ * Webonyx\Elastica3x multi search.
  *
  * @author munkie
  *
@@ -21,7 +21,7 @@ class Search
     private $_builder;
 
     /**
-     * @var \Elastica\Client
+     * @var \Webonyx\Elastica3x\Client
      */
     protected $_client;
 
@@ -31,14 +31,14 @@ class Search
     protected $_options = [];
 
     /**
-     * @var array|\Elastica\Search[]
+     * @var array|\Webonyx\Elastica3x\Search[]
      */
     protected $_searches = [];
 
     /**
      * Constructs search object.
      *
-     * @param \Elastica\Client      $client  Client object
+     * @param \Webonyx\Elastica3x\Client      $client  Client object
      * @param MultiBuilderInterface $builder
      */
     public function __construct(Client $client, MultiBuilderInterface $builder = null)
@@ -48,7 +48,7 @@ class Search
     }
 
     /**
-     * @return \Elastica\Client
+     * @return \Webonyx\Elastica3x\Client
      */
     public function getClient()
     {
@@ -66,7 +66,7 @@ class Search
     }
 
     /**
-     * @param \Elastica\Search $search
+     * @param \Webonyx\Elastica3x\Search $search
      * @param string           $key    Optional key
      *
      * @return $this
@@ -83,7 +83,7 @@ class Search
     }
 
     /**
-     * @param array|\Elastica\Search[] $searches
+     * @param array|\Webonyx\Elastica3x\Search[] $searches
      *
      * @return $this
      */
@@ -97,7 +97,7 @@ class Search
     }
 
     /**
-     * @param array|\Elastica\Search[] $searches
+     * @param array|\Webonyx\Elastica3x\Search[] $searches
      *
      * @return $this
      */
@@ -110,7 +110,7 @@ class Search
     }
 
     /**
-     * @return array|\Elastica\Search[]
+     * @return array|\Webonyx\Elastica3x\Search[]
      */
     public function getSearches()
     {
@@ -130,7 +130,7 @@ class Search
     }
 
     /**
-     * @return \Elastica\Multi\ResultSet
+     * @return \Webonyx\Elastica3x\Multi\ResultSet
      */
     public function search()
     {
@@ -160,7 +160,7 @@ class Search
     }
 
     /**
-     * @param \Elastica\Search $search
+     * @param \Webonyx\Elastica3x\Search $search
      *
      * @return string
      */
@@ -177,7 +177,7 @@ class Search
     }
 
     /**
-     * @param \Elastica\Search $search
+     * @param \Webonyx\Elastica3x\Search $search
      *
      * @return array
      */

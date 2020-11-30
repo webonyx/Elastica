@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Exception\NotImplementedException;
-use Elastica\Filter\BoolFilter;
-use Elastica\Suggest;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Filter\BoolFilter;
+use Webonyx\Elastica3x\Suggest;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class SuggestTest extends BaseTest
 {

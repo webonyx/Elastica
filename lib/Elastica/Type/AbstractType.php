@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Type;
+namespace Webonyx\Elastica3x\Type;
 
-use Elastica\Client;
-use Elastica\Exception\InvalidException;
-use Elastica\Index;
-use Elastica\SearchableInterface;
-use Elastica\Type as BaseType;
-use Elastica\Util;
+use Webonyx\Elastica3x\Client;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\SearchableInterface;
+use Webonyx\Elastica3x\Type as BaseType;
+use Webonyx\Elastica3x\Util;
 
 /**
  * Abstract helper class to implement search indices based on models.
@@ -47,21 +47,21 @@ abstract class AbstractType implements SearchableInterface
     /**
      * Client.
      *
-     * @var \Elastica\Client Client object
+     * @var \Webonyx\Elastica3x\Client Client object
      */
     protected $_client;
 
     /**
      * Index.
      *
-     * @var \Elastica\Index Index object
+     * @var \Webonyx\Elastica3x\Index Index object
      */
     protected $_index;
 
     /**
      * Type.
      *
-     * @var \Elastica\Type Type object
+     * @var \Webonyx\Elastica3x\Type Type object
      */
     protected $_type;
 
@@ -92,9 +92,9 @@ abstract class AbstractType implements SearchableInterface
      * Reads index and type name from protected vars _indexName and _typeName.
      * Has to be set in child class
      *
-     * @param \Elastica\Client $client OPTIONAL Client object
+     * @param \Webonyx\Elastica3x\Client $client OPTIONAL Client object
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function __construct(Client $client = null)
     {
@@ -131,10 +131,10 @@ abstract class AbstractType implements SearchableInterface
     }
 
     /**
-     * @param string|\Elastica\Query $query
+     * @param string|\Webonyx\Elastica3x\Query $query
      * @param array|int              $options
      *
-     * @return \Elastica\Search
+     * @return \Webonyx\Elastica3x\Search
      */
     public function createSearch($query = '', $options = null)
     {
@@ -144,12 +144,12 @@ abstract class AbstractType implements SearchableInterface
     /**
      * Search on the type.
      *
-     * @param string|array|\Elastica\Query $query   Array with all query data inside or a Elastica\Query object
+     * @param string|array|\Webonyx\Elastica3x\Query $query   Array with all query data inside or a Webonyx\Elastica3x\Query object
      * @param null                         $options
      *
-     * @return \Elastica\ResultSet with all results inside
+     * @return \Webonyx\Elastica3x\ResultSet with all results inside
      *
-     * @see \Elastica\SearchableInterface::search
+     * @see \Webonyx\Elastica3x\SearchableInterface::search
      */
     public function search($query = '', $options = null)
     {
@@ -159,11 +159,11 @@ abstract class AbstractType implements SearchableInterface
     /**
      * Count docs in the type based on query.
      *
-     * @param string|array|\Elastica\Query $query Array with all query data inside or a Elastica\Query object
+     * @param string|array|\Webonyx\Elastica3x\Query $query Array with all query data inside or a Webonyx\Elastica3x\Query object
      *
      * @return int number of documents matching the query
      *
-     * @see \Elastica\SearchableInterface::count
+     * @see \Webonyx\Elastica3x\SearchableInterface::count
      */
     public function count($query = '')
     {
@@ -173,7 +173,7 @@ abstract class AbstractType implements SearchableInterface
     /**
      * Returns the search index.
      *
-     * @return \Elastica\Index Index object
+     * @return \Webonyx\Elastica3x\Index Index object
      */
     public function getIndex()
     {
@@ -183,7 +183,7 @@ abstract class AbstractType implements SearchableInterface
     /**
      * Returns type object.
      *
-     * @return \Elastica\Type Type object
+     * @return \Webonyx\Elastica3x\Type Type object
      */
     public function getType()
     {

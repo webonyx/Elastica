@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Index;
-use Elastica\Query;
-use Elastica\Query\Indices;
-use Elastica\Query\Term;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Indices;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class IndicesTest extends BaseTest
 {
@@ -104,7 +104,7 @@ class IndicesTest extends BaseTest
         $this->assertEquals($expected, $query->getParam('indices'));
 
         $returnValue = $query->setIndices($indices);
-        $this->assertInstanceOf('Elastica\Query\Indices', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Indices', $returnValue);
     }
 
     /**
@@ -126,6 +126,6 @@ class IndicesTest extends BaseTest
         $this->assertEquals($expected, $query->getParam('indices'));
 
         $returnValue = $query->addIndex('bar');
-        $this->assertInstanceOf('Elastica\Query\Indices', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Indices', $returnValue);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
 /**
  * geo_shape query for pre-indexed shapes.
@@ -61,7 +61,7 @@ class GeoShapePreIndexed extends AbstractGeoShape
     /**
      * Converts query to array.
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      *
      * @return array
      */

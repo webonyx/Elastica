@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Type;
+namespace Webonyx\Elastica3x\Type;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Request;
-use Elastica\Type;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Type;
 
 /**
- * Elastica Mapping object.
+ * Webonyx\Elastica3x Mapping object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
@@ -24,14 +24,14 @@ class Mapping
     /**
      * Type.
      *
-     * @var \Elastica\Type Type object
+     * @var \Webonyx\Elastica3x\Type Type object
      */
     protected $_type;
 
     /**
      * Construct Mapping.
      *
-     * @param \Elastica\Type $type       OPTIONAL Type object
+     * @param \Webonyx\Elastica3x\Type $type       OPTIONAL Type object
      * @param array          $properties OPTIONAL Properties
      */
     public function __construct(Type $type = null, array $properties = [])
@@ -49,7 +49,7 @@ class Mapping
      * Sets the mapping type
      * Enter description here ...
      *
-     * @param \Elastica\Type $type Type object
+     * @param \Webonyx\Elastica3x\Type $type Type object
      *
      * @return $this
      */
@@ -99,7 +99,7 @@ class Mapping
     /**
      * Returns mapping type.
      *
-     * @return \Elastica\Type Type
+     * @return \Webonyx\Elastica3x\Type Type
      */
     public function getType()
     {
@@ -243,7 +243,7 @@ class Mapping
     /**
      * Converts the mapping to an array.
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array Mapping as array
      */
@@ -263,7 +263,7 @@ class Mapping
      *
      * @param array $query Query string parameters to send with mapping
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function send(array $query = [])
     {
@@ -275,9 +275,9 @@ class Mapping
     /**
      * Creates a mapping object.
      *
-     * @param array|\Elastica\Type\Mapping $mapping Mapping object or properties array
+     * @param array|\Webonyx\Elastica3x\Type\Mapping $mapping Mapping object or properties array
      *
-     * @throws \Elastica\Exception\InvalidException If invalid type
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If invalid type
      *
      * @return self
      */

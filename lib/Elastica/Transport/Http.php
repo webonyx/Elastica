@@ -1,15 +1,15 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
-use Elastica\Exception\Connection\HttpException;
-use Elastica\Exception\PartialShardFailureException;
-use Elastica\Exception\ResponseException;
-use Elastica\JSON;
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\Exception\Connection\HttpException;
+use Webonyx\Elastica3x\Exception\PartialShardFailureException;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 
 /**
- * Elastica Http Transport object.
+ * Webonyx\Elastica3x Http Transport object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */
@@ -34,14 +34,14 @@ class Http extends AbstractTransport
      *
      * All calls that are made to the server are done through this function
      *
-     * @param \Elastica\Request $request
+     * @param \Webonyx\Elastica3x\Request $request
      * @param array             $params  Host, Port, ...
      *
-     * @throws \Elastica\Exception\ConnectionException
-     * @throws \Elastica\Exception\ResponseException
-     * @throws \Elastica\Exception\Connection\HttpException
+     * @throws \Webonyx\Elastica3x\Exception\ConnectionException
+     * @throws \Webonyx\Elastica3x\Exception\ResponseException
+     * @throws \Webonyx\Elastica3x\Exception\Connection\HttpException
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function exec(Request $request, array $params)
     {

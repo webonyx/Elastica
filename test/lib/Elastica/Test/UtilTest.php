@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Connection;
-use Elastica\Request;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Util;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Util;
 
 class UtilTest extends BaseTest
 {

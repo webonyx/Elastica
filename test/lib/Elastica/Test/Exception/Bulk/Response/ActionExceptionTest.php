@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Exception\Bulk\Response;
+namespace Webonyx\Elastica3x\Test\Exception\Bulk\Response;
 
-use Elastica\Test\Exception\AbstractExceptionTest;
+use Webonyx\Elastica3x\Test\Exception\AbstractExceptionTest;
 
 class ActionExceptionTest extends AbstractExceptionTest
 {

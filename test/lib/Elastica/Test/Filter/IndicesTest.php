@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\BoolNot;
-use Elastica\Filter\Indices;
-use Elastica\Filter\Term;
-use Elastica\Index;
-use Elastica\Query;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\BoolNot;
+use Webonyx\Elastica3x\Filter\Indices;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class IndicesTest extends BaseTest
 {
@@ -107,7 +107,7 @@ class IndicesTest extends BaseTest
         $this->assertEquals($expected, $filter->getParam('indices'));
 
         $returnValue = $filter->setIndices($indices);
-        $this->assertInstanceOf('Elastica\Filter\Indices', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Indices', $returnValue);
     }
 
     /**
@@ -129,6 +129,6 @@ class IndicesTest extends BaseTest
         $this->assertEquals($expected, $filter->getParam('indices'));
 
         $returnValue = $filter->addIndex('bar');
-        $this->assertInstanceOf('Elastica\Filter\Indices', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Indices', $returnValue);
     }
 }

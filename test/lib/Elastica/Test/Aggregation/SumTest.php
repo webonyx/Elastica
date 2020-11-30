@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Sum;
-use Elastica\Document;
-use Elastica\Query;
+use Webonyx\Elastica3x\Aggregation\Sum;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
 
 class SumTest extends BaseAggregationTest
 {

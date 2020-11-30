@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\ResultSet;
-use Elastica\Scroll;
-use Elastica\Search;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\Scroll;
+use Webonyx\Elastica3x\Search;
 
 class ScrollTest extends Base
 {

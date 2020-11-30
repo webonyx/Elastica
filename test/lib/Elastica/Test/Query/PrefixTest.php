@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Prefix;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Prefix;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class PrefixTest extends BaseTest
 {

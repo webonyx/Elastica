@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -85,7 +85,7 @@ abstract class AbstractGeoDistance extends AbstractFilter
     /**
      * @param array|string $location
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -155,7 +155,7 @@ abstract class AbstractGeoDistance extends AbstractFilter
     }
 
     /**
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array|string
      */
@@ -185,9 +185,9 @@ abstract class AbstractGeoDistance extends AbstractFilter
     }
 
     /**
-     * @see \Elastica\Param::toArray()
+     * @see \Webonyx\Elastica3x\Param::toArray()
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array
      */

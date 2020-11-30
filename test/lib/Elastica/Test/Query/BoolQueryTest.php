@@ -1,22 +1,22 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Term as TermFilter;
-use Elastica\Index;
-use Elastica\Query\BoolQuery;
-use Elastica\Query\Ids;
-use Elastica\Query\Term;
-use Elastica\Query\Term as TermQuery;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Term as TermFilter;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query\BoolQuery;
+use Webonyx\Elastica3x\Query\Ids;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Query\Term as TermQuery;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
 
 class BoolQueryTest extends BaseTest
 {
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddFilterInvalid()
     {
@@ -41,7 +41,7 @@ class BoolQueryTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\BoolQuery::addFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\BoolQuery::addFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
@@ -306,7 +306,7 @@ class BoolQueryTest extends BaseTest
         $index->refresh();
 
         $this->hideDeprecated();
-        $boolQuery = new \Elastica\Query\Bool();
+        $boolQuery = new \Webonyx\Elastica3x\Query\Bool();
         $this->showDeprecated();
 
         $resultSet = $type->search($boolQuery);
@@ -324,9 +324,9 @@ class BoolQueryTest extends BaseTest
         }
 
         $this->hideDeprecated();
-        $reflection = new \ReflectionClass(new \Elastica\Query\Bool());
+        $reflection = new \ReflectionClass(new \Webonyx\Elastica3x\Query\Bool());
         $this->showDeprecated();
 
-        $this->assertFileDeprecated($reflection->getFileName(), 'Elastica\Query\Bool is deprecated. Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Elastica releases');
+        $this->assertFileDeprecated($reflection->getFileName(), 'Webonyx\Elastica3x\Query\Bool is deprecated. Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Webonyx\Elastica3x releases');
     }
 }

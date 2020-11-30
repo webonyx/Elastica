@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Cluster;
+namespace Webonyx\Elastica3x\Cluster;
 
-use Elastica\Client;
-use Elastica\Request;
+use Webonyx\Elastica3x\Client;
+use Webonyx\Elastica3x\Request;
 
 /**
  * Cluster settings.
@@ -14,14 +14,14 @@ use Elastica\Request;
 class Settings
 {
     /**
-     * @var \Elastica\Client Client object
+     * @var \Webonyx\Elastica3x\Client Client object
      */
     protected $_client = null;
 
     /**
      * Creates a cluster object.
      *
-     * @param \Elastica\Client $client Connection client object
+     * @param \Webonyx\Elastica3x\Client $client Connection client object
      */
     public function __construct(Client $client)
     {
@@ -108,7 +108,7 @@ class Settings
      * @param string $key
      * @param string $value
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setPersistent($key, $value)
     {
@@ -127,7 +127,7 @@ class Settings
      * @param string $key
      * @param string $value
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setTransient($key, $value)
     {
@@ -148,7 +148,7 @@ class Settings
      * @param bool $readOnly
      * @param bool $persistent
      *
-     * @return \Elastica\Response $response
+     * @return \Webonyx\Elastica3x\Response $response
      */
     public function setReadOnly($readOnly = true, $persistent = false)
     {
@@ -164,7 +164,7 @@ class Settings
      *
      * @param array $settings Raw settings (including persistent or transient)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function set(array $settings)
     {
@@ -174,7 +174,7 @@ class Settings
     /**
      * Get the client.
      *
-     * @return \Elastica\Client
+     * @return \Webonyx\Elastica3x\Client
      */
     public function getClient()
     {
@@ -185,9 +185,9 @@ class Settings
      * Sends settings request.
      *
      * @param array  $data   OPTIONAL Data array
-     * @param string $method OPTIONAL Transfer method (default = \Elastica\Request::GET)
+     * @param string $method OPTIONAL Transfer method (default = \Webonyx\Elastica3x\Request::GET)
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function request(array $data = [], $method = Request::GET)
     {

@@ -1,7 +1,7 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\DeprecatedException;
+use Webonyx\Elastica3x\Exception\DeprecatedException;
 
 /**
  * Base class for things that can be sent to the update api (Document and
@@ -12,7 +12,7 @@ use Elastica\Exception\DeprecatedException;
 class AbstractUpdateAction extends Param
 {
     /**
-     * @var \Elastica\Document
+     * @var \Webonyx\Elastica3x\Document
      */
     protected $_upsert;
 
@@ -94,7 +94,7 @@ class AbstractUpdateAction extends Param
     /**
      * Return document type name.
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return string Document type name
      */
@@ -122,7 +122,7 @@ class AbstractUpdateAction extends Param
     /**
      * Get the document index name.
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return string Index name
      */
@@ -261,35 +261,35 @@ class AbstractUpdateAction extends Param
      *
      * @param string $value percolator filter
      *
-     * @deprecated Option "percolate" deprecated as of ES 1.3 and will be removed in further Elastica releases. Use Percolator instead.
+     * @deprecated Option "percolate" deprecated as of ES 1.3 and will be removed in further Webonyx\Elastica3x releases. Use Percolator instead.
      *
      * @return $this
      */
     public function setPercolate($value = '*')
     {
-        throw new DeprecatedException('Option "percolate" deprecated as of ES 1.3 and will be removed in further Elastica releases. Use Percolator instead.');
+        throw new DeprecatedException('Option "percolate" deprecated as of ES 1.3 and will be removed in further Webonyx\Elastica3x releases. Use Percolator instead.');
     }
 
     /**
      * Get percolate parameter.
      *
-     * @deprecated Option "percolate" deprecated as of ES 1.3 and will be removed in further Elastica releases. Use Percolator instead.
+     * @deprecated Option "percolate" deprecated as of ES 1.3 and will be removed in further Webonyx\Elastica3x releases. Use Percolator instead.
      *
      * @return string
      */
     public function getPercolate()
     {
-        throw new DeprecatedException('Option "percolate" deprecated as of ES 1.3 and will be removed in further Elastica releases. Use Percolator instead.');
+        throw new DeprecatedException('Option "percolate" deprecated as of ES 1.3 and will be removed in further Webonyx\Elastica3x releases. Use Percolator instead.');
     }
 
     /**
-     * @deprecated Option "percolate" deprecated as of ES 1.3 and will be removed in further Elastica releases. Use Percolator instead.
+     * @deprecated Option "percolate" deprecated as of ES 1.3 and will be removed in further Webonyx\Elastica3x releases. Use Percolator instead.
      *
      * @return bool
      */
     public function hasPercolate()
     {
-        throw new DeprecatedException('Option "percolate" deprecated as of ES 1.3 and will be removed in further Elastica releases. Use Percolator instead.');
+        throw new DeprecatedException('Option "percolate" deprecated as of ES 1.3 and will be removed in further Webonyx\Elastica3x releases. Use Percolator instead.');
     }
 
     /**
@@ -517,7 +517,7 @@ class AbstractUpdateAction extends Param
     }
 
     /**
-     * @param \Elastica\Document|array $data
+     * @param \Webonyx\Elastica3x\Document|array $data
      *
      * @return $this
      */
@@ -530,7 +530,7 @@ class AbstractUpdateAction extends Param
     }
 
     /**
-     * @return \Elastica\Document
+     * @return \Webonyx\Elastica3x\Document
      */
     public function getUpsert()
     {

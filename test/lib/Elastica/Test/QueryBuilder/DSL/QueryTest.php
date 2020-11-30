@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\QueryBuilder\DSL;
+namespace Webonyx\Elastica3x\Test\QueryBuilder\DSL;
 
-use Elastica\Filter\Exists;
-use Elastica\Query\Match;
-use Elastica\Query\Term;
-use Elastica\QueryBuilder\DSL;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Query\Match;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
 
 class QueryTest extends AbstractDSLTest
 {
@@ -15,7 +15,7 @@ class QueryTest extends AbstractDSLTest
     {
         $queryDSL = new DSL\Query();
 
-        $this->assertInstanceOf('Elastica\QueryBuilder\DSL', $queryDSL);
+        $this->assertInstanceOf('Webonyx\Elastica3x\QueryBuilder\DSL', $queryDSL);
         $this->assertEquals(DSL::TYPE_QUERY, $queryDSL->getType());
     }
 
@@ -28,12 +28,12 @@ class QueryTest extends AbstractDSLTest
 
         $match = $queryDSL->match('field', 'match');
         $this->assertEquals('match', $match->getParam('field'));
-        $this->assertInstanceOf('Elastica\Query\Match', $match);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Match', $match);
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testConstantScoreFilterInvalid()
     {
@@ -58,8 +58,8 @@ class QueryTest extends AbstractDSLTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\ConstantScore passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\ConstantScore passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
@@ -77,9 +77,9 @@ class QueryTest extends AbstractDSLTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Use bool() instead. Filtered query is deprecated since ES 2.0.0-beta1 and this method will be removed in further Elastica releases.',
-                'Deprecated: Elastica\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Use bool() instead. Filtered query is deprecated since ES 2.0.0-beta1 and this method will be removed in further Webonyx\Elastica3x releases.',
+                'Deprecated: Webonyx\Elastica3x\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
@@ -91,40 +91,40 @@ class QueryTest extends AbstractDSLTest
     {
         $queryDSL = new DSL\Query();
 
-        $this->_assertImplemented($queryDSL, 'bool', 'Elastica\Query\BoolQuery', []);
-        $this->_assertImplemented($queryDSL, 'boosting', 'Elastica\Query\Boosting', []);
-        $this->_assertImplemented($queryDSL, 'common_terms', 'Elastica\Query\Common', ['field', 'query', 0.001]);
-        $this->_assertImplemented($queryDSL, 'constant_score', 'Elastica\Query\ConstantScore', [new Match()]);
-        $this->_assertImplemented($queryDSL, 'dis_max', 'Elastica\Query\DisMax', []);
+        $this->_assertImplemented($queryDSL, 'bool', 'Webonyx\Elastica3x\Query\BoolQuery', []);
+        $this->_assertImplemented($queryDSL, 'boosting', 'Webonyx\Elastica3x\Query\Boosting', []);
+        $this->_assertImplemented($queryDSL, 'common_terms', 'Webonyx\Elastica3x\Query\Common', ['field', 'query', 0.001]);
+        $this->_assertImplemented($queryDSL, 'constant_score', 'Webonyx\Elastica3x\Query\ConstantScore', [new Match()]);
+        $this->_assertImplemented($queryDSL, 'dis_max', 'Webonyx\Elastica3x\Query\DisMax', []);
 
         $this->hideDeprecated();
-        $this->_assertImplemented($queryDSL, 'filtered', 'Elastica\Query\Filtered', [new Match(), new Exists('field')]);
-        $this->_assertImplemented($queryDSL, 'filtered', 'Elastica\Query\Filtered', [new Match(), new Term()]);
+        $this->_assertImplemented($queryDSL, 'filtered', 'Webonyx\Elastica3x\Query\Filtered', [new Match(), new Exists('field')]);
+        $this->_assertImplemented($queryDSL, 'filtered', 'Webonyx\Elastica3x\Query\Filtered', [new Match(), new Term()]);
         $this->showDeprecated();
 
-        $this->_assertImplemented($queryDSL, 'function_score', 'Elastica\Query\FunctionScore', []);
-        $this->_assertImplemented($queryDSL, 'fuzzy', 'Elastica\Query\Fuzzy', ['field', 'type']);
-        $this->_assertImplemented($queryDSL, 'has_child', 'Elastica\Query\HasChild', [new Match()]);
-        $this->_assertImplemented($queryDSL, 'has_parent', 'Elastica\Query\HasParent', [new Match(), 'type']);
-        $this->_assertImplemented($queryDSL, 'ids', 'Elastica\Query\Ids', ['type', []]);
-        $this->_assertImplemented($queryDSL, 'match', 'Elastica\Query\Match', ['field', 'values']);
-        $this->_assertImplemented($queryDSL, 'match_all', 'Elastica\Query\MatchAll', []);
-        $this->_assertImplemented($queryDSL, 'more_like_this', 'Elastica\Query\MoreLikeThis', []);
-        $this->_assertImplemented($queryDSL, 'multi_match', 'Elastica\Query\MultiMatch', []);
-        $this->_assertImplemented($queryDSL, 'nested', 'Elastica\Query\Nested', []);
-        $this->_assertImplemented($queryDSL, 'prefix', 'Elastica\Query\Prefix', []);
-        $this->_assertImplemented($queryDSL, 'query_string', 'Elastica\Query\QueryString', []);
-        $this->_assertImplemented($queryDSL, 'range', 'Elastica\Query\Range', ['field', []]);
-        $this->_assertImplemented($queryDSL, 'regexp', 'Elastica\Query\Regexp', ['field', 'value', 1.0]);
-        $this->_assertImplemented($queryDSL, 'simple_query_string', 'Elastica\Query\SimpleQueryString', ['query']);
-        $this->_assertImplemented($queryDSL, 'term', 'Elastica\Query\Term', []);
-        $this->_assertImplemented($queryDSL, 'terms', 'Elastica\Query\Terms', ['field', []]);
-        $this->_assertImplemented($queryDSL, 'top_children', 'Elastica\Query\TopChildren', [new Match(), 'type']);
-        $this->_assertImplemented($queryDSL, 'wildcard', 'Elastica\Query\Wildcard', []);
+        $this->_assertImplemented($queryDSL, 'function_score', 'Webonyx\Elastica3x\Query\FunctionScore', []);
+        $this->_assertImplemented($queryDSL, 'fuzzy', 'Webonyx\Elastica3x\Query\Fuzzy', ['field', 'type']);
+        $this->_assertImplemented($queryDSL, 'has_child', 'Webonyx\Elastica3x\Query\HasChild', [new Match()]);
+        $this->_assertImplemented($queryDSL, 'has_parent', 'Webonyx\Elastica3x\Query\HasParent', [new Match(), 'type']);
+        $this->_assertImplemented($queryDSL, 'ids', 'Webonyx\Elastica3x\Query\Ids', ['type', []]);
+        $this->_assertImplemented($queryDSL, 'match', 'Webonyx\Elastica3x\Query\Match', ['field', 'values']);
+        $this->_assertImplemented($queryDSL, 'match_all', 'Webonyx\Elastica3x\Query\MatchAll', []);
+        $this->_assertImplemented($queryDSL, 'more_like_this', 'Webonyx\Elastica3x\Query\MoreLikeThis', []);
+        $this->_assertImplemented($queryDSL, 'multi_match', 'Webonyx\Elastica3x\Query\MultiMatch', []);
+        $this->_assertImplemented($queryDSL, 'nested', 'Webonyx\Elastica3x\Query\Nested', []);
+        $this->_assertImplemented($queryDSL, 'prefix', 'Webonyx\Elastica3x\Query\Prefix', []);
+        $this->_assertImplemented($queryDSL, 'query_string', 'Webonyx\Elastica3x\Query\QueryString', []);
+        $this->_assertImplemented($queryDSL, 'range', 'Webonyx\Elastica3x\Query\Range', ['field', []]);
+        $this->_assertImplemented($queryDSL, 'regexp', 'Webonyx\Elastica3x\Query\Regexp', ['field', 'value', 1.0]);
+        $this->_assertImplemented($queryDSL, 'simple_query_string', 'Webonyx\Elastica3x\Query\SimpleQueryString', ['query']);
+        $this->_assertImplemented($queryDSL, 'term', 'Webonyx\Elastica3x\Query\Term', []);
+        $this->_assertImplemented($queryDSL, 'terms', 'Webonyx\Elastica3x\Query\Terms', ['field', []]);
+        $this->_assertImplemented($queryDSL, 'top_children', 'Webonyx\Elastica3x\Query\TopChildren', [new Match(), 'type']);
+        $this->_assertImplemented($queryDSL, 'wildcard', 'Webonyx\Elastica3x\Query\Wildcard', []);
         $this->_assertImplemented(
             $queryDSL,
             'geo_distance',
-            'Elastica\Query\GeoDistance',
+            'Webonyx\Elastica3x\Query\GeoDistance',
             ['key', ['lat' => 1, 'lon' => 0], 'distance']
         );
 

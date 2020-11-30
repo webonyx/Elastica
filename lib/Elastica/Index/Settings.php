@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Index;
+namespace Webonyx\Elastica3x\Index;
 
-use Elastica\Exception\NotFoundException;
-use Elastica\Exception\ResponseException;
-use Elastica\Index as BaseIndex;
-use Elastica\Request;
+use Webonyx\Elastica3x\Exception\NotFoundException;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\Index as BaseIndex;
+use Webonyx\Elastica3x\Request;
 
 /**
- * Elastica index settings object.
+ * Webonyx\Elastica3x index settings object.
  *
  * All settings listed in the update settings API (https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-update-settings.html)
  * can be changed on a running indices. To make changes like the merge policy (https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-merge.html)
@@ -25,7 +25,7 @@ class Settings
     /**
      * Response.
      *
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
@@ -39,14 +39,14 @@ class Settings
     /**
      * Index.
      *
-     * @var \Elastica\Index Index object
+     * @var \Webonyx\Elastica3x\Index Index object
      */
     protected $_index;
 
     /**
      * Construct.
      *
-     * @param \Elastica\Index $index Index object
+     * @param \Webonyx\Elastica3x\Index $index Index object
      */
     public function __construct(BaseIndex $index)
     {
@@ -107,7 +107,7 @@ class Settings
      *
      * @param int $replicas Number of replicas
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function setNumberOfReplicas($replicas)
     {
@@ -123,7 +123,7 @@ class Settings
      *
      * @param bool $readOnly (default = true)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setReadOnly($readOnly = true)
     {
@@ -151,7 +151,7 @@ class Settings
     /**
      * @param bool $state OPTIONAL (default = true)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setBlocksRead($state = true)
     {
@@ -171,7 +171,7 @@ class Settings
     /**
      * @param bool $state OPTIONAL (default = true)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setBlocksWrite($state = true)
     {
@@ -202,7 +202,7 @@ class Settings
     /**
      * @param bool $state OPTIONAL (default = true)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setBlocksMetadata($state = true)
     {
@@ -219,7 +219,7 @@ class Settings
      *
      * @param int $interval Number of milliseconds
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function setRefreshInterval($interval)
     {
@@ -259,7 +259,7 @@ class Settings
      *
      * @param string $type Merge policy type
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-merge.html
      */
@@ -280,7 +280,7 @@ class Settings
      * @param string $key   Merge policy key (for ex. expunge_deletes_allowed)
      * @param string $value
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-merge.html
      */
@@ -317,7 +317,7 @@ class Settings
      *
      * @param array $data Arguments
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function set(array $data)
     {
@@ -327,7 +327,7 @@ class Settings
     /**
      * Returns the index object.
      *
-     * @return \Elastica\Index Index object
+     * @return \Webonyx\Elastica3x\Index Index object
      */
     public function getIndex()
     {
@@ -348,9 +348,9 @@ class Settings
      * - index.auto_expand_replicas
      *
      * @param array  $data   OPTIONAL Data array
-     * @param string $method OPTIONAL Transfer method (default = \Elastica\Request::GET)
+     * @param string $method OPTIONAL Transfer method (default = \Webonyx\Elastica3x\Request::GET)
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function request(array $data = [], $method = Request::GET)
     {

@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Filter\AbstractFilter;
-use Elastica\Query\AbstractQuery;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
+use Webonyx\Elastica3x\Query\AbstractQuery;
 
 /**
  * Class Filter.
@@ -22,7 +22,7 @@ class Filter extends AbstractAggregation
 
         if ($filter !== null) {
             if ($filter instanceof AbstractFilter) {
-                trigger_error('Deprecated: Elastica\Aggregation\Filter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+                trigger_error('Deprecated: Webonyx\Elastica3x\Aggregation\Filter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
             } elseif (!($filter instanceof AbstractQuery)) {
                 throw new InvalidException('Filter must be instance of AbstractQuery');
             }
@@ -41,7 +41,7 @@ class Filter extends AbstractAggregation
     public function setFilter($filter)
     {
         if ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Aggregation\Filter\setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            trigger_error('Deprecated: Webonyx\Elastica3x\Aggregation\Filter\setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }
@@ -50,7 +50,7 @@ class Filter extends AbstractAggregation
     }
 
     /**
-     * @throws \Elastica\Exception\InvalidException If filter is not set
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If filter is not set
      *
      * @return array
      */

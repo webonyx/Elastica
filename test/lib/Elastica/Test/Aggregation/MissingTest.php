@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Missing;
-use Elastica\Document;
-use Elastica\Query;
+use Webonyx\Elastica3x\Aggregation\Missing;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
 
 class MissingTest extends BaseAggregationTest
 {

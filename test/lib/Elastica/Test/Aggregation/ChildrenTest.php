@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Children;
-use Elastica\Aggregation\Terms;
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Aggregation\Children;
+use Webonyx\Elastica3x\Aggregation\Terms;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class ChildrenTest extends BaseAggregationTest
 {

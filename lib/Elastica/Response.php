@@ -1,11 +1,11 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\JSONParseException;
-use Elastica\Exception\NotFoundException;
+use Webonyx\Elastica3x\Exception\JSONParseException;
+use Webonyx\Elastica3x\Exception\NotFoundException;
 
 /**
- * Elastica Response object.
+ * Webonyx\Elastica3x Response object.
  *
  * Stores query time, and result array -> is given to result set, returned by ...
  *
@@ -267,7 +267,7 @@ class Response
 
     /**
      * Sets the transfer info of the curl request. This function is called
-     * from the \Elastica\Client::_callService .
+     * from the \Webonyx\Elastica3x\Client::_callService .
      *
      * @param array $transferInfo The curl transfer information.
      *
@@ -307,7 +307,7 @@ class Response
     /**
      * Time request took.
      *
-     * @throws \Elastica\Exception\NotFoundException
+     * @throws \Webonyx\Elastica3x\Exception\NotFoundException
      *
      * @return int Time request took
      */
@@ -325,7 +325,7 @@ class Response
     /**
      * Get the _shard statistics for the response.
      *
-     * @throws \Elastica\Exception\NotFoundException
+     * @throws \Webonyx\Elastica3x\Exception\NotFoundException
      *
      * @return array
      */
@@ -343,7 +343,7 @@ class Response
     /**
      * Get the _scroll value for the response.
      *
-     * @throws \Elastica\Exception\NotFoundException
+     * @throws \Webonyx\Elastica3x\Exception\NotFoundException
      *
      * @return string
      */

@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Suggest;
+namespace Webonyx\Elastica3x\Suggest;
 
-use Elastica\Exception\InvalidException;
-use Elastica\NameableInterface;
-use Elastica\Param;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\NameableInterface;
+use Webonyx\Elastica3x\Param;
 
 /**
  * Class AbstractSuggestion.
@@ -80,7 +80,7 @@ abstract class AbstractSuggest extends Param implements NameableInterface
      *
      * @param string $name The name of the suggest.
      *
-     * @throws \Elastica\Exception\InvalidException If name is empty
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If name is empty
      *
      * @return $this
      */

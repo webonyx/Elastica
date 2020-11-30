@@ -1,18 +1,18 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Exception\ResponseException;
-use Elastica\Filter\Exists;
-use Elastica\Index;
-use Elastica\Query;
-use Elastica\Query\FunctionScore;
-use Elastica\Query\MatchAll;
-use Elastica\Query\QueryString;
-use Elastica\Script\Script;
-use Elastica\Search;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\FunctionScore;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
 
 class SearchTest extends BaseTest
 {
@@ -34,9 +34,9 @@ class SearchTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Search::setQuery() passing AbstractFilter is deprecated. Create query and use setPostFilter with AbstractQuery instead.',
-                'Deprecated: Elastica\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.',
-                'Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Search::setQuery() passing AbstractFilter is deprecated. Create query and use setPostFilter with AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
@@ -49,7 +49,7 @@ class SearchTest extends BaseTest
         $client = $this->_getClient();
         $search = new Search($client);
 
-        $this->assertInstanceOf('Elastica\Search', $search);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Search', $search);
         $this->assertSame($client, $search->getClient());
     }
 
@@ -159,7 +159,7 @@ class SearchTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddTypeInvalid()
     {
@@ -171,7 +171,7 @@ class SearchTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddIndexInvalid()
     {
@@ -328,7 +328,7 @@ class SearchTest extends BaseTest
     }
 
     /**
-     * Default Limit tests for \Elastica\Search.
+     * Default Limit tests for \Webonyx\Elastica3x\Search.
      *
      * @group functional
      */
@@ -426,8 +426,8 @@ class SearchTest extends BaseTest
         $this->assertTrue(($resultSet->count() === 0) && $resultSet->getTotalHits() === 11);
 
         //Timeout - this one is a bit more tricky to test
-        $mockResponse = new \Elastica\Response(json_encode(['timed_out' => true]));
-        $client = $this->getMockBuilder('Elastica\\Client')
+        $mockResponse = new \Webonyx\Elastica3x\Response(json_encode(['timed_out' => true]));
+        $client = $this->getMockBuilder('Webonyx\Elastica3x\\Client')
             ->disableOriginalConstructor()
             ->getMock();
         $client->method('request')
@@ -442,7 +442,7 @@ class SearchTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidConfigSearch()
     {
@@ -549,7 +549,7 @@ class SearchTest extends BaseTest
 
         $search->addIndex($index)->addType($type);
         $resultSet = $search->search();
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSet);
         $this->assertCount(10, $resultSet);
         $this->assertEquals(11, $resultSet->getTotalHits());
 
@@ -581,11 +581,11 @@ class SearchTest extends BaseTest
         $search->addIndex($index);
         $search->addType($type);
 
-        $result1 = $search->count(new \Elastica\Query\MatchAll());
+        $result1 = $search->count(new \Webonyx\Elastica3x\Query\MatchAll());
         $this->assertEquals(1, $result1);
 
-        $result2 = $search->count(new \Elastica\Query\MatchAll(), true);
-        $this->assertInstanceOf('\Elastica\ResultSet', $result2);
+        $result2 = $search->count(new \Webonyx\Elastica3x\Query\MatchAll(), true);
+        $this->assertInstanceOf('\Webonyx\Elastica3x\ResultSet', $result2);
         $this->assertEquals(1, $result2->getTotalHits());
     }
 
@@ -595,7 +595,7 @@ class SearchTest extends BaseTest
     public function testScanAndScroll()
     {
         $search = new Search($this->_getClient());
-        $this->assertInstanceOf('Elastica\ScanAndScroll', $search->scanAndScroll());
+        $this->assertInstanceOf('Webonyx\Elastica3x\ScanAndScroll', $search->scanAndScroll());
     }
 
     /**
@@ -620,6 +620,6 @@ class SearchTest extends BaseTest
         $this->assertEquals('index_not_found_exception', $error['type']);
 
         $results = $search->search($query, [Search::OPTION_SEARCH_IGNORE_UNAVAILABLE => true]);
-        $this->assertInstanceOf('\Elastica\ResultSet', $results);
+        $this->assertInstanceOf('\Webonyx\Elastica3x\ResultSet', $results);
     }
 }

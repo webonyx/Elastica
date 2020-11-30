@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Document;
-use Elastica\Exception\DeprecatedException;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\DeprecatedException;
 
 /**
  * More Like This query.
@@ -18,7 +18,7 @@ class MoreLikeThis extends AbstractQuery
      *
      * @param array $fields Field names
      *
-     * @return \Elastica\Query\MoreLikeThis Current object
+     * @return \Webonyx\Elastica3x\Query\MoreLikeThis Current object
      */
     public function setFields(array $fields)
     {
@@ -30,13 +30,13 @@ class MoreLikeThis extends AbstractQuery
      *
      * @param array $ids Document ids
      *
-     * @deprecated Option "ids" deprecated as of ES 2.0.0-beta1 and will be removed in further Elastica releases. Use "like" instead.
+     * @deprecated Option "ids" deprecated as of ES 2.0.0-beta1 and will be removed in further Webonyx\Elastica3x releases. Use "like" instead.
      
-     * @return \Elastica\Query\MoreLikeThis Current object
+     * @return \Webonyx\Elastica3x\Query\MoreLikeThis Current object
      */
     public function setIds(array $ids)
     {
-        throw new DeprecatedException('Option "ids" deprecated as of ES 2.0.0-beta1 and will be removed in further Elastica releases. Use "like" instead.');
+        throw new DeprecatedException('Option "ids" deprecated as of ES 2.0.0-beta1 and will be removed in further Webonyx\Elastica3x releases. Use "like" instead.');
     }
 
     /**
@@ -56,13 +56,13 @@ class MoreLikeThis extends AbstractQuery
      *
      * @param string $likeText
      *
-     * @deprecated Option "like_text" deprecated as of ES 2.0.0-beta1 and will be removed at further Elastica releases. Use "like" instead.
+     * @deprecated Option "like_text" deprecated as of ES 2.0.0-beta1 and will be removed at further Webonyx\Elastica3x releases. Use "like" instead.
      
      * @return $this
      */
     public function setLikeText($likeText)
     {
-        throw new DeprecatedException('Option "like_text" deprecated as of ES 2.0.0-beta1 and will be removed in further Elastica releases. Use "like" instead.');
+        throw new DeprecatedException('Option "like_text" deprecated as of ES 2.0.0-beta1 and will be removed in further Webonyx\Elastica3x releases. Use "like" instead.');
     }
 
     /**
@@ -96,11 +96,11 @@ class MoreLikeThis extends AbstractQuery
      *
      * @return $this
      *
-     * @deprecated Option "percent_terms_to_match" deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "minimum_should_match" instead.
+     * @deprecated Option "percent_terms_to_match" deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "minimum_should_match" instead.
      */
     public function setPercentTermsToMatch($percentTermsToMatch)
     {
-        throw new DeprecatedException('Option "percent_terms_to_match" deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "minimum_should_match" instead.');
+        throw new DeprecatedException('Option "percent_terms_to_match" deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "minimum_should_match" instead.');
     }
 
     /**

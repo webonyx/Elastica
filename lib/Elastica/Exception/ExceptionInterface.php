@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Exception;
+namespace Webonyx\Elastica3x\Exception;
 
 /**
- * General Elastica exception interface.
+ * General Webonyx\Elastica3x exception interface.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */

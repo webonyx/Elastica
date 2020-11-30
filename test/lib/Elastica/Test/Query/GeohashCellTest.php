@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\GeohashCell;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\GeohashCell;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class GeohashCellTest extends BaseTest
 {

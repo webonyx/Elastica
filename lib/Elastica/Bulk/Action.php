@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Bulk;
+namespace Webonyx\Elastica3x\Bulk;
 
-use Elastica\Bulk;
-use Elastica\Index;
-use Elastica\JSON;
-use Elastica\Type;
+use Webonyx\Elastica3x\Bulk;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Type;
 
 class Action
 {
@@ -127,7 +127,7 @@ class Action
     }
 
     /**
-     * @param string|\Elastica\Index $index
+     * @param string|\Webonyx\Elastica3x\Index $index
      *
      * @return $this
      */
@@ -142,7 +142,7 @@ class Action
     }
 
     /**
-     * @param string|\Elastica\Type $type
+     * @param string|\Webonyx\Elastica3x\Type $type
      *
      * @return $this
      */

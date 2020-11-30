@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Cluster;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Cluster;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ClusterTest extends BaseTest
 {
@@ -39,7 +39,7 @@ class ClusterTest extends BaseTest
         $nodes = $cluster->getNodes();
 
         foreach ($nodes as $node) {
-            $this->assertInstanceOf('Elastica\Node', $node);
+            $this->assertInstanceOf('Webonyx\Elastica3x\Node', $node);
         }
 
         $this->assertGreaterThan(0, count($nodes));
@@ -86,6 +86,6 @@ class ClusterTest extends BaseTest
     public function testGetHealth()
     {
         $client = $this->_getClient();
-        $this->assertInstanceOf('Elastica\Cluster\Health', $client->getCluster()->getHealth());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Cluster\Health', $client->getCluster()->getHealth());
     }
 }

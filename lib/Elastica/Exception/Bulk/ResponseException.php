@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Exception\Bulk;
+namespace Webonyx\Elastica3x\Exception\Bulk;
 
-use Elastica\Bulk\ResponseSet;
-use Elastica\Exception\Bulk\Response\ActionException;
-use Elastica\Exception\BulkException;
+use Webonyx\Elastica3x\Bulk\ResponseSet;
+use Webonyx\Elastica3x\Exception\Bulk\Response\ActionException;
+use Webonyx\Elastica3x\Exception\BulkException;
 
 /**
  * Bulk Response exception.
@@ -11,19 +11,19 @@ use Elastica\Exception\BulkException;
 class ResponseException extends BulkException
 {
     /**
-     * @var \Elastica\Bulk\ResponseSet ResponseSet object
+     * @var \Webonyx\Elastica3x\Bulk\ResponseSet ResponseSet object
      */
     protected $_responseSet;
 
     /**
-     * @var \Elastica\Exception\Bulk\Response\ActionException[]
+     * @var \Webonyx\Elastica3x\Exception\Bulk\Response\ActionException[]
      */
     protected $_actionExceptions = [];
 
     /**
      * Construct Exception.
      *
-     * @param \Elastica\Bulk\ResponseSet $responseSet
+     * @param \Webonyx\Elastica3x\Bulk\ResponseSet $responseSet
      */
     public function __construct(ResponseSet $responseSet)
     {
@@ -36,7 +36,7 @@ class ResponseException extends BulkException
     }
 
     /**
-     * @param \Elastica\Bulk\ResponseSet $responseSet
+     * @param \Webonyx\Elastica3x\Bulk\ResponseSet $responseSet
      */
     protected function _init(ResponseSet $responseSet)
     {
@@ -52,7 +52,7 @@ class ResponseException extends BulkException
     /**
      * Returns bulk response set object.
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      */
     public function getResponseSet()
     {
@@ -76,7 +76,7 @@ class ResponseException extends BulkException
     }
 
     /**
-     * @return \Elastica\Exception\Bulk\Response\ActionException[]
+     * @return \Webonyx\Elastica3x\Exception\Bulk\Response\ActionException[]
      */
     public function getActionExceptions()
     {

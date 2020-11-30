@@ -1,8 +1,8 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\NotFoundException;
-use Elastica\Exception\ResponseException;
+use Webonyx\Elastica3x\Exception\NotFoundException;
+use Webonyx\Elastica3x\Exception\ResponseException;
 
 /**
  * Class Snapshot.

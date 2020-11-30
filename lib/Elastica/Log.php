@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
 use Psr\Log\AbstractLogger;
 
 /**
- * Elastica log object.
+ * Webonyx\Elastica3x log object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */

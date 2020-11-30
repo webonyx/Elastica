@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
- * Elastica index template object.
+ * Webonyx\Elastica3x index template object.
  *
  * @author Dmitry Balabka <dmitry.balabka@gmail.com>
  * 
@@ -22,17 +22,17 @@ class IndexTemplate
     /**
      * Client object.
      *
-     * @var \Elastica\Client Client object
+     * @var \Webonyx\Elastica3x\Client Client object
      */
     protected $_client;
 
     /**
      * Creates a new index template object.
      *
-     * @param \Elastica\Client $client Client object
+     * @param \Webonyx\Elastica3x\Client $client Client object
      * @param string           $name   Index template name
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function __construct(Client $client, $name)
     {
@@ -47,7 +47,7 @@ class IndexTemplate
     /**
      * Deletes the index template.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function delete()
     {
@@ -63,7 +63,7 @@ class IndexTemplate
      *
      * @param array $args OPTIONAL Arguments to use
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function create(array $args = [])
     {
@@ -96,7 +96,7 @@ class IndexTemplate
     /**
      * Returns index template client.
      *
-     * @return \Elastica\Client Index client object
+     * @return \Webonyx\Elastica3x\Client Index client object
      */
     public function getClient()
     {
@@ -109,7 +109,7 @@ class IndexTemplate
      * @param string $method Rest method to use (GET, POST, DELETE, PUT)
      * @param array  $data   OPTIONAL Arguments as array
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function request($method, $data = [])
     {

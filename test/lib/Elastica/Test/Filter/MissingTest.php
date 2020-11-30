@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Missing;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Missing;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class MissingTest extends BaseTest
 {
@@ -48,7 +48,7 @@ class MissingTest extends BaseTest
         $this->assertEquals('new_field_name', $filter->getParam('field'));
 
         $returnValue = $filter->setField('very_new_field_name');
-        $this->assertInstanceOf('Elastica\Filter\Missing', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Missing', $returnValue);
     }
 
     /**
@@ -65,7 +65,7 @@ class MissingTest extends BaseTest
         $this->assertFalse($filter->getParam('existence'));
 
         $returnValue = $filter->setExistence(true);
-        $this->assertInstanceOf('Elastica\Filter\Missing', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Missing', $returnValue);
     }
 
     /**
@@ -82,6 +82,6 @@ class MissingTest extends BaseTest
         $this->assertFalse($filter->getParam('null_value'));
 
         $returnValue = $filter->setNullValue(true);
-        $this->assertInstanceOf('Elastica\Filter\Missing', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Missing', $returnValue);
     }
 }

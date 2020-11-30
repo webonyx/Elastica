@@ -1,14 +1,14 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Terms;
-use Elastica\Aggregation\TopHits;
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\MatchAll;
-use Elastica\Query\SimpleQueryString;
-use Elastica\Script\Script;
-use Elastica\Script\ScriptFields;
+use Webonyx\Elastica3x\Aggregation\Terms;
+use Webonyx\Elastica3x\Aggregation\TopHits;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Query\SimpleQueryString;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Script\ScriptFields;
 
 class TopHitsTest extends BaseAggregationTest
 {
@@ -57,7 +57,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setSize(12);
         $this->assertEquals(12, $agg->getParam('size'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -68,7 +68,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setFrom(12);
         $this->assertEquals(12, $agg->getParam('from'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -80,7 +80,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setSort($sort);
         $this->assertEquals($sort, $agg->getParam('sort'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -92,7 +92,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setSource($fields);
         $this->assertEquals($fields, $agg->getParam('_source'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -103,7 +103,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setVersion(true);
         $this->assertTrue($agg->getParam('version'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
 
         $agg->setVersion(false);
         $this->assertFalse($agg->getParam('version'));
@@ -117,7 +117,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setExplain(true);
         $this->assertTrue($agg->getParam('explain'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
 
         $agg->setExplain(false);
         $this->assertFalse($agg->getParam('explain'));
@@ -136,7 +136,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setHighlight($highlight);
         $this->assertEquals($highlight, $agg->getParam('highlight'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -148,7 +148,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setFieldDataFields($fields);
         $this->assertEquals($fields, $agg->getParam('fielddata_fields'));
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -162,7 +162,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->setScriptFields($scriptFields);
         $this->assertEquals($scriptFields->toArray(), $agg->getParam('script_fields')->toArray());
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     /**
@@ -174,7 +174,7 @@ class TopHitsTest extends BaseAggregationTest
         $agg = new TopHits('agg_name');
         $returnValue = $agg->addScriptField('five', $script);
         $this->assertEquals(['five' => $script->toArray()], $agg->getParam('script_fields')->toArray());
-        $this->assertInstanceOf('Elastica\Aggregation\TopHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\TopHits', $returnValue);
     }
 
     protected function getOuterAggregationResult($innerAggr)

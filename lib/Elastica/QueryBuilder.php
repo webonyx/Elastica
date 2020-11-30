@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\QueryBuilderException;
-use Elastica\QueryBuilder\DSL;
-use Elastica\QueryBuilder\Facade;
-use Elastica\QueryBuilder\Version;
+use Webonyx\Elastica3x\Exception\QueryBuilderException;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
+use Webonyx\Elastica3x\QueryBuilder\Facade;
+use Webonyx\Elastica3x\QueryBuilder\Version;
 
 /**
  * Query Builder.

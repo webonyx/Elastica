@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Exception;
+namespace Webonyx\Elastica3x\Test\Exception;
 
-use Elastica\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
 
 class NotImplementedExceptionTest extends AbstractExceptionTest
 {

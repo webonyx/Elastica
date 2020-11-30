@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -28,7 +28,7 @@ class GeoDistance extends AbstractGeoDistance
      * @param array|string $location Location as array or geohash: array('lat' => 48.86, 'lon' => 2.35) OR 'drm3btev3e86'
      * @param string       $distance Distance
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function __construct($key, $location, $distance)
     {

@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Exception;
+namespace Webonyx\Elastica3x\Test\Exception;
 
-use Elastica\Document;
-use Elastica\Exception\PartialShardFailureException;
-use Elastica\JSON;
-use Elastica\Query;
-use Elastica\ResultSet;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\PartialShardFailureException;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\ResultSet;
 
 class PartialShardFailureExceptionTest extends AbstractExceptionTest
 {

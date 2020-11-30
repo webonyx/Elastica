@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\Range;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\Range;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class RangeTest extends BaseTest
 {

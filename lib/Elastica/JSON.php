@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\JSONParseException;
+use Webonyx\Elastica3x\Exception\JSONParseException;
 
 /**
- * Elastica JSON tools.
+ * Webonyx\Elastica3x JSON tools.
  */
 class JSON
 {

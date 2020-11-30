@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Suggest;
+namespace Webonyx\Elastica3x\Suggest;
 
 /**
  * Completion suggester.

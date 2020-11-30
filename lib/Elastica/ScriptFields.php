@@ -1,12 +1,12 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Script\ScriptFields as BaseScriptFields;
+use Webonyx\Elastica3x\Script\ScriptFields as BaseScriptFields;
 
 /**
  * Kept for BC reasons.
  *
- * @deprecated Use \Elastica\Script\ScriptFields instead.
+ * @deprecated Use \Webonyx\Elastica3x\Script\ScriptFields instead.
  */
 class ScriptFields extends BaseScriptFields
 {

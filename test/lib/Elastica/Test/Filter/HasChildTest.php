@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\HasChild;
-use Elastica\Query\MatchAll;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\HasChild;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class HasChildTest extends BaseTest
 {
@@ -60,7 +60,7 @@ class HasChildTest extends BaseTest
         $this->assertEquals('bar', $filter->getParam('type'));
 
         $returnValue = $filter->setType('last');
-        $this->assertInstanceOf('Elastica\Filter\HasChild', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\HasChild', $returnValue);
     }
 
     /**
@@ -75,7 +75,7 @@ class HasChildTest extends BaseTest
         $this->assertEquals(2, $filter->getParam('min_children'));
 
         $returnValue = $filter->setMinimumChildrenCount(2);
-        $this->assertInstanceOf('Elastica\Filter\HasChild', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\HasChild', $returnValue);
     }
 
     /**
@@ -90,7 +90,7 @@ class HasChildTest extends BaseTest
         $this->assertEquals(10, $filter->getParam('max_children'));
 
         $returnValue = $filter->setMaximumChildrenCount(10);
-        $this->assertInstanceOf('Elastica\Filter\HasChild', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\HasChild', $returnValue);
     }
 
     /**
@@ -98,7 +98,7 @@ class HasChildTest extends BaseTest
      */
     public function testFilterInsideHasChild()
     {
-        $f = new \Elastica\Filter\MatchAll();
+        $f = new \Webonyx\Elastica3x\Filter\MatchAll();
 
         $type = 'test';
 
@@ -121,11 +121,11 @@ class HasChildTest extends BaseTest
     {
         $index = $this->prepareSearchData();
 
-        $f = new \Elastica\Filter\Term();
+        $f = new \Webonyx\Elastica3x\Filter\Term();
         $f->setTerm('user', 'child1');
         $filter = new HasChild($f, 'child');
 
-        $searchQuery = new \Elastica\Query();
+        $searchQuery = new \Webonyx\Elastica3x\Query();
         $searchQuery->setPostFilter($filter);
         $searchResults = $index->search($searchQuery);
 
@@ -144,11 +144,11 @@ class HasChildTest extends BaseTest
     {
         $index = $this->prepareSearchData();
 
-        $f = new \Elastica\Query\Term();
+        $f = new \Webonyx\Elastica3x\Query\Term();
         $f->setTerm('user', 'child1');
         $filter = new HasChild($f, 'child');
 
-        $searchQuery = new \Elastica\Query();
+        $searchQuery = new \Webonyx\Elastica3x\Query();
         $searchQuery->setPostFilter($filter);
         $searchResults = $index->search($searchQuery);
 
@@ -167,11 +167,11 @@ class HasChildTest extends BaseTest
     {
         $index = $this->prepareSearchData();
 
-        $f = new \Elastica\Query\Match();
+        $f = new \Webonyx\Elastica3x\Query\Match();
         $f->setField('alt.name', 'testname');
         $filter = new HasChild($f, 'child');
 
-        $searchQuery = new \Elastica\Query();
+        $searchQuery = new \Webonyx\Elastica3x\Query();
         $searchQuery->setPostFilter($filter);
         $searchResults = $index->search($searchQuery);
 
@@ -192,7 +192,7 @@ class HasChildTest extends BaseTest
         $parentType = $index->getType('parent');
 
         $childType = $index->getType('child');
-        $childMapping = new \Elastica\Type\Mapping($childType);
+        $childMapping = new \Webonyx\Elastica3x\Type\Mapping($childType);
         $childMapping->setParent('parent');
         $childMapping->send();
 

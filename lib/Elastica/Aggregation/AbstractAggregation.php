@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
-use Elastica\Exception\InvalidException;
-use Elastica\NameableInterface;
-use Elastica\Param;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\NameableInterface;
+use Webonyx\Elastica3x\Param;
 
 abstract class AbstractAggregation extends Param implements NameableInterface
 {
@@ -64,7 +64,7 @@ abstract class AbstractAggregation extends Param implements NameableInterface
      *
      * @param AbstractAggregation $aggregation
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */

@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Suggest;
+namespace Webonyx\Elastica3x\Test\Suggest;
 
-use Elastica\Document;
-use Elastica\Index;
-use Elastica\Suggest;
-use Elastica\Suggest\CandidateGenerator\DirectGenerator;
-use Elastica\Suggest\Phrase;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Suggest;
+use Webonyx\Elastica3x\Suggest\CandidateGenerator\DirectGenerator;
+use Webonyx\Elastica3x\Suggest\Phrase;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class PhraseTest extends BaseTest
 {

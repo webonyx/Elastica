@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
 /**
  * Image query.

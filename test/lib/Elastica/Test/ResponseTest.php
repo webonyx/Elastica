@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\MatchAll;
-use Elastica\Request;
-use Elastica\Response;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class ResponseTest extends BaseTest
 {

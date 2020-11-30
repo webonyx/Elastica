@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -41,7 +41,7 @@ class Regexp extends AbstractFilter
      * @param string $regexp  Regular expression
      * @param array  $options Regular expression options
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function __construct($field = '', $regexp = '', $options = [])
     {
@@ -95,7 +95,7 @@ class Regexp extends AbstractFilter
     /**
      * Converts object to an array.
      *
-     * @see \Elastica\Filter\AbstractFilter::toArray()
+     * @see \Webonyx\Elastica3x\Filter\AbstractFilter::toArray()
      *
      * @return array data array
      */

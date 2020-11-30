@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Index as ElasticaIndex;
+use Webonyx\Elastica3x\Index as Webonyx\Elastica3xIndex;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -42,13 +42,13 @@ class Indices extends AbstractFilter
     /**
      * Adds one more index on which this filter should be applied.
      *
-     * @param string|\Elastica\Index $index
+     * @param string|\Webonyx\Elastica3x\Index $index
      *
      * @return $this
      */
     public function addIndex($index)
     {
-        if ($index instanceof ElasticaIndex) {
+        if ($index instanceof Webonyx\Elastica3xIndex) {
             $index = $index->getName();
         }
 

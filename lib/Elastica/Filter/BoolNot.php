@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
 trigger_error('Deprecated: Filters are deprecated. Use BoolQuery::addMustNot. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -16,7 +16,7 @@ class BoolNot extends AbstractFilter
     /**
      * Creates Not filter query.
      *
-     * @param \Elastica\Filter\AbstractFilter $filter Filter object
+     * @param \Webonyx\Elastica3x\Filter\AbstractFilter $filter Filter object
      */
     public function __construct(AbstractFilter $filter)
     {
@@ -26,7 +26,7 @@ class BoolNot extends AbstractFilter
     /**
      * Set filter.
      *
-     * @param \Elastica\Filter\AbstractFilter $filter
+     * @param \Webonyx\Elastica3x\Filter\AbstractFilter $filter
      *
      * @return $this
      */

@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Class Range.
@@ -17,7 +17,7 @@ class Range extends AbstractSimpleAggregation
      * @param int|float $toValue   high end of this range, exclusive (less than)
      * @param string    $key       customized key value
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */

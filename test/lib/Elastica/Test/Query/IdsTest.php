@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\Ids;
-use Elastica\Query\Type;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\Ids;
+use Webonyx\Elastica3x\Query\Type;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class IdsTest extends BaseTest
 {
@@ -207,13 +207,13 @@ class IdsTest extends BaseTest
      */
     public function testQueryTypeAndTypeCollision()
     {
-        // This test ensures that Elastica\Type and Elastica\Query\Type
+        // This test ensures that Webonyx\Elastica3x\Type and Webonyx\Elastica3x\Query\Type
         // do not collide when used together, which at one point
-        // happened because of a use statement in Elastica\Query\Ids
+        // happened because of a use statement in Webonyx\Elastica3x\Query\Ids
         // Test goal is to make sure a Fatal Error is not triggered
         //
-        // adapted fix for Elastica\Filter\Type
-        // see https://github.com/ruflin/Elastica/pull/438
+        // adapted fix for Webonyx\Elastica3x\Filter\Type
+        // see https://github.com/ruflin/Webonyx\Elastica3x/pull/438
         $queryType = new Type();
         $filter = new Ids();
     }

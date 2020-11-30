@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Cluster;
+namespace Webonyx\Elastica3x\Test\Cluster;
 
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class HealthTest extends BaseTest
 {
     /**
-     * @var \Elastica\Cluster\Health
+     * @var \Webonyx\Elastica3x\Cluster\Health
      */
     protected $_health;
 
@@ -34,7 +34,7 @@ class HealthTest extends BaseTest
         ];
 
         $health = $this
-            ->getMockBuilder('Elastica\Cluster\Health')
+            ->getMockBuilder('Webonyx\Elastica3x\Cluster\Health')
             ->setConstructorArgs([$this->_getClient()])
             ->setMethods(['_retrieveHealthData'])
             ->getMock();
@@ -141,7 +141,7 @@ class HealthTest extends BaseTest
         $this->assertEquals(2, count($indices));
 
         foreach ($indices as $index) {
-            $this->assertInstanceOf('Elastica\Cluster\Health\Index', $index);
+            $this->assertInstanceOf('Webonyx\Elastica3x\Cluster\Health\Index', $index);
         }
     }
 }

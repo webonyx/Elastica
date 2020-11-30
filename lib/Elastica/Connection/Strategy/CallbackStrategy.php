@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Connection\Strategy;
+namespace Webonyx\Elastica3x\Connection\Strategy;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Description of CallbackStrategy.
@@ -18,7 +18,7 @@ class CallbackStrategy implements StrategyInterface
     /**
      * @param callable $callback
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function __construct($callback)
     {
@@ -30,9 +30,9 @@ class CallbackStrategy implements StrategyInterface
     }
 
     /**
-     * @param array|\Elastica\Connection[] $connections
+     * @param array|\Webonyx\Elastica3x\Connection[] $connections
      *
-     * @return \Elastica\Connection
+     * @return \Webonyx\Elastica3x\Connection
      */
     public function getConnection($connections)
     {

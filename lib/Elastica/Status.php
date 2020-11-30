@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\ResponseException;
+use Webonyx\Elastica3x\Exception\ResponseException;
 
 /**
- * Elastica general status.
+ * Webonyx\Elastica3x general status.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
@@ -15,7 +15,7 @@ class Status
     /**
      * Contains all status infos.
      *
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
@@ -29,14 +29,14 @@ class Status
     /**
      * Client object.
      *
-     * @var \Elastica\Client Client object
+     * @var \Webonyx\Elastica3x\Client Client object
      */
     protected $_client;
 
     /**
      * Constructs Status object.
      *
-     * @param \Elastica\Client $client Client object
+     * @param \Webonyx\Elastica3x\Client $client Client object
      */
     public function __construct(Client $client)
     {
@@ -98,7 +98,7 @@ class Status
      *
      * @param string $alias Alias name
      *
-     * @return array|\Elastica\Index[] List of Elastica\Index
+     * @return array|\Webonyx\Elastica3x\Index[] List of Webonyx\Elastica3x\Index
      */
     public function getIndicesWithAlias($alias)
     {
@@ -125,7 +125,7 @@ class Status
     /**
      * Returns response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {

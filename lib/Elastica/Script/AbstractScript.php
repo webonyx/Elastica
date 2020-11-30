@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Script;
+namespace Webonyx\Elastica3x\Script;
 
-use Elastica\AbstractUpdateAction;
+use Webonyx\Elastica3x\AbstractUpdateAction;
 
 /**
  * Base class for Script object.

@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Suggest;
+namespace Webonyx\Elastica3x\Test\Suggest;
 
-use Elastica\Document;
-use Elastica\Index;
-use Elastica\Suggest;
-use Elastica\Suggest\Term;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Suggest;
+use Webonyx\Elastica3x\Suggest\Term;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class TermTest extends BaseTest
 {

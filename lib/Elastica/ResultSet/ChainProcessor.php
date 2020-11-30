@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\ResultSet;
+namespace Webonyx\Elastica3x\ResultSet;
 
-use Elastica\ResultSet;
+use Webonyx\Elastica3x\ResultSet;
 
 /**
  * Allows multiple ProcessorInterface instances to operate on the same

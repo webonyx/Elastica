@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Builder;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Builder;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class BuilderTest extends BaseTest
 {
@@ -15,18 +15,18 @@ class BuilderTest extends BaseTest
         $reflection = new \ReflectionClass(new Builder());
         $this->showDeprecated();
 
-        $this->assertFileDeprecated($reflection->getFileName(), 'This builder is deprecated and will be removed in further Elastica releases. Use new Elastica\QueryBuilder instead.');
+        $this->assertFileDeprecated($reflection->getFileName(), 'This builder is deprecated and will be removed in further Webonyx\Elastica3x releases. Use new Webonyx\Elastica3x\QueryBuilder instead.');
     }
 
     /**
      * @group unit
-     * @covers \Elastica\Query\Builder::factory
-     * @covers \Elastica\Query\Builder::__construct
+     * @covers \Webonyx\Elastica3x\Query\Builder::factory
+     * @covers \Webonyx\Elastica3x\Query\Builder::__construct
      */
     public function testFactory()
     {
         $this->assertInstanceOf(
-            'Elastica\Query\Builder',
+            'Webonyx\Elastica3x\Query\Builder',
             Builder::factory('some string')
         );
     }
@@ -70,30 +70,30 @@ class BuilderTest extends BaseTest
     /**
      * @group unit
      * @dataProvider getQueryData
-     * @covers \Elastica\Query\Builder::__toString
-     * @covers \Elastica\Query\Builder::allowLeadingWildcard
-     * @covers \Elastica\Query\Builder::analyzeWildcard
-     * @covers \Elastica\Query\Builder::analyzer
-     * @covers \Elastica\Query\Builder::autoGeneratePhraseQueries
-     * @covers \Elastica\Query\Builder::boost
-     * @covers \Elastica\Query\Builder::defaultField
-     * @covers \Elastica\Query\Builder::defaultOperator
-     * @covers \Elastica\Query\Builder::enablePositionIncrements
-     * @covers \Elastica\Query\Builder::explain
-     * @covers \Elastica\Query\Builder::from
-     * @covers \Elastica\Query\Builder::fuzzyMinSim
-     * @covers \Elastica\Query\Builder::fuzzyPrefixLength
-     * @covers \Elastica\Query\Builder::gt
-     * @covers \Elastica\Query\Builder::gte
-     * @covers \Elastica\Query\Builder::lowercaseExpandedTerms
-     * @covers \Elastica\Query\Builder::lt
-     * @covers \Elastica\Query\Builder::lte
-     * @covers \Elastica\Query\Builder::minimumNumberShouldMatch
-     * @covers \Elastica\Query\Builder::phraseSlop
-     * @covers \Elastica\Query\Builder::size
-     * @covers \Elastica\Query\Builder::tieBreakerMultiplier
-     * @covers \Elastica\Query\Builder::matchAll
-     * @covers \Elastica\Query\Builder::fields
+     * @covers \Webonyx\Elastica3x\Query\Builder::__toString
+     * @covers \Webonyx\Elastica3x\Query\Builder::allowLeadingWildcard
+     * @covers \Webonyx\Elastica3x\Query\Builder::analyzeWildcard
+     * @covers \Webonyx\Elastica3x\Query\Builder::analyzer
+     * @covers \Webonyx\Elastica3x\Query\Builder::autoGeneratePhraseQueries
+     * @covers \Webonyx\Elastica3x\Query\Builder::boost
+     * @covers \Webonyx\Elastica3x\Query\Builder::defaultField
+     * @covers \Webonyx\Elastica3x\Query\Builder::defaultOperator
+     * @covers \Webonyx\Elastica3x\Query\Builder::enablePositionIncrements
+     * @covers \Webonyx\Elastica3x\Query\Builder::explain
+     * @covers \Webonyx\Elastica3x\Query\Builder::from
+     * @covers \Webonyx\Elastica3x\Query\Builder::fuzzyMinSim
+     * @covers \Webonyx\Elastica3x\Query\Builder::fuzzyPrefixLength
+     * @covers \Webonyx\Elastica3x\Query\Builder::gt
+     * @covers \Webonyx\Elastica3x\Query\Builder::gte
+     * @covers \Webonyx\Elastica3x\Query\Builder::lowercaseExpandedTerms
+     * @covers \Webonyx\Elastica3x\Query\Builder::lt
+     * @covers \Webonyx\Elastica3x\Query\Builder::lte
+     * @covers \Webonyx\Elastica3x\Query\Builder::minimumNumberShouldMatch
+     * @covers \Webonyx\Elastica3x\Query\Builder::phraseSlop
+     * @covers \Webonyx\Elastica3x\Query\Builder::size
+     * @covers \Webonyx\Elastica3x\Query\Builder::tieBreakerMultiplier
+     * @covers \Webonyx\Elastica3x\Query\Builder::matchAll
+     * @covers \Webonyx\Elastica3x\Query\Builder::fields
      */
     public function testAllowLeadingWildcard($method, $argument, $result)
     {
@@ -127,40 +127,40 @@ class BuilderTest extends BaseTest
     /**
      * @group unit
      * @dataProvider getQueryTypes
-     * @covers \Elastica\Query\Builder::fieldClose
-     * @covers \Elastica\Query\Builder::close
-     * @covers \Elastica\Query\Builder::bool
-     * @covers \Elastica\Query\Builder::boolClose
-     * @covers \Elastica\Query\Builder::constantScore
-     * @covers \Elastica\Query\Builder::constantScoreClose
-     * @covers \Elastica\Query\Builder::disMax
-     * @covers \Elastica\Query\Builder::disMaxClose
-     * @covers \Elastica\Query\Builder::filter
-     * @covers \Elastica\Query\Builder::filterClose
-     * @covers \Elastica\Query\Builder::filteredQuery
-     * @covers \Elastica\Query\Builder::filteredQueryClose
-     * @covers \Elastica\Query\Builder::must
-     * @covers \Elastica\Query\Builder::mustClose
-     * @covers \Elastica\Query\Builder::mustNot
-     * @covers \Elastica\Query\Builder::mustNotClose
-     * @covers \Elastica\Query\Builder::prefix
-     * @covers \Elastica\Query\Builder::prefixClose
-     * @covers \Elastica\Query\Builder::query
-     * @covers \Elastica\Query\Builder::queryClose
-     * @covers \Elastica\Query\Builder::queryString
-     * @covers \Elastica\Query\Builder::queryStringClose
-     * @covers \Elastica\Query\Builder::range
-     * @covers \Elastica\Query\Builder::rangeClose
-     * @covers \Elastica\Query\Builder::should
-     * @covers \Elastica\Query\Builder::shouldClose
-     * @covers \Elastica\Query\Builder::sort
-     * @covers \Elastica\Query\Builder::sortClose
-     * @covers \Elastica\Query\Builder::term
-     * @covers \Elastica\Query\Builder::termClose
-     * @covers \Elastica\Query\Builder::textPhrase
-     * @covers \Elastica\Query\Builder::textPhraseClose
-     * @covers \Elastica\Query\Builder::wildcard
-     * @covers \Elastica\Query\Builder::wildcardClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::fieldClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::close
+     * @covers \Webonyx\Elastica3x\Query\Builder::bool
+     * @covers \Webonyx\Elastica3x\Query\Builder::boolClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::constantScore
+     * @covers \Webonyx\Elastica3x\Query\Builder::constantScoreClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::disMax
+     * @covers \Webonyx\Elastica3x\Query\Builder::disMaxClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::filter
+     * @covers \Webonyx\Elastica3x\Query\Builder::filterClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::filteredQuery
+     * @covers \Webonyx\Elastica3x\Query\Builder::filteredQueryClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::must
+     * @covers \Webonyx\Elastica3x\Query\Builder::mustClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::mustNot
+     * @covers \Webonyx\Elastica3x\Query\Builder::mustNotClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::prefix
+     * @covers \Webonyx\Elastica3x\Query\Builder::prefixClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::query
+     * @covers \Webonyx\Elastica3x\Query\Builder::queryClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::queryString
+     * @covers \Webonyx\Elastica3x\Query\Builder::queryStringClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::range
+     * @covers \Webonyx\Elastica3x\Query\Builder::rangeClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::should
+     * @covers \Webonyx\Elastica3x\Query\Builder::shouldClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::sort
+     * @covers \Webonyx\Elastica3x\Query\Builder::sortClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::term
+     * @covers \Webonyx\Elastica3x\Query\Builder::termClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::textPhrase
+     * @covers \Webonyx\Elastica3x\Query\Builder::textPhraseClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::wildcard
+     * @covers \Webonyx\Elastica3x\Query\Builder::wildcardClose
      */
     public function testQueryTypes($method, $queryType)
     {
@@ -172,10 +172,10 @@ class BuilderTest extends BaseTest
 
     /**
      * @group unit
-     * @covers \Elastica\Query\Builder::fieldOpen
-     * @covers \Elastica\Query\Builder::fieldClose
-     * @covers \Elastica\Query\Builder::open
-     * @covers \Elastica\Query\Builder::close
+     * @covers \Webonyx\Elastica3x\Query\Builder::fieldOpen
+     * @covers \Webonyx\Elastica3x\Query\Builder::fieldClose
+     * @covers \Webonyx\Elastica3x\Query\Builder::open
+     * @covers \Webonyx\Elastica3x\Query\Builder::close
      */
     public function testFieldOpenAndClose()
     {
@@ -187,7 +187,7 @@ class BuilderTest extends BaseTest
 
     /**
      * @group unit
-     * @covers \Elastica\Query\Builder::sortField
+     * @covers \Webonyx\Elastica3x\Query\Builder::sortField
      */
     public function testSortField()
     {
@@ -198,7 +198,7 @@ class BuilderTest extends BaseTest
 
     /**
      * @group unit
-     * @covers \Elastica\Query\Builder::sortFields
+     * @covers \Webonyx\Elastica3x\Query\Builder::sortFields
      */
     public function testSortFields()
     {
@@ -209,7 +209,7 @@ class BuilderTest extends BaseTest
 
     /**
      * @group unit
-     * @covers \Elastica\Query\Builder::queries
+     * @covers \Webonyx\Elastica3x\Query\Builder::queries
      */
     public function testQueries()
     {
@@ -240,7 +240,7 @@ class BuilderTest extends BaseTest
     /**
      * @group unit
      * @dataProvider getFieldData
-     * @covers \Elastica\Query\Builder::field
+     * @covers \Webonyx\Elastica3x\Query\Builder::field
      */
     public function testField($name, $value, $result)
     {
@@ -251,9 +251,9 @@ class BuilderTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage The produced query is not a valid json string : "{{}"
-     * @covers \Elastica\Query\Builder::toArray
+     * @covers \Webonyx\Elastica3x\Query\Builder::toArray
      */
     public function testToArrayWithInvalidData()
     {
@@ -264,7 +264,7 @@ class BuilderTest extends BaseTest
 
     /**
      * @group unit
-     * @covers \Elastica\Query\Builder::toArray
+     * @covers \Webonyx\Elastica3x\Query\Builder::toArray
      */
     public function testToArray()
     {

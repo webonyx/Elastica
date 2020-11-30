@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Node;
+namespace Webonyx\Elastica3x\Test\Node;
 
-use Elastica\Node;
-use Elastica\Node\Info as NodeInfo;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Node;
+use Webonyx\Elastica3x\Node\Info as NodeInfo;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class InfoTest extends BaseTest
 {

@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Filter\AbstractFilter;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
 
 /**
  * Bool query.
@@ -16,7 +16,7 @@ class BoolQuery extends AbstractQuery
     /**
      * Add should part to query.
      *
-     * @param \Elastica\Query\AbstractQuery|array $args Should query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery|array $args Should query
      *
      * @return $this
      */
@@ -28,7 +28,7 @@ class BoolQuery extends AbstractQuery
     /**
      * Add must part to query.
      *
-     * @param \Elastica\Query\AbstractQuery|array $args Must query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery|array $args Must query
      *
      * @return $this
      */
@@ -40,7 +40,7 @@ class BoolQuery extends AbstractQuery
     /**
      * Add must not part to query.
      *
-     * @param \Elastica\Query\AbstractQuery|array $args Must not query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery|array $args Must not query
      *
      * @return $this
      */
@@ -52,14 +52,14 @@ class BoolQuery extends AbstractQuery
     /**
      * Sets the filter.
      *
-     * @param \Elastica\Query\AbstractQuery $filter Filter object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $filter Filter object
      *
      * @return $this
      */
     public function addFilter($filter)
     {
         if ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Query\BoolQuery::addFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+            trigger_error('Deprecated: Webonyx\Elastica3x\Query\BoolQuery::addFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }
@@ -71,16 +71,16 @@ class BoolQuery extends AbstractQuery
      * Adds a query to the current object.
      *
      * @param string                              $type Query type
-     * @param \Elastica\Query\AbstractQuery|array $args Query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery|array $args Query
      *
-     * @throws \Elastica\Exception\InvalidException If not valid query
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If not valid query
      *
      * @return $this
      */
     protected function _addQuery($type, $args)
     {
         if (!is_array($args) && !($args instanceof AbstractQuery)) {
-            throw new InvalidException('Invalid parameter. Has to be array or instance of Elastica\Query\AbstractQuery');
+            throw new InvalidException('Invalid parameter. Has to be array or instance of Webonyx\Elastica3x\Query\AbstractQuery');
         }
 
         return $this->addParam($type, $args);

@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Type;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Type;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class TypeTest extends BaseTest
 {
@@ -22,7 +22,7 @@ class TypeTest extends BaseTest
     {
         $typeFilter = new Type();
         $returnValue = $typeFilter->setType('type_name');
-        $this->assertInstanceOf('Elastica\Filter\Type', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Type', $returnValue);
     }
 
     /**

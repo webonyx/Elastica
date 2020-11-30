@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\ResultSet;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class HttpTest extends BaseTest
 {
@@ -83,7 +83,7 @@ class HttpTest extends BaseTest
 
         $id = 1;
         $data = ['id' => $id, 'name' => 'Item 1'];
-        $doc = new \Elastica\Document($id, $data);
+        $doc = new \Webonyx\Elastica3x\Document($id, $data);
 
         $type->addDocument($doc);
 
@@ -118,7 +118,7 @@ class HttpTest extends BaseTest
             Послушай: далеко, далеко, на озере Чад /
             Изысканный бродит жираф.'];
 
-        $doc = new \Elastica\Document($id, $data);
+        $doc = new \Webonyx\Elastica3x\Document($id, $data);
 
         $type->addDocument($doc);
 

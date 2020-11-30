@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query;
-use Elastica\Query\Match;
-use Elastica\Query\Term;
-use Elastica\Rescore\Query as QueryRescore;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Match;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Rescore\Query as QueryRescore;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class RescoreTest extends BaseTest
 {

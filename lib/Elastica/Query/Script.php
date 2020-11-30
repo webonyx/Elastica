@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica;
+use Webonyx\Elastica3x;
 
 /**
  * Script query.
@@ -15,7 +15,7 @@ class Script extends AbstractQuery
     /**
      * Construct script query.
      *
-     * @param array|string|\Elastica\Script\AbstractScript $script OPTIONAL Script
+     * @param array|string|\Webonyx\Elastica3x\Script\AbstractScript $script OPTIONAL Script
      */
     public function __construct($script = null)
     {
@@ -27,13 +27,13 @@ class Script extends AbstractQuery
     /**
      * Sets script object.
      *
-     * @param \Elastica\Script\Script|string|array $script
+     * @param \Webonyx\Elastica3x\Script\Script|string|array $script
      *
      * @return $this
      */
     public function setScript($script)
     {
-        return $this->setParam('script', Elastica\Script\Script::create($script));
+        return $this->setParam('script', Webonyx\Elastica3x\Script\Script::create($script));
     }
 
     /**

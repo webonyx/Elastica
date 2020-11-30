@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -10,7 +10,7 @@ trigger_error('Deprecated: Filters are deprecated. Use queries in filter context
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
- * @deprecated Use BoolFilter instead. From PHP7 bool is reserved word and this class will be removed in further Elastica releases
+ * @deprecated Use BoolFilter instead. From PHP7 bool is reserved word and this class will be removed in further Webonyx\Elastica3x releases
  * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html
  */
 class Bool extends BoolFilter

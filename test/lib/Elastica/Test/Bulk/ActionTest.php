@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Bulk;
+namespace Webonyx\Elastica3x\Test\Bulk;
 
-use Elastica\Bulk\Action;
-use Elastica\Index;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
+use Webonyx\Elastica3x\Bulk\Action;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
 
 class ActionTest extends BaseTest
 {

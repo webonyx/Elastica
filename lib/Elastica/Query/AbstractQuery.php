@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Param;
+use Webonyx\Elastica3x\Param;
 
 /**
  * Abstract query object. Should be extended by all query types.

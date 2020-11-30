@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Nested;
-use Elastica\Query\QueryString;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Nested;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class NestedTest extends BaseTest
 {
@@ -16,8 +16,8 @@ class NestedTest extends BaseTest
         $path = 'test1';
 
         $queryString = new QueryString('test');
-        $this->assertInstanceOf('Elastica\Query\Nested', $nested->setQuery($queryString));
-        $this->assertInstanceOf('Elastica\Query\Nested', $nested->setPath($path));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Nested', $nested->setQuery($queryString));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Nested', $nested->setPath($path));
         $expected = [
             'nested' => [
                 'query' => $queryString->toArray(),

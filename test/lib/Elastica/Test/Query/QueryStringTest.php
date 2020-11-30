@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\QueryString;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class QueryStringTest extends BaseTest
 {
@@ -125,7 +125,7 @@ class QueryStringTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetQueryInvalid()
     {
@@ -152,7 +152,7 @@ class QueryStringTest extends BaseTest
         ];
 
         $this->assertEquals($expected, $query->toArray());
-        $this->assertInstanceOf('Elastica\Query\QueryString', $query->setTimezone($timezone));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\QueryString', $query->setTimezone($timezone));
     }
 
     /**

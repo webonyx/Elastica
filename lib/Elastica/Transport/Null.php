@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
 /**
- * Elastica Null Transport object.
+ * Webonyx\Elastica3x Null Transport object.
  *
  * This class is for backward compatibility reason for all php < 7 versions. For PHP 7 and above use NullTransport as Null is reserved.
  *

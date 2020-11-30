@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\NumericRange;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\NumericRange;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class NumericRangeTest extends BaseTest
 {
@@ -22,7 +22,7 @@ class NumericRangeTest extends BaseTest
     {
         $rangeFilter = new NumericRange();
         $returnValue = $rangeFilter->addField('fieldName', ['to' => 'value']);
-        $this->assertInstanceOf('Elastica\Filter\NumericRange', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\NumericRange', $returnValue);
     }
 
     /**

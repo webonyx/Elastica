@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Exception\JSONParseException;
-use Elastica\JSON;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\JSONParseException;
+use Webonyx\Elastica3x\JSON;
 
-trigger_error('This builder is deprecated and will be removed in further Elastica releases. Use new Elastica\QueryBuilder instead.', E_USER_DEPRECATED);
+trigger_error('This builder is deprecated and will be removed in further Webonyx\Elastica3x releases. Use new Webonyx\Elastica3x\QueryBuilder instead.', E_USER_DEPRECATED);
 
 /**
  * Query Builder.
@@ -13,7 +13,7 @@ trigger_error('This builder is deprecated and will be removed in further Elastic
  * @author Chris Gedrim <chris@gedr.im>
  *
  * @link https://www.elastic.co/
- * @deprecated This builder is deprecated and will be removed in further Elastica releases. Use new Elastica\QueryBuilder instead.
+ * @deprecated This builder is deprecated and will be removed in further Webonyx\Elastica3x releases. Use new Webonyx\Elastica3x\QueryBuilder instead.
  **/
 class Builder extends AbstractQuery
 {

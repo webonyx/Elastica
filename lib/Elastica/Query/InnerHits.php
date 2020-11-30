@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Script\AbstractScript;
-use Elastica\Script\ScriptFields;
+use Webonyx\Elastica3x\Script\AbstractScript;
+use Webonyx\Elastica3x\Script\ScriptFields;
 
 /**
  * Nested query.
@@ -117,7 +117,7 @@ class InnerHits extends AbstractQuery
     /**
      * Set script fields.
      *
-     * @param \Elastica\Script\ScriptFields $scriptFields
+     * @param \Webonyx\Elastica3x\Script\ScriptFields $scriptFields
      *
      * @return $this
      */
@@ -130,7 +130,7 @@ class InnerHits extends AbstractQuery
      * Adds a Script to the aggregation.
      *
      * @param string                          $name
-     * @param \Elastica\Script\AbstractScript $script
+     * @param \Webonyx\Elastica3x\Script\AbstractScript $script
      *
      * @return $this
      */

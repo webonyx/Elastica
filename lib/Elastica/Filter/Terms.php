@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -60,17 +60,17 @@ class Terms extends AbstractFilter
      * Set the lookup parameters for this filter.
      *
      * @param string                       $key     terms key
-     * @param string|\Elastica\Type        $type    document type from which to fetch the terms values
+     * @param string|\Webonyx\Elastica3x\Type        $type    document type from which to fetch the terms values
      * @param string                       $id      id of the document from which to fetch the terms values
      * @param string                       $path    the field from which to fetch the values for the filter
-     * @param string|array|\Elastica\Index $options An array of options or the index from which to fetch the terms values. Defaults to the current index.
+     * @param string|array|\Webonyx\Elastica3x\Index $options An array of options or the index from which to fetch the terms values. Defaults to the current index.
      *
      * @return $this
      */
     public function setLookup($key, $type, $id, $path, $options = [])
     {
         $this->_key = $key;
-        if ($type instanceof \Elastica\Type) {
+        if ($type instanceof \Webonyx\Elastica3x\Type) {
             $type = $type->getName();
         }
         $this->_terms = [
@@ -89,7 +89,7 @@ class Terms extends AbstractFilter
         }
 
         if (!is_null($index)) {
-            if ($index instanceof \Elastica\Index) {
+            if ($index instanceof \Webonyx\Elastica3x\Index) {
                 $index = $index->getName();
             }
             $this->_terms['index'] = $index;
@@ -115,9 +115,9 @@ class Terms extends AbstractFilter
     /**
      * Converts object to an array.
      *
-     * @see \Elastica\Filter\AbstractFilter::toArray()
+     * @see \Webonyx\Elastica3x\Filter\AbstractFilter::toArray()
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array
      */

@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Script as ScriptQuery;
-use Elastica\Script\Script;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Script as ScriptQuery;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ScriptTest extends BaseTest
 {

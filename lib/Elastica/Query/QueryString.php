@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * QueryString query.
@@ -34,7 +34,7 @@ class QueryString extends AbstractQuery
      *
      * @param string $query Query string
      *
-     * @throws \Elastica\Exception\InvalidException If given parameter is not a string
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If given parameter is not a string
      *
      * @return $this
      */
@@ -205,7 +205,7 @@ class QueryString extends AbstractQuery
      *
      * @param array $fields Fields
      *
-     * @throws \Elastica\Exception\InvalidException If given parameter is not an array
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If given parameter is not an array
      *
      * @return $this
      */
@@ -271,7 +271,7 @@ class QueryString extends AbstractQuery
     /**
      * Converts query to array.
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      *
      * @return array Query array
      */

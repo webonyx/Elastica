@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\QueryBuilder\DSL;
+namespace Webonyx\Elastica3x\QueryBuilder\DSL;
 
-use Elastica\Exception\NotImplementedException;
-use Elastica\QueryBuilder\DSL;
-use Elastica\Suggest\Completion;
-use Elastica\Suggest\Phrase;
-use Elastica\Suggest\Term;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
+use Webonyx\Elastica3x\Suggest\Completion;
+use Webonyx\Elastica3x\Suggest\Phrase;
+use Webonyx\Elastica3x\Suggest\Term;
 
 /**
  * elasticsearch suggesters DSL.

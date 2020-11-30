@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Terms query.
@@ -83,9 +83,9 @@ class Terms extends AbstractQuery
     /**
      * Converts the terms object to an array.
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      *
-     * @throws \Elastica\Exception\InvalidException If term key is empty
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If term key is empty
      *
      * @return array Query array
      */

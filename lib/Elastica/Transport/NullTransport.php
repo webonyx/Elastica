@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
-use Elastica\JSON;
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 
 /**
- * Elastica Null Transport object.
+ * Webonyx\Elastica3x Null Transport object.
  *
  * This is used in case you just need a test transport that doesn't do any connection to an elasticsearch
  * host but still returns a valid response object
@@ -18,10 +18,10 @@ class NullTransport extends AbstractTransport
     /**
      * Null transport.
      *
-     * @param \Elastica\Request $request
+     * @param \Webonyx\Elastica3x\Request $request
      * @param array             $params  Hostname, port, path, ...
      *
-     * @return \Elastica\Response Response empty object
+     * @return \Webonyx\Elastica3x\Response Response empty object
      */
     public function exec(Request $request, array $params)
     {

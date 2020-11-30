@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Test\Base;
+use Webonyx\Elastica3x\Test\Base;
 
 abstract class BaseAggregationTest extends Base
 {

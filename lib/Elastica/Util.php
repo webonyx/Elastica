@@ -1,8 +1,8 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
 /**
- * Elastica tools.
+ * Webonyx\Elastica3x tools.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  * @author Thibault Duplessis <thibault.duplessis@gmail.com>
@@ -144,7 +144,7 @@ class Util
 
     /**
      * Tries to guess the name of the param, based on its class
-     * Example: \Elastica\Filter\HasChildFilter => has_child.
+     * Example: \Webonyx\Elastica3x\Filter\HasChildFilter => has_child.
      *
      * @param string|object Class or Class name
      *

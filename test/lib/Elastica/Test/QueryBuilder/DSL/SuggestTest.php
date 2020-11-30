@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\QueryBuilder\DSL;
+namespace Webonyx\Elastica3x\Test\QueryBuilder\DSL;
 
-use Elastica\QueryBuilder\DSL;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
 
 class SuggestTest extends AbstractDSLTest
 {
@@ -12,7 +12,7 @@ class SuggestTest extends AbstractDSLTest
     {
         $suggestDSL = new DSL\Suggest();
 
-        $this->assertInstanceOf('Elastica\QueryBuilder\DSL', $suggestDSL);
+        $this->assertInstanceOf('Webonyx\Elastica3x\QueryBuilder\DSL', $suggestDSL);
         $this->assertEquals(DSL::TYPE_SUGGEST, $suggestDSL->getType());
     }
 
@@ -23,9 +23,9 @@ class SuggestTest extends AbstractDSLTest
     {
         $suggestDSL = new DSL\Suggest();
 
-        $this->_assertImplemented($suggestDSL, 'completion', 'Elastica\Suggest\Completion', ['name', 'field']);
-        $this->_assertImplemented($suggestDSL, 'phrase', 'Elastica\Suggest\Phrase', ['name', 'field']);
-        $this->_assertImplemented($suggestDSL, 'term', 'Elastica\Suggest\Term', ['name', 'field']);
+        $this->_assertImplemented($suggestDSL, 'completion', 'Webonyx\Elastica3x\Suggest\Completion', ['name', 'field']);
+        $this->_assertImplemented($suggestDSL, 'phrase', 'Webonyx\Elastica3x\Suggest\Phrase', ['name', 'field']);
+        $this->_assertImplemented($suggestDSL, 'term', 'Webonyx\Elastica3x\Suggest\Term', ['name', 'field']);
 
         $this->_assertNotImplemented($suggestDSL, 'context', []);
     }

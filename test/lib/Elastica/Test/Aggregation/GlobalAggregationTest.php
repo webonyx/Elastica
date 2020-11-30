@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Avg;
-use Elastica\Aggregation\GlobalAggregation;
+use Webonyx\Elastica3x\Aggregation\Avg;
+use Webonyx\Elastica3x\Aggregation\GlobalAggregation;
 
 class GlobalAggregationTest extends BaseAggregationTest
 {

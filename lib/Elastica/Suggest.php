@@ -1,8 +1,8 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\NotImplementedException;
-use Elastica\Suggest\AbstractSuggest;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Suggest\AbstractSuggest;
 
 /**
  * Class Suggest.

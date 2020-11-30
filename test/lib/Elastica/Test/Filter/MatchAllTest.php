@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\MatchAll;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\MatchAll;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class MatchAllTest extends BaseTest
 {

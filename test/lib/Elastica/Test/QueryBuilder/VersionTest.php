@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\QueryBuilder;
+namespace Webonyx\Elastica3x\Test\QueryBuilder;
 
-use Elastica\QueryBuilder\DSL;
-use Elastica\QueryBuilder\Version;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
+use Webonyx\Elastica3x\QueryBuilder\Version;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class VersionTest extends BaseTest
 {

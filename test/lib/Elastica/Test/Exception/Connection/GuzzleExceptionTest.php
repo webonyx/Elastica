@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Exception\Connection;
+namespace Webonyx\Elastica3x\Test\Exception\Connection;
 
-use Elastica\Test\Exception\AbstractExceptionTest;
+use Webonyx\Elastica3x\Test\Exception\AbstractExceptionTest;
 
 class GuzzleExceptionTest extends AbstractExceptionTest
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -70,7 +70,7 @@ class Prefix extends AbstractFilter
     /**
      * Converts object to an array.
      *
-     * @see \Elastica\Filter\AbstractFilter::toArray()
+     * @see \Webonyx\Elastica3x\Filter\AbstractFilter::toArray()
      *
      * @return array data array
      */

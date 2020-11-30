@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\GeoPolygon;
-use Elastica\Query;
-use Elastica\Query\MatchAll;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\GeoPolygon;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class GeoPolygonTest extends BaseTest
 {

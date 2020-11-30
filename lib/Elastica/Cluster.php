@@ -1,9 +1,9 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Cluster\Health;
-use Elastica\Cluster\Settings;
-use Elastica\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Cluster\Health;
+use Webonyx\Elastica3x\Cluster\Settings;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
 
 /**
  * Cluster information for elasticsearch.
@@ -17,14 +17,14 @@ class Cluster
     /**
      * Client.
      *
-     * @var \Elastica\Client Client object
+     * @var \Webonyx\Elastica3x\Client Client object
      */
     protected $_client;
 
     /**
      * Cluster state response.
      *
-     * @var \Elastica\Response
+     * @var \Webonyx\Elastica3x\Response
      */
     protected $_response;
 
@@ -38,7 +38,7 @@ class Cluster
     /**
      * Creates a cluster object.
      *
-     * @param \Elastica\Client $client Connection client object
+     * @param \Webonyx\Elastica3x\Client $client Connection client object
      */
     public function __construct(Client $client)
     {
@@ -59,7 +59,7 @@ class Cluster
     /**
      * Returns the response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {
@@ -107,7 +107,7 @@ class Cluster
     /**
      * Returns all nodes of the cluster.
      *
-     * @return \Elastica\Node[]
+     * @return \Webonyx\Elastica3x\Node[]
      */
     public function getNodes()
     {
@@ -124,7 +124,7 @@ class Cluster
     /**
      * Returns the client object.
      *
-     * @return \Elastica\Client Client object
+     * @return \Webonyx\Elastica3x\Client Client object
      */
     public function getClient()
     {
@@ -138,7 +138,7 @@ class Cluster
      *
      * @param array $args Additional arguments
      *
-     * @throws \Elastica\Exception\NotImplementedException
+     * @throws \Webonyx\Elastica3x\Exception\NotImplementedException
      */
     public function getInfo(array $args)
     {
@@ -150,7 +150,7 @@ class Cluster
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html
      *
-     * @return \Elastica\Cluster\Health
+     * @return \Webonyx\Elastica3x\Cluster\Health
      */
     public function getHealth()
     {
@@ -160,7 +160,7 @@ class Cluster
     /**
      * Return Cluster settings.
      *
-     * @return \Elastica\Cluster\Settings
+     * @return \Webonyx\Elastica3x\Cluster\Settings
      */
     public function getSettings()
     {
@@ -174,7 +174,7 @@ class Cluster
      *
      * @param string $delay OPTIONAL Seconds to shutdown cluster after (default = 1s)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function shutdown($delay = '1s')
     {

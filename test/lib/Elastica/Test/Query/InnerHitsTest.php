@@ -1,16 +1,16 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\InnerHits;
-use Elastica\Query\MatchAll;
-use Elastica\Query\SimpleQueryString;
-use Elastica\QueryBuilder;
-use Elastica\Script\Script;
-use Elastica\Script\ScriptFields;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\InnerHits;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Query\SimpleQueryString;
+use Webonyx\Elastica3x\QueryBuilder;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Script\ScriptFields;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class InnerHitsTest extends BaseTest
 {
@@ -172,7 +172,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setSize(12);
         $this->assertEquals(12, $innerHits->getParam('size'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -183,7 +183,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setFrom(12);
         $this->assertEquals(12, $innerHits->getParam('from'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -195,7 +195,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setSort($sort);
         $this->assertEquals($sort, $innerHits->getParam('sort'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -207,7 +207,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setSource($fields);
         $this->assertEquals($fields, $innerHits->getParam('_source'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -218,7 +218,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setVersion(true);
         $this->assertTrue($innerHits->getParam('version'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
 
         $innerHits->setVersion(false);
         $this->assertFalse($innerHits->getParam('version'));
@@ -232,7 +232,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setExplain(true);
         $this->assertTrue($innerHits->getParam('explain'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
 
         $innerHits->setExplain(false);
         $this->assertFalse($innerHits->getParam('explain'));
@@ -251,7 +251,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setHighlight($highlight);
         $this->assertEquals($highlight, $innerHits->getParam('highlight'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -263,7 +263,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setFieldDataFields($fields);
         $this->assertEquals($fields, $innerHits->getParam('fielddata_fields'));
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -277,7 +277,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->setScriptFields($scriptFields);
         $this->assertEquals($scriptFields->toArray(), $innerHits->getParam('script_fields')->toArray());
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     /**
@@ -289,7 +289,7 @@ class InnerHitsTest extends BaseTest
         $innerHits = new InnerHits();
         $returnValue = $innerHits->addScriptField('five', $script);
         $this->assertEquals(['five' => $script->toArray()], $innerHits->getParam('script_fields')->toArray());
-        $this->assertInstanceOf('Elastica\Query\InnerHits', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\InnerHits', $returnValue);
     }
 
     protected function getNestedQuery($queryString, $innerHits)

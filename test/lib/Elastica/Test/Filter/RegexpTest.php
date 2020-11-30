@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\Regexp;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Regexp;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class RegexpTest extends BaseTest
 {

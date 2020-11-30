@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Query\AbstractQuery;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Query\AbstractQuery;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -26,7 +26,7 @@ class Query extends AbstractFilter
     /**
      * Construct query filter.
      *
-     * @param array|\Elastica\Query\AbstractQuery $query
+     * @param array|\Webonyx\Elastica3x\Query\AbstractQuery $query
      */
     public function __construct($query = null)
     {
@@ -38,16 +38,16 @@ class Query extends AbstractFilter
     /**
      * Set query.
      *
-     * @param array|\Elastica\Query\AbstractQuery $query
+     * @param array|\Webonyx\Elastica3x\Query\AbstractQuery $query
      *
-     * @throws \Elastica\Exception\InvalidException If parameter is invalid
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If parameter is invalid
      *
      * @return $this
      */
     public function setQuery($query)
     {
         if (!$query instanceof AbstractQuery && !is_array($query)) {
-            throw new InvalidException('expected an array or instance of Elastica\Query\AbstractQuery');
+            throw new InvalidException('expected an array or instance of Webonyx\Elastica3x\Query\AbstractQuery');
         }
 
         $this->_query = $query;
@@ -56,7 +56,7 @@ class Query extends AbstractFilter
     }
 
     /**
-     * @see \Elastica\Param::_getBaseName()
+     * @see \Webonyx\Elastica3x\Param::_getBaseName()
      */
     protected function _getBaseName()
     {
@@ -68,7 +68,7 @@ class Query extends AbstractFilter
     }
 
     /**
-     * @see \Elastica\Param::toArray()
+     * @see \Webonyx\Elastica3x\Param::toArray()
      */
     public function toArray()
     {

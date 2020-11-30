@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Connection;
-use Elastica\Request;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class RequestTest extends BaseTest
 {
@@ -27,7 +27,7 @@ class RequestTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidConnection()
     {
@@ -48,7 +48,7 @@ class RequestTest extends BaseTest
 
         $response = $request->send();
 
-        $this->assertInstanceOf('Elastica\Response', $response);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $response);
     }
 
     /**

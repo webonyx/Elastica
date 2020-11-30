@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Term;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class TermTest extends BaseTest
 {

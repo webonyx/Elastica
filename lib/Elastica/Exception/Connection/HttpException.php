@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Exception\Connection;
+namespace Webonyx\Elastica3x\Exception\Connection;
 
-use Elastica\Exception\ConnectionException;
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\Exception\ConnectionException;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 
 /**
  * Connection exception.
@@ -23,8 +23,8 @@ class HttpException extends ConnectionException
      * Construct Exception.
      *
      * @param int|string         $error    Error
-     * @param \Elastica\Request  $request
-     * @param \Elastica\Response $response
+     * @param \Webonyx\Elastica3x\Request  $request
+     * @param \Webonyx\Elastica3x\Response $response
      */
     public function __construct($error, Request $request = null, Response $response = null)
     {

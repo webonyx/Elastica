@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Test\Exception;
+namespace Webonyx\Elastica3x\Test\Exception;
 
 class NotFoundExceptionTest extends AbstractExceptionTest
 {

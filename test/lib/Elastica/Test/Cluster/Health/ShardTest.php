@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test\Cluster\Health;
+namespace Webonyx\Elastica3x\Test\Cluster\Health;
 
-use Elastica\Cluster\Health\Shard as HealthShard;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Cluster\Health\Shard as HealthShard;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ShardTest extends BaseTest
 {
     /**
-     * @var \Elastica\Cluster\Health\Shard
+     * @var \Webonyx\Elastica3x\Cluster\Health\Shard
      */
     protected $_shard;
 

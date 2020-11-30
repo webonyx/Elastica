@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Bulk\Action;
-use Elastica\Exception\ConnectionException;
-use Elastica\Exception\InvalidException;
-use Elastica\Script\AbstractScript;
+use Webonyx\Elastica3x\Bulk\Action;
+use Webonyx\Elastica3x\Exception\ConnectionException;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Script\AbstractScript;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
@@ -19,7 +19,7 @@ class Client
      * Config with defaults.
      *
      * log: Set to true, to enable logging, set a string to log to a specific file
-     * retryOnConflict: Use in \Elastica\Client::updateDocument
+     * retryOnConflict: Use in \Webonyx\Elastica3x\Client::updateDocument
      * bigintConversion: Set to true to enable the JSON bigint to string conversion option (see issue #717)
      *
      * @var array
@@ -53,12 +53,12 @@ class Client
     protected $_connectionPool;
 
     /**
-     * @var \Elastica\Request|null
+     * @var \Webonyx\Elastica3x\Request|null
      */
     protected $_lastRequest;
 
     /**
-     * @var \Elastica\Response|null
+     * @var \Webonyx\Elastica3x\Response|null
      */
     protected $_lastResponse;
 
@@ -73,7 +73,7 @@ class Client
     protected $_version;
 
     /**
-     * Creates a new Elastica client.
+     * Creates a new Webonyx\Elastica3x client.
      *
      * @param array           $config   OPTIONAL Additional config options
      * @param callback        $callback OPTIONAL Callback function which can be used to be notified about errors (for example connection down)
@@ -187,7 +187,7 @@ class Client
      *
      * @param string $key Config key
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array|string Config value
      */
@@ -242,7 +242,7 @@ class Client
      *
      * @param string $name Index name to create connection to
      *
-     * @return \Elastica\Index Index for the given name
+     * @return \Webonyx\Elastica3x\Index Index for the given name
      */
     public function getIndex($name)
     {
@@ -255,7 +255,7 @@ class Client
      * @param string $header      The HTTP Header
      * @param string $headerValue The HTTP Header Value
      *
-     * @throws \Elastica\Exception\InvalidException If $header or $headerValue is not a string
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If $header or $headerValue is not a string
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class Client
      *
      * @param string $header The HTTP Header to remove
      *
-     * @throws \Elastica\Exception\InvalidException If $header is not a string
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If $header is not a string
      *
      * @return $this
      */
@@ -295,17 +295,17 @@ class Client
     /**
      * Uses _bulk to send documents to the server.
      *
-     * Array of \Elastica\Document as input. Index and type has to be
+     * Array of \Webonyx\Elastica3x\Document as input. Index and type has to be
      * set inside the document, because for bulk settings documents,
      * documents can belong to any type and index
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      *
-     * @param array|\Elastica\Document[] $docs Array of Elastica\Document
+     * @param array|\Webonyx\Elastica3x\Document[] $docs Array of Webonyx\Elastica3x\Document
      *
-     * @throws \Elastica\Exception\InvalidException If docs is empty
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If docs is empty
      *
-     * @return \Elastica\Bulk\ResponseSet Response object
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet Response object
      */
     public function updateDocuments(array $docs)
     {
@@ -315,7 +315,7 @@ class Client
 
         $bulk = new Bulk($this);
 
-        $bulk->addDocuments($docs, \Elastica\Bulk\Action::OP_TYPE_UPDATE);
+        $bulk->addDocuments($docs, \Webonyx\Elastica3x\Bulk\Action::OP_TYPE_UPDATE);
 
         return $bulk->send();
     }
@@ -323,17 +323,17 @@ class Client
     /**
      * Uses _bulk to send documents to the server.
      *
-     * Array of \Elastica\Document as input. Index and type has to be
+     * Array of \Webonyx\Elastica3x\Document as input. Index and type has to be
      * set inside the document, because for bulk settings documents,
      * documents can belong to any type and index
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      *
-     * @param array|\Elastica\Document[] $docs Array of Elastica\Document
+     * @param array|\Webonyx\Elastica3x\Document[] $docs Array of Webonyx\Elastica3x\Document
      *
-     * @throws \Elastica\Exception\InvalidException If docs is empty
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If docs is empty
      *
-     * @return \Elastica\Bulk\ResponseSet Response object
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet Response object
      */
     public function addDocuments(array $docs)
     {
@@ -352,12 +352,12 @@ class Client
      * Update document, using update script. Requires elasticsearch >= 0.19.0.
      *
      * @param int|string                                               $id      document id
-     * @param array|\Elastica\Script\AbstractScript|\Elastica\Document $data    raw data for request body
+     * @param array|\Webonyx\Elastica3x\Script\AbstractScript|\Webonyx\Elastica3x\Document $data    raw data for request body
      * @param string                                                   $index   index to update
      * @param string                                                   $type    type of index to update
      * @param array                                                    $options array of query params to use for query. For possible options check es api
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-update.html
      */
@@ -432,8 +432,8 @@ class Client
     }
 
     /**
-     * @param \Elastica\Response $response
-     * @param \Elastica\Document $document
+     * @param \Webonyx\Elastica3x\Response $response
+     * @param \Webonyx\Elastica3x\Document $document
      * @param string             $fields   Array of field names to be populated or '_source' if whole document data should be updated
      */
     protected function _populateDocumentFieldsFromResponse(Response $response, Document $document, $fields)
@@ -460,11 +460,11 @@ class Client
     /**
      * Bulk deletes documents.
      *
-     * @param array|\Elastica\Document[] $docs
+     * @param array|\Webonyx\Elastica3x\Document[] $docs
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      */
     public function deleteDocuments(array $docs)
     {
@@ -481,7 +481,7 @@ class Client
     /**
      * Returns the status object for all indices.
      *
-     * @return \Elastica\Status Status object
+     * @return \Webonyx\Elastica3x\Status Status object
      */
     public function getStatus()
     {
@@ -491,7 +491,7 @@ class Client
     /**
      * Returns the current cluster.
      *
-     * @return \Elastica\Cluster Cluster object
+     * @return \Webonyx\Elastica3x\Cluster Cluster object
      */
     public function getCluster()
     {
@@ -507,7 +507,7 @@ class Client
     }
 
     /**
-     * @param \Elastica\Connection $connection
+     * @param \Webonyx\Elastica3x\Connection $connection
      *
      * @return $this
      */
@@ -529,9 +529,9 @@ class Client
     }
 
     /**
-     * @throws \Elastica\Exception\ClientException
+     * @throws \Webonyx\Elastica3x\Exception\ClientException
      *
-     * @return \Elastica\Connection
+     * @return \Webonyx\Elastica3x\Connection
      */
     public function getConnection()
     {
@@ -539,7 +539,7 @@ class Client
     }
 
     /**
-     * @return \Elastica\Connection[]
+     * @return \Webonyx\Elastica3x\Connection[]
      */
     public function getConnections()
     {
@@ -547,7 +547,7 @@ class Client
     }
 
     /**
-     * @return \Elastica\Connection\Strategy\StrategyInterface
+     * @return \Webonyx\Elastica3x\Connection\Strategy\StrategyInterface
      */
     public function getConnectionStrategy()
     {
@@ -555,7 +555,7 @@ class Client
     }
 
     /**
-     * @param array|\Elastica\Connection[] $connections
+     * @param array|\Webonyx\Elastica3x\Connection[] $connections
      *
      * @return $this
      */
@@ -572,13 +572,13 @@ class Client
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      *
      * @param array                  $ids     Document ids
-     * @param string|\Elastica\Index $index   Index name
-     * @param string|\Elastica\Type  $type    Type of documents
+     * @param string|\Webonyx\Elastica3x\Index $index   Index name
+     * @param string|\Webonyx\Elastica3x\Type  $type    Type of documents
      * @param string|bool            $routing Optional routing key for all ids
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\Bulk\ResponseSet Response  object
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet Response  object
      */
     public function deleteIds(array $ids, $index, $type, $routing = false)
     {
@@ -620,10 +620,10 @@ class Client
      *
      * @param array $params Parameter array
      *
-     * @throws \Elastica\Exception\ResponseException
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\ResponseException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\Bulk\ResponseSet Response object
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet Response object
      */
     public function bulk(array $params)
     {
@@ -688,7 +688,7 @@ class Client
     protected function _log($context)
     {
         if ($context instanceof ConnectionException) {
-            $this->_logger->error('Elastica Request Failure', [
+            $this->_logger->error('Webonyx\Elastica3x Request Failure', [
                 'exception' => $context,
                 'request' => $context->getRequest()->toArray(),
                 'retry' => $this->hasConnection(),
@@ -698,7 +698,7 @@ class Client
         }
 
         if ($context instanceof Request) {
-            $this->_logger->debug('Elastica Request', [
+            $this->_logger->debug('Webonyx\Elastica3x Request', [
                 'request' => $context->toArray(),
                 'response' => $this->_lastResponse ? $this->_lastResponse->getData() : null,
                 'responseStatus' => $this->_lastResponse ? $this->_lastResponse->getStatus() : null,
@@ -707,7 +707,7 @@ class Client
             return;
         }
 
-        $this->_logger->debug('Elastica Request', [
+        $this->_logger->debug('Webonyx\Elastica3x Request', [
             'message' => $context,
         ]);
     }
@@ -717,7 +717,7 @@ class Client
      *
      * @param array $args OPTIONAL Optional arguments
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-optimize.html
      */
@@ -729,7 +729,7 @@ class Client
     /**
      * Refreshes all search indices.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-refresh.html
      */

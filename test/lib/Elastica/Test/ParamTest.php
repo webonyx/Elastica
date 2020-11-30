@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Param;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Util;
+use Webonyx\Elastica3x\Param;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Util;
 
 class ParamTest extends BaseTest
 {
@@ -13,7 +13,7 @@ class ParamTest extends BaseTest
     public function testToArrayEmpty()
     {
         $param = new Param();
-        $this->assertInstanceOf('Elastica\Param', $param);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Param', $param);
         $this->assertEquals([$this->_getFilterName($param) => []], $param->toArray());
     }
 
@@ -26,7 +26,7 @@ class ParamTest extends BaseTest
         $params = ['hello' => 'word', 'nicolas' => 'ruflin'];
         $param->setParams($params);
 
-        $this->assertInstanceOf('Elastica\Param', $param);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Param', $param);
         $this->assertEquals([$this->_getFilterName($param) => $params], $param->toArray());
     }
 
@@ -83,7 +83,7 @@ class ParamTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testGetParamInvalid()
     {

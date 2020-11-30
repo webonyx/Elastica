@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\QueryBuilder;
+namespace Webonyx\Elastica3x\QueryBuilder;
 
 /**
  * DSL Interface.

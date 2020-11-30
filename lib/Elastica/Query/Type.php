@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
 /**
  * Type Query.
@@ -46,7 +46,7 @@ class Type extends AbstractQuery
     /**
      * Convert object to array.
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      *
      * @return array Query array
      */

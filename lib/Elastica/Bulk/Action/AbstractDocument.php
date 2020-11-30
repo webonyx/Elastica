@@ -1,20 +1,20 @@
 <?php
-namespace Elastica\Bulk\Action;
+namespace Webonyx\Elastica3x\Bulk\Action;
 
-use Elastica\AbstractUpdateAction;
-use Elastica\Bulk\Action;
-use Elastica\Document;
-use Elastica\Script\AbstractScript;
+use Webonyx\Elastica3x\AbstractUpdateAction;
+use Webonyx\Elastica3x\Bulk\Action;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Script\AbstractScript;
 
 abstract class AbstractDocument extends Action
 {
     /**
-     * @var \Elastica\Document|\Elastica\Script\AbstractScript
+     * @var \Webonyx\Elastica3x\Document|\Webonyx\Elastica3x\Script\AbstractScript
      */
     protected $_data;
 
     /**
-     * @param \Elastica\Document|\Elastica\Script\AbstractScript $document
+     * @param \Webonyx\Elastica3x\Document|\Webonyx\Elastica3x\Script\AbstractScript $document
      */
     public function __construct($document)
     {
@@ -22,7 +22,7 @@ abstract class AbstractDocument extends Action
     }
 
     /**
-     * @param \Elastica\Document $document
+     * @param \Webonyx\Elastica3x\Document $document
      *
      * @return $this
      */
@@ -38,7 +38,7 @@ abstract class AbstractDocument extends Action
     }
 
     /**
-     * @param \Elastica\Script\AbstractScript $script
+     * @param \Webonyx\Elastica3x\Script\AbstractScript $script
      *
      * @return $this
      */
@@ -57,7 +57,7 @@ abstract class AbstractDocument extends Action
     }
 
     /**
-     * @param \Elastica\Script\AbstractScript|\Elastica\Document $data
+     * @param \Webonyx\Elastica3x\Script\AbstractScript|\Webonyx\Elastica3x\Document $data
      *
      * @throws \InvalidArgumentException
      *
@@ -79,7 +79,7 @@ abstract class AbstractDocument extends Action
     /**
      * Note: This is for backwards compatibility.
      *
-     * @return \Elastica\Document|null
+     * @return \Webonyx\Elastica3x\Document|null
      */
     public function getDocument()
     {
@@ -93,7 +93,7 @@ abstract class AbstractDocument extends Action
     /**
      * Note: This is for backwards compatibility.
      *
-     * @return \Elastica\Script\AbstractScript|null
+     * @return \Webonyx\Elastica3x\Script\AbstractScript|null
      */
     public function getScript()
     {
@@ -105,7 +105,7 @@ abstract class AbstractDocument extends Action
     }
 
     /**
-     * @return \Elastica\Document|\Elastica\Script\AbstractScript
+     * @return \Webonyx\Elastica3x\Document|\Webonyx\Elastica3x\Script\AbstractScript
      */
     public function getData()
     {
@@ -113,14 +113,14 @@ abstract class AbstractDocument extends Action
     }
 
     /**
-     * @param \Elastica\AbstractUpdateAction $source
+     * @param \Webonyx\Elastica3x\AbstractUpdateAction $source
      *
      * @return array
      */
     abstract protected function _getMetadata(AbstractUpdateAction $source);
 
     /**
-     * @param \Elastica\Document|\Elastica\Script\AbstractScript $data
+     * @param \Webonyx\Elastica3x\Document|\Webonyx\Elastica3x\Script\AbstractScript $data
      * @param string                                             $opType
      *
      * @return static

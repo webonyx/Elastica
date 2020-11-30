@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Class IpRange.
@@ -38,7 +38,7 @@ class IpRange extends AbstractAggregation
      * @param string $fromValue a valid ipv4 address. Low end of this range, exclusive (greater than)
      * @param string $toValue   a valid ipv4 address. High end of this range, exclusive (less than)
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */

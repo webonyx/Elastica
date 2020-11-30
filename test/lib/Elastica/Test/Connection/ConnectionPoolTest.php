@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Connection;
+namespace Webonyx\Elastica3x\Test\Connection;
 
-use Elastica\Connection;
-use Elastica\Connection\ConnectionPool;
-use Elastica\Connection\Strategy\StrategyFactory;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Connection\ConnectionPool;
+use Webonyx\Elastica3x\Connection\Strategy\StrategyFactory;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * @author chabior
@@ -34,7 +34,7 @@ class ConnectionPoolTest extends BaseTest
 
         $this->assertEquals($connections, $pool->getConnections());
 
-        $this->assertInstanceOf('Elastica\Connection\ConnectionPool', $pool->setConnections($connections));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\ConnectionPool', $pool->setConnections($connections));
     }
 
     /**
@@ -53,7 +53,7 @@ class ConnectionPoolTest extends BaseTest
 
         $this->assertEquals($connections, $pool->getConnections());
 
-        $this->assertInstanceOf('Elastica\Connection\ConnectionPool', $pool->addConnection($connections[0]));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\ConnectionPool', $pool->addConnection($connections[0]));
     }
 
     /**
@@ -85,7 +85,7 @@ class ConnectionPoolTest extends BaseTest
     {
         $pool = $this->createPool();
 
-        $this->assertInstanceOf('Elastica\Connection', $pool->getConnection());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection', $pool->getConnection());
     }
 
     protected function getConnections($quantity = 1)

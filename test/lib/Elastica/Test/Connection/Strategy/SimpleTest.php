@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Connection\Strategy;
+namespace Webonyx\Elastica3x\Test\Connection\Strategy;
 
-use Elastica\Connection;
-use Elastica\Exception\ConnectionException;
-use Elastica\Test\Base;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Exception\ConnectionException;
+use Webonyx\Elastica3x\Test\Base;
 
 /**
  * Description of SimplyTest.
@@ -24,7 +24,7 @@ class SimpleTest extends Base
     {
         $client = $this->_getClient();
         $response = $client->request('/_aliases');
-        /* @var $response \Elastica\Response */
+        /* @var $response \Webonyx\Elastica3x\Response */
 
         $this->_checkResponse($response);
 
@@ -33,7 +33,7 @@ class SimpleTest extends Base
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\ConnectionException
+     * @expectedException \Webonyx\Elastica3x\Exception\ConnectionException
      */
     public function testFailConnection()
     {
@@ -103,7 +103,7 @@ class SimpleTest extends Base
     {
         $strategy = $client->getConnectionStrategy();
 
-        $this->assertInstanceOf('Elastica\Connection\Strategy\Simple', $strategy);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\Strategy\Simple', $strategy);
     }
 
     protected function _checkResponse($response)

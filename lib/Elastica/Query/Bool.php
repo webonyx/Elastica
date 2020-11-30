@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-trigger_error('Elastica\Query\Bool is deprecated. Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Elastica releases', E_USER_DEPRECATED);
+trigger_error('Webonyx\Elastica3x\Query\Bool is deprecated. Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Webonyx\Elastica3x releases', E_USER_DEPRECATED);
 
 /**
  * Bool query.
@@ -10,7 +10,7 @@ trigger_error('Elastica\Query\Bool is deprecated. Use BoolQuery instead. From PH
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
- * @deprecated Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Elastica releases
+ * @deprecated Use BoolQuery instead. From PHP7 bool is reserved word and this class will be removed in further Webonyx\Elastica3x releases
  * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html
  */
 class Bool extends BoolQuery

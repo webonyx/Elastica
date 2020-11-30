@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Exception\Connection\GuzzleException;
+use Webonyx\Elastica3x\Exception\Connection\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 
 class AwsAuthV4Test extends GuzzleTest

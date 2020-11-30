@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\DisMax;
-use Elastica\Query\Ids;
-use Elastica\Query\QueryString;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\DisMax;
+use Webonyx\Elastica3x\Query\Ids;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class DisMaxTest extends BaseTest
 {

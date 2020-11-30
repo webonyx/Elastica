@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
 /**
  * Simple query
@@ -45,7 +45,7 @@ class Simple extends AbstractQuery
      *
      * @return array Query array
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      */
     public function toArray()
     {

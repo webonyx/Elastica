@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Terms;
-use Elastica\Document;
-use Elastica\Query;
+use Webonyx\Elastica3x\Aggregation\Terms;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
 
 class TermsTest extends BaseAggregationTest
 {

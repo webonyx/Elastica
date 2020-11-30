@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Rescore;
+namespace Webonyx\Elastica3x\Rescore;
 
-use Elastica\Query as BaseQuery;
+use Webonyx\Elastica3x\Query as BaseQuery;
 
 /**
  * Query Rescore.
@@ -15,7 +15,7 @@ class Query extends AbstractRescore
     /**
      * Constructor.
      *
-     * @param string|\Elastica\Query\AbstractQuery $query
+     * @param string|\Webonyx\Elastica3x\Query\AbstractQuery $query
      */
     public function __construct($query = null)
     {
@@ -49,7 +49,7 @@ class Query extends AbstractRescore
     /**
      * Sets rescoreQuery object.
      *
-     * @param string|\Elastica\Query|\Elastica\Query\AbstractQuery $rescoreQuery
+     * @param string|\Webonyx\Elastica3x\Query|\Webonyx\Elastica3x\Query\AbstractQuery $rescoreQuery
      *
      * @return $this
      */

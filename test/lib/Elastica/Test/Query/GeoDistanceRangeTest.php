@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\GeoDistanceRange;
-use Elastica\Query\MatchAll;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\GeoDistanceRange;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class GeoDistanceRangeTest extends BaseTest
 {
@@ -71,7 +71,7 @@ class GeoDistanceRangeTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidRange()
     {
@@ -85,7 +85,7 @@ class GeoDistanceRangeTest extends BaseTest
     /**
      * @group unit
      * @dataProvider invalidLocationDataProvider
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidLocation($location)
     {

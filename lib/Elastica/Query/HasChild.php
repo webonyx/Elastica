@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Query as BaseQuery;
+use Webonyx\Elastica3x\Query as BaseQuery;
 
 /**
  * Returns parent documents having child docs matching the query.
@@ -15,7 +15,7 @@ class HasChild extends AbstractQuery
     /**
      * Construct HasChild Query.
      *
-     * @param string|\Elastica\Query|\Elastica\Query\AbstractQuery $query
+     * @param string|\Webonyx\Elastica3x\Query|\Webonyx\Elastica3x\Query\AbstractQuery $query
      * @param string                                               $type  Parent document type
      */
     public function __construct($query, $type = null)
@@ -27,7 +27,7 @@ class HasChild extends AbstractQuery
     /**
      * Sets query object.
      *
-     * @param string|\Elastica\Query|\Elastica\Query\AbstractQuery $query
+     * @param string|\Webonyx\Elastica3x\Query|\Webonyx\Elastica3x\Query\AbstractQuery $query
      *
      * @return $this
      */

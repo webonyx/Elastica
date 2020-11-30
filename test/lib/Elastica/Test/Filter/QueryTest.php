@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Query;
-use Elastica\Query\QueryString;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Query;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class QueryTest extends BaseTest
 {

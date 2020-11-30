@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\ResultSet;
-use Elastica\ScanAndScroll;
-use Elastica\Search;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\ScanAndScroll;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ScanAndScrollTest extends BaseTest
 {

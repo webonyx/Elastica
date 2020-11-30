@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Test\Connection\Strategy;
+namespace Webonyx\Elastica3x\Test\Connection\Strategy;
 
 class CallbackStrategyTestHelper
 {

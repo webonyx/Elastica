@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Cluster;
+namespace Webonyx\Elastica3x\Test\Cluster;
 
-use Elastica\Cluster\Settings;
-use Elastica\Document;
-use Elastica\Exception\ResponseException;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Cluster\Settings;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class SettingsTest extends BaseTest
 {

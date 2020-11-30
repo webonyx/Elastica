@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Connection;
+namespace Webonyx\Elastica3x\Connection;
 
-use Elastica\Client;
-use Elastica\Connection;
-use Elastica\Connection\Strategy\StrategyInterface;
+use Webonyx\Elastica3x\Client;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Connection\Strategy\StrategyInterface;
 use Exception;
 
 /**
@@ -14,12 +14,12 @@ use Exception;
 class ConnectionPool
 {
     /**
-     * @var array|\Elastica\Connection[] Connections array
+     * @var array|\Webonyx\Elastica3x\Connection[] Connections array
      */
     protected $_connections;
 
     /**
-     * @var \Elastica\Connection\Strategy\StrategyInterface Strategy for connection
+     * @var \Webonyx\Elastica3x\Connection\Strategy\StrategyInterface Strategy for connection
      */
     protected $_strategy;
 
@@ -30,7 +30,7 @@ class ConnectionPool
 
     /**
      * @param array                                           $connections
-     * @param \Elastica\Connection\Strategy\StrategyInterface $strategy
+     * @param \Webonyx\Elastica3x\Connection\Strategy\StrategyInterface $strategy
      * @param callback                                        $callback
      */
     public function __construct(array $connections, StrategyInterface $strategy, $callback = null)
@@ -43,7 +43,7 @@ class ConnectionPool
     }
 
     /**
-     * @param \Elastica\Connection $connection
+     * @param \Webonyx\Elastica3x\Connection $connection
      *
      * @return $this
      */
@@ -55,7 +55,7 @@ class ConnectionPool
     }
 
     /**
-     * @param array|\Elastica\Connection[] $connections
+     * @param array|\Webonyx\Elastica3x\Connection[] $connections
      *
      * @return $this
      */
@@ -89,9 +89,9 @@ class ConnectionPool
     }
 
     /**
-     * @throws \Elastica\Exception\ClientException
+     * @throws \Webonyx\Elastica3x\Exception\ClientException
      *
-     * @return \Elastica\Connection
+     * @return \Webonyx\Elastica3x\Connection
      */
     public function getConnection()
     {
@@ -99,7 +99,7 @@ class ConnectionPool
     }
 
     /**
-     * @param \Elastica\Connection $connection
+     * @param \Webonyx\Elastica3x\Connection $connection
      * @param \Exception           $e
      * @param Client               $client
      */
@@ -113,7 +113,7 @@ class ConnectionPool
     }
 
     /**
-     * @return \Elastica\Connection\Strategy\StrategyInterface
+     * @return \Webonyx\Elastica3x\Connection\Strategy\StrategyInterface
      */
     public function getStrategy()
     {

@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\QueryBuilder;
+namespace Webonyx\Elastica3x\QueryBuilder;
 
-use Elastica\Exception\QueryBuilderException;
+use Webonyx\Elastica3x\Exception\QueryBuilderException;
 
 /**
  * Facade for a specific DSL object.

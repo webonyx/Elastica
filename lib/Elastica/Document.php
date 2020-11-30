@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Bulk\Action;
-use Elastica\Exception\DeprecatedException;
-use Elastica\Exception\InvalidException;
-use Elastica\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Bulk\Action;
+use Webonyx\Elastica3x\Exception\DeprecatedException;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
 
 /**
  * Single document stored in elastic search.
@@ -90,7 +90,7 @@ class Document extends AbstractUpdateAction
     /**
      * @param string $key
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return mixed
      */
@@ -107,7 +107,7 @@ class Document extends AbstractUpdateAction
      * @param string $key
      * @param mixed  $value
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -134,7 +134,7 @@ class Document extends AbstractUpdateAction
     /**
      * @param string $key
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -151,7 +151,7 @@ class Document extends AbstractUpdateAction
     /**
      * Adds the given key/value pair to the document.
      *
-     * @deprecated Will be removed in further Elastica releases. Use Elastica\Document::set instead
+     * @deprecated Will be removed in further Webonyx\Elastica3x releases. Use Webonyx\Elastica3x\Document::set instead
      *
      * @param string $key   Document entry key
      * @param mixed  $value Document entry value
@@ -160,7 +160,7 @@ class Document extends AbstractUpdateAction
      */
     public function add($key, $value)
     {
-        trigger_error('Deprecated: Elastica\Document::add is deprecated and will be removed in further Elastica releases. Use Elastica\Document::set instead.', E_USER_DEPRECATED);
+        trigger_error('Deprecated: Webonyx\Elastica3x\Document::add is deprecated and will be removed in further Webonyx\Elastica3x releases. Use Webonyx\Elastica3x\Document::set instead.', E_USER_DEPRECATED);
 
         return $this->set($key, $value);
     }
@@ -255,9 +255,9 @@ class Document extends AbstractUpdateAction
     }
 
     /**
-     * @deprecated setScript() is no longer available as of 0.90.2. See http://elastica.io/migration/0.90.2/upsert.html to migrate. This method will be removed in further Elastica releases
+     * @deprecated setScript() is no longer available as of 0.90.2. See http://elastica.io/migration/0.90.2/upsert.html to migrate. This method will be removed in further Webonyx\Elastica3x releases
      *
-     * @param \Elastica\Script\Script $data
+     * @param \Webonyx\Elastica3x\Script\Script $data
      *
      * @throws NotImplementedException
      */
@@ -269,7 +269,7 @@ class Document extends AbstractUpdateAction
     /**
      * @throws NotImplementedException
      *
-     * @deprecated getScript() is no longer available as of 0.90.2. See http://elastica.io/migration/0.90.2/upsert.html to migrate. This method will be removed in further Elastica releases
+     * @deprecated getScript() is no longer available as of 0.90.2. See http://elastica.io/migration/0.90.2/upsert.html to migrate. This method will be removed in further Webonyx\Elastica3x releases
      */
     public function getScript()
     {
@@ -279,7 +279,7 @@ class Document extends AbstractUpdateAction
     /**
      * @throws NotImplementedException
      *
-     * @deprecated hasScript() is no longer available as of 0.90.2. See http://elastica.io/migration/0.90.2/upsert.html to migrate. This method will be removed in further Elastica releases
+     * @deprecated hasScript() is no longer available as of 0.90.2. See http://elastica.io/migration/0.90.2/upsert.html to migrate. This method will be removed in further Webonyx\Elastica3x releases
      */
     public function hasScript()
     {
@@ -340,9 +340,9 @@ class Document extends AbstractUpdateAction
     }
 
     /**
-     * @param array|\Elastica\Document $data
+     * @param array|\Webonyx\Elastica3x\Document $data
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return self
      */

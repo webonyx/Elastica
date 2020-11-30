@@ -1,17 +1,17 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Exception\ResponseException;
-use Elastica\Index;
-use Elastica\Query\HasChild;
-use Elastica\Query\QueryString;
-use Elastica\Query\SimpleQueryString;
-use Elastica\Query\Term;
-use Elastica\Status;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query\HasChild;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Query\SimpleQueryString;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Status;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class IndexTest extends BaseTest
 {
@@ -283,7 +283,7 @@ class IndexTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\ResponseException
+     * @expectedException \Webonyx\Elastica3x\Exception\ResponseException
      */
     public function testAddRemoveAlias()
     {
@@ -674,7 +674,7 @@ class IndexTest extends BaseTest
      *
      * Tests if deleting an index that does not exist in Elasticsearch,
      * correctly returns a boolean true from the hasError() method of
-     * the \Elastica\Response object
+     * the \Webonyx\Elastica3x\Response object
      *
      * @group functional
      */
@@ -690,7 +690,7 @@ class IndexTest extends BaseTest
             $response = $error->getResponse();
             $this->assertTrue($response->hasError());
             $request = $error->getRequest();
-            $this->assertInstanceOf('Elastica\Request', $request);
+            $this->assertInstanceOf('Webonyx\Elastica3x\Request', $request);
         }
     }
 
@@ -770,7 +770,7 @@ class IndexTest extends BaseTest
     }
 
     /**
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @group functional
      */
@@ -921,7 +921,7 @@ class IndexTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testThrowExceptionIfNotScalar()
     {

@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Suggest;
+namespace Webonyx\Elastica3x\Suggest;
 
-use Elastica\Suggest\CandidateGenerator\AbstractCandidateGenerator;
+use Webonyx\Elastica3x\Suggest\CandidateGenerator\AbstractCandidateGenerator;
 
 /**
  * Class Phrase.

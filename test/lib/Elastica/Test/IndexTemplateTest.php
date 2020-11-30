@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Client;
-use Elastica\IndexTemplate;
-use Elastica\Request;
-use Elastica\Response;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Client;
+use Webonyx\Elastica3x\IndexTemplate;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * IndexTemplate class tests.
@@ -28,7 +28,7 @@ class IndexTemplateTest extends BaseTest
     }
 
     /**
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @group unit
      */
     public function testIncorrectInstantiate()
@@ -45,7 +45,7 @@ class IndexTemplateTest extends BaseTest
         $name = 'index_template1';
         $response = new Response('');
         /** @var \PHPUnit_Framework_MockObject_MockObject|Client $clientMock */
-        $clientMock = $this->getMock('\Elastica\Client', ['request']);
+        $clientMock = $this->getMock('\Webonyx\Elastica3x\Client', ['request']);
         $clientMock->expects($this->once())
             ->method('request')
             ->with('/_template/'.$name, Request::DELETE, [], [])
@@ -63,7 +63,7 @@ class IndexTemplateTest extends BaseTest
         $response = new Response('');
         $name = 'index_template1';
         /** @var \PHPUnit_Framework_MockObject_MockObject|Client $clientMock */
-        $clientMock = $this->getMock('\Elastica\Client', ['request']);
+        $clientMock = $this->getMock('\Webonyx\Elastica3x\Client', ['request']);
         $clientMock->expects($this->once())
             ->method('request')
             ->with('/_template/'.$name, Request::PUT, $args, [])
@@ -81,7 +81,7 @@ class IndexTemplateTest extends BaseTest
         $response = new Response('');
         $response->setTransferInfo(['http_code' => 200]);
         /** @var \PHPUnit_Framework_MockObject_MockObject|Client $clientMock */
-        $clientMock = $this->getMock('\Elastica\Client', ['request']);
+        $clientMock = $this->getMock('\Webonyx\Elastica3x\Client', ['request']);
         $clientMock->expects($this->once())
             ->method('request')
             ->with('/_template/'.$name, Request::HEAD, [], [])

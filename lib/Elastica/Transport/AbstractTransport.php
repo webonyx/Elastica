@@ -1,27 +1,27 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
-use Elastica\Connection;
-use Elastica\Exception\InvalidException;
-use Elastica\Param;
-use Elastica\Request;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Param;
+use Webonyx\Elastica3x\Request;
 
 /**
- * Elastica Abstract Transport object.
+ * Webonyx\Elastica3x Abstract Transport object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */
 abstract class AbstractTransport extends Param
 {
     /**
-     * @var \Elastica\Connection
+     * @var \Webonyx\Elastica3x\Connection
      */
     protected $_connection;
 
     /**
      * Construct transport.
      *
-     * @param \Elastica\Connection $connection Connection object
+     * @param \Webonyx\Elastica3x\Connection $connection Connection object
      */
     public function __construct(Connection $connection = null)
     {
@@ -31,7 +31,7 @@ abstract class AbstractTransport extends Param
     }
 
     /**
-     * @return \Elastica\Connection Connection object
+     * @return \Webonyx\Elastica3x\Connection Connection object
      */
     public function getConnection()
     {
@@ -39,7 +39,7 @@ abstract class AbstractTransport extends Param
     }
 
     /**
-     * @param \Elastica\Connection $connection Connection object
+     * @param \Webonyx\Elastica3x\Connection $connection Connection object
      *
      * @return $this
      */
@@ -53,10 +53,10 @@ abstract class AbstractTransport extends Param
     /**
      * Executes the transport request.
      *
-     * @param \Elastica\Request $request Request object
+     * @param \Webonyx\Elastica3x\Request $request Request object
      * @param array             $params  Hostname, port, path, ...
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     abstract public function exec(Request $request, array $params);
 
@@ -71,10 +71,10 @@ abstract class AbstractTransport extends Param
      *          keys in the array will be set as parameters in the transport instance
      *
      * @param mixed                $transport  A transport definition
-     * @param \Elastica\Connection $connection A connection instance
+     * @param \Webonyx\Elastica3x\Connection $connection A connection instance
      * @param array                $params     Parameters for the transport class
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return AbstractTransport
      */
@@ -99,7 +99,7 @@ abstract class AbstractTransport extends Param
             } else {
                 $transport = ucfirst($transport);
             }
-            $classNames = ["Elastica\\Transport\\$transport", $transport];
+            $classNames = ["Webonyx\Elastica3x\\Transport\\$transport", $transport];
             foreach ($classNames as $className) {
                 if (class_exists($className)) {
                     $transport = new $className();

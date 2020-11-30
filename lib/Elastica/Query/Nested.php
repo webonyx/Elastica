@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
 /**
  * Nested query.
@@ -25,7 +25,7 @@ class Nested extends AbstractQuery
     /**
      * Sets nested query.
      *
-     * @param \Elastica\Query\AbstractQuery $query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $query
      *
      * @return $this
      */

@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Script as ScriptFilter;
-use Elastica\Script\Script;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Script as ScriptFilter;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class ScriptTest extends BaseTest
 {

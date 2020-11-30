@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Connection;
-use Elastica\Request;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ConnectionTest extends BaseTest
 {
@@ -16,7 +16,7 @@ class ConnectionTest extends BaseTest
         $this->assertEquals(Connection::DEFAULT_HOST, $connection->getHost());
         $this->assertEquals(Connection::DEFAULT_PORT, $connection->getPort());
         $this->assertEquals(Connection::DEFAULT_TRANSPORT, $connection->getTransport());
-        $this->assertInstanceOf('Elastica\Transport\AbstractTransport', $connection->getTransportObject());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Transport\AbstractTransport', $connection->getTransportObject());
         $this->assertEquals(Connection::TIMEOUT, $connection->getTimeout());
         $this->assertEquals(Connection::CONNECT_TIMEOUT, $connection->getConnectTimeout());
         $this->assertEquals([], $connection->getConfig());
@@ -38,7 +38,7 @@ class ConnectionTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\ConnectionException
+     * @expectedException \Webonyx\Elastica3x\Exception\ConnectionException
      */
     public function testInvalidConnection()
     {
@@ -57,21 +57,21 @@ class ConnectionTest extends BaseTest
     public function testCreate()
     {
         $connection = Connection::create();
-        $this->assertInstanceOf('Elastica\Connection', $connection);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection', $connection);
 
         $connection = Connection::create([]);
-        $this->assertInstanceOf('Elastica\Connection', $connection);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection', $connection);
 
         $port = 9999;
         $connection = Connection::create(['port' => $port]);
-        $this->assertInstanceOf('Elastica\Connection', $connection);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection', $connection);
         $this->assertEquals($port, $connection->getPort());
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testCreateInvalid()
     {
@@ -95,12 +95,12 @@ class ConnectionTest extends BaseTest
     public function testGetConfigWithArrayUsedForTransport()
     {
         $connection = new Connection(['transport' => ['type' => 'Http']]);
-        $this->assertInstanceOf('Elastica\Transport\Http', $connection->getTransportObject());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Transport\Http', $connection->getTransportObject());
     }
 
     /**
      * @group unit
-     * @expectedException Elastica\Exception\InvalidException
+     * @expectedException Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Invalid transport
      */
     public function testGetInvalidConfigWithArrayUsedForTransport()
@@ -111,7 +111,7 @@ class ConnectionTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testGetConfigInvalidValue()
     {
@@ -136,7 +136,7 @@ class ConnectionTest extends BaseTest
      */
     public function testCompressionDefaultWithClient()
     {
-        $client = new \Elastica\Client();
+        $client = new \Webonyx\Elastica3x\Client();
         $connection = $client->getConnection();
         $this->assertFalse($connection->hasCompression());
     }
@@ -146,7 +146,7 @@ class ConnectionTest extends BaseTest
      */
     public function testCompressionEnabledWithClient()
     {
-        $client = new \Elastica\Client(['connections' => [['compression' => true]]]);
+        $client = new \Webonyx\Elastica3x\Client(['connections' => [['compression' => true]]]);
         $connection = $client->getConnection();
 
         $this->assertTrue($connection->hasCompression());
@@ -158,7 +158,7 @@ class ConnectionTest extends BaseTest
     public function testUsernameFromClient()
     {
         $username = 'foo';
-        $client = new \Elastica\Client(['username' => $username]);
+        $client = new \Webonyx\Elastica3x\Client(['username' => $username]);
 
         $this->assertEquals($username, $client->getConnection()->getUsername('username'));
     }
@@ -169,7 +169,7 @@ class ConnectionTest extends BaseTest
     public function testPasswordFromClient()
     {
         $password = 'bar';
-        $client = new \Elastica\Client(['password' => $password]);
+        $client = new \Webonyx\Elastica3x\Client(['password' => $password]);
 
         $this->assertEquals($password, $client->getConnection()->getPassword('password'));
     }

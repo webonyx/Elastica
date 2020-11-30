@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Type;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Type;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class TypeTest extends BaseTest
 {
@@ -13,7 +13,7 @@ class TypeTest extends BaseTest
     {
         $typeQuery = new Type();
         $returnValue = $typeQuery->setType('type_name');
-        $this->assertInstanceOf('Elastica\Query\Type', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Type', $returnValue);
     }
 
     /**

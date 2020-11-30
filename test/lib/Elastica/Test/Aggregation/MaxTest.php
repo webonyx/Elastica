@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Max;
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Script\Script;
+use Webonyx\Elastica3x\Aggregation\Max;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Script\Script;
 
 class MaxTest extends BaseAggregationTest
 {

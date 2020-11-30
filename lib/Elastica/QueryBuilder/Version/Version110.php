@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\QueryBuilder\Version;
+namespace Webonyx\Elastica3x\QueryBuilder\Version;
 
-use Elastica\QueryBuilder\Version;
+use Webonyx\Elastica3x\QueryBuilder\Version;
 
 /**
  * elasticsearch 1.1 DSL.

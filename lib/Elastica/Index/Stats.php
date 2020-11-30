@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Index;
+namespace Webonyx\Elastica3x\Index;
 
-use Elastica\Index as BaseIndex;
-use Elastica\Request;
+use Webonyx\Elastica3x\Index as BaseIndex;
+use Webonyx\Elastica3x\Request;
 
 /**
- * Elastica index stats object.
+ * Webonyx\Elastica3x index stats object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
@@ -16,7 +16,7 @@ class Stats
     /**
      * Response.
      *
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
@@ -30,14 +30,14 @@ class Stats
     /**
      * Index.
      *
-     * @var \Elastica\Index Index object
+     * @var \Webonyx\Elastica3x\Index Index object
      */
     protected $_index;
 
     /**
      * Construct.
      *
-     * @param \Elastica\Index $index Index object
+     * @param \Webonyx\Elastica3x\Index $index Index object
      */
     public function __construct(BaseIndex $index)
     {
@@ -79,7 +79,7 @@ class Stats
     /**
      * Returns the index object.
      *
-     * @return \Elastica\Index Index object
+     * @return \Webonyx\Elastica3x\Index Index object
      */
     public function getIndex()
     {
@@ -89,7 +89,7 @@ class Stats
     /**
      * Returns response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {

@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
-use Elastica\Connection;
-use Elastica\Exception\PartialShardFailureException;
-use Elastica\Exception\ResponseException;
-use Elastica\JSON;
-use Elastica\Request as ElasticaRequest;
-use Elastica\Response as ElasticaResponse;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Exception\PartialShardFailureException;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Request as Webonyx\Elastica3xRequest;
+use Webonyx\Elastica3x\Response as Webonyx\Elastica3xResponse;
 use Ivory\HttpAdapter\HttpAdapterInterface;
 use Ivory\HttpAdapter\Message\Request as HttpAdapterRequest;
 use Ivory\HttpAdapter\Message\Response as HttpAdapterResponse;
@@ -41,16 +41,16 @@ class HttpAdapter extends AbstractTransport
      *
      * All calls that are made to the server are done through this function
      *
-     * @param \Elastica\Request $elasticaRequest
+     * @param \Webonyx\Elastica3x\Request $elasticaRequest
      * @param array             $params          Host, Port, ...
      *
-     * @throws \Elastica\Exception\ConnectionException
-     * @throws \Elastica\Exception\ResponseException
-     * @throws \Elastica\Exception\Connection\HttpException
+     * @throws \Webonyx\Elastica3x\Exception\ConnectionException
+     * @throws \Webonyx\Elastica3x\Exception\ResponseException
+     * @throws \Webonyx\Elastica3x\Exception\Connection\HttpException
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
-    public function exec(ElasticaRequest $elasticaRequest, array $params)
+    public function exec(Webonyx\Elastica3xRequest $elasticaRequest, array $params)
     {
         $connection = $this->getConnection();
 
@@ -64,7 +64,7 @@ class HttpAdapter extends AbstractTransport
         $httpAdapterResponse = $this->httpAdapter->sendRequest($httpAdapterRequest);
         $end = microtime(true);
 
-        $elasticaResponse = $this->_createElasticaResponse($httpAdapterResponse);
+        $elasticaResponse = $this->_createWebonyx\Elastica3xResponse($httpAdapterResponse);
         $elasticaResponse->setQueryTime($end - $start);
 
         $elasticaResponse->setTransferInfo(
@@ -88,33 +88,33 @@ class HttpAdapter extends AbstractTransport
     /**
      * @param HttpAdapterResponse $httpAdapterResponse
      *
-     * @return ElasticaResponse
+     * @return Webonyx\Elastica3xResponse
      */
-    protected function _createElasticaResponse(HttpAdapterResponse $httpAdapterResponse)
+    protected function _createWebonyx\Elastica3xResponse(HttpAdapterResponse $httpAdapterResponse)
     {
-        return new ElasticaResponse((string) $httpAdapterResponse->getBody(), $httpAdapterResponse->getStatusCode());
+        return new Webonyx\Elastica3xResponse((string) $httpAdapterResponse->getBody(), $httpAdapterResponse->getStatusCode());
     }
 
     /**
-     * @param ElasticaRequest $elasticaRequest
+     * @param Webonyx\Elastica3xRequest $elasticaRequest
      * @param Connection      $connection
      *
      * @return HttpAdapterRequest
      */
-    protected function _createHttpAdapterRequest(ElasticaRequest $elasticaRequest, Connection $connection)
+    protected function _createHttpAdapterRequest(Webonyx\Elastica3xRequest $elasticaRequest, Connection $connection)
     {
         $data = $elasticaRequest->getData();
         $body = null;
         $method = $elasticaRequest->getMethod();
         $headers = $connection->hasConfig('headers') ?: [];
         if (!empty($data) || '0' === $data) {
-            if ($method == ElasticaRequest::GET) {
-                $method = ElasticaRequest::POST;
+            if ($method == Webonyx\Elastica3xRequest::GET) {
+                $method = Webonyx\Elastica3xRequest::POST;
             }
 
             if ($this->hasParam('postWithRequestBody') && $this->getParam('postWithRequestBody') == true) {
-                $elasticaRequest->setMethod(ElasticaRequest::POST);
-                $method = ElasticaRequest::POST;
+                $elasticaRequest->setMethod(Webonyx\Elastica3xRequest::POST);
+                $method = Webonyx\Elastica3xRequest::POST;
             }
 
             if (is_array($data)) {
@@ -131,12 +131,12 @@ class HttpAdapter extends AbstractTransport
     }
 
     /**
-     * @param ElasticaRequest      $request
-     * @param \Elastica\Connection $connection
+     * @param Webonyx\Elastica3xRequest      $request
+     * @param \Webonyx\Elastica3x\Connection $connection
      *
      * @return string
      */
-    protected function _getUri(ElasticaRequest $request, Connection $connection)
+    protected function _getUri(Webonyx\Elastica3xRequest $request, Connection $connection)
     {
         $url = $connection->hasConfig('url') ? $connection->getConfig('url') : '';
 

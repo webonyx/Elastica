@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Script as LegacyScript;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Script as LegacyScript;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class LegacyScriptTest extends BaseTest
 {
@@ -11,6 +11,6 @@ class LegacyScriptTest extends BaseTest
      */
     public function testParent()
     {
-        $this->assertInstanceOf('Elastica\Script\Script', new LegacyScript('script'));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Script\Script', new LegacyScript('script'));
     }
 }

@@ -1,18 +1,18 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Exception\InvalidException;
-use Elastica\Filter\Exists;
-use Elastica\Query;
-use Elastica\Query\Builder;
-use Elastica\Query\Term;
-use Elastica\Query\Text;
-use Elastica\Script\Script;
-use Elastica\Script\ScriptFields;
-use Elastica\Suggest;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Builder;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Query\Text;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Script\ScriptFields;
+use Webonyx\Elastica3x\Suggest;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
 
 class QueryTest extends BaseTest
 {
@@ -31,15 +31,15 @@ class QueryTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.',
-                'Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetFilterInvalid()
     {
@@ -64,16 +64,16 @@ class QueryTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query::setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
-                'Deprecated: Elastica\Query::setFilter() is deprecated and will be removed in further Elastica releases. Use Elastica\Query::setPostFilter() instead.',
-                'Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setFilter() is deprecated and will be removed in further Webonyx\Elastica3x releases. Use Webonyx\Elastica3x\Query::setPostFilter() instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetPostFilterInvalid()
     {
@@ -98,7 +98,7 @@ class QueryTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
@@ -186,7 +186,7 @@ class QueryTest extends BaseTest
     {
         $query = new Query();
         $suggest = new Suggest();
-        $this->assertInstanceOf('Elastica\Query', $query->setSuggest($suggest));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query', $query->setSuggest($suggest));
     }
 
     /**
@@ -439,7 +439,7 @@ class QueryTest extends BaseTest
     public function testAddAggregationToArrayCast()
     {
         $query = new Query();
-        $aggregation = new \Elastica\Aggregation\Terms('text');
+        $aggregation = new \Webonyx\Elastica3x\Aggregation\Terms('text');
         $aggregation->setField('field');
 
         $query->addAggregation($aggregation);
@@ -477,7 +477,7 @@ class QueryTest extends BaseTest
     public function testSetRescoreToArrayCast()
     {
         $query = new Query();
-        $rescore = new \Elastica\Rescore\Query();
+        $rescore = new \Webonyx\Elastica3x\Rescore\Query();
         $rescore->setQueryWeight(1);
 
         $query->setRescore($rescore);
@@ -496,7 +496,7 @@ class QueryTest extends BaseTest
     public function testSetPostFilterToArrayCast()
     {
         $query = new Query();
-        $postFilter = new \Elastica\Query\Terms();
+        $postFilter = new \Webonyx\Elastica3x\Query\Terms();
         $postFilter->setTerms('key', ['term']);
         $query->setPostFilter($postFilter);
 
@@ -516,7 +516,7 @@ class QueryTest extends BaseTest
         $this->hideDeprecated();
 
         $query = new Query();
-        $postFilter = new \Elastica\Filter\Terms();
+        $postFilter = new \Webonyx\Elastica3x\Filter\Terms();
         $postFilter->setTerms('key', ['term']);
         $query->setPostFilter($postFilter);
 

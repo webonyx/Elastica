@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Multi;
+namespace Webonyx\Elastica3x\Test\Multi;
 
-use Elastica\Multi\MultiBuilder;
-use Elastica\Response;
-use Elastica\ResultSet;
-use Elastica\ResultSet\BuilderInterface;
-use Elastica\Search;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Multi\MultiBuilder;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\ResultSet\BuilderInterface;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * @group unit
@@ -27,7 +27,7 @@ class MultiBuilderTest extends BaseTest
     {
         parent::setUp();
 
-        $this->builder = $this->getMock('Elastica\\ResultSet\\BuilderInterface');
+        $this->builder = $this->getMock('Webonyx\Elastica3x\\ResultSet\\BuilderInterface');
         $this->multiBuilder = new MultiBuilder($this->builder);
     }
 
@@ -41,7 +41,7 @@ class MultiBuilderTest extends BaseTest
 
         $result = $this->multiBuilder->buildMultiResultSet($response, $searches);
 
-        $this->assertInstanceOf('Elastica\\Multi\\ResultSet', $result);
+        $this->assertInstanceOf('Webonyx\Elastica3x\\Multi\\ResultSet', $result);
     }
 
     public function testBuildMultiResultSet()
@@ -62,14 +62,14 @@ class MultiBuilderTest extends BaseTest
         $this->builder->expects($this->exactly(2))
             ->method('buildResultSet')
             ->withConsecutive(
-                [$this->isInstanceOf('Elastica\\Response'), $s1->getQuery()],
-                [$this->isInstanceOf('Elastica\\Response'), $s2->getQuery()]
+                [$this->isInstanceOf('Webonyx\Elastica3x\\Response'), $s1->getQuery()],
+                [$this->isInstanceOf('Webonyx\Elastica3x\\Response'), $s2->getQuery()]
             )
             ->willReturnOnConsecutiveCalls($resultSet1, $resultSet2);
 
         $result = $this->multiBuilder->buildMultiResultSet($response, $searches);
 
-        $this->assertInstanceOf('Elastica\\Multi\\ResultSet', $result);
+        $this->assertInstanceOf('Webonyx\Elastica3x\\Multi\\ResultSet', $result);
         $this->assertSame($resultSet1, $result[0]);
         $this->assertSame($resultSet2, $result[1]);
     }

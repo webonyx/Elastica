@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\DateHistogram;
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Aggregation\DateHistogram;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class DateHistogramTest extends BaseAggregationTest
 {
@@ -73,7 +73,7 @@ class DateHistogramTest extends BaseAggregationTest
 
         $this->assertEquals($expected, $agg->toArray());
 
-        $this->assertInstanceOf('Elastica\Aggregation\DateHistogram', $agg->setOffset('3m'));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\DateHistogram', $agg->setOffset('3m'));
     }
 
     /**
@@ -112,6 +112,6 @@ class DateHistogramTest extends BaseAggregationTest
 
         $this->assertEquals($expected, $agg->toArray());
 
-        $this->assertInstanceOf('Elastica\Aggregation\DateHistogram', $agg->setTimezone('-02:30'));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\DateHistogram', $agg->setTimezone('-02:30'));
     }
 }

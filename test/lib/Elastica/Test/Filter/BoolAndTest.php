@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\BoolAnd;
-use Elastica\Filter\Ids;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\BoolAnd;
+use Webonyx\Elastica3x\Filter\Ids;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class BoolAndTest extends BaseTest
 {

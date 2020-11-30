@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Cluster\Health;
+namespace Webonyx\Elastica3x\Cluster\Health;
 
 /**
  * Wraps status information for a shard.

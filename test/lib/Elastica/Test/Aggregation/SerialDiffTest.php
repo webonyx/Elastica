@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\DateHistogram;
-use Elastica\Aggregation\Max;
-use Elastica\Aggregation\SerialDiff;
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Aggregation\DateHistogram;
+use Webonyx\Elastica3x\Aggregation\Max;
+use Webonyx\Elastica3x\Aggregation\SerialDiff;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class SerialDiffTest extends BaseAggregationTest
 {
@@ -80,7 +80,7 @@ class SerialDiffTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testToArrayInvalidBucketsPath()
     {

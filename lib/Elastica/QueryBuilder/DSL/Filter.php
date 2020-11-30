@@ -1,38 +1,38 @@
 <?php
-namespace Elastica\QueryBuilder\DSL;
+namespace Webonyx\Elastica3x\QueryBuilder\DSL;
 
-use Elastica\Filter\AbstractFilter;
-use Elastica\Filter\BoolAnd;
-use Elastica\Filter\BoolFilter;
-use Elastica\Filter\BoolNot;
-use Elastica\Filter\BoolOr;
-use Elastica\Filter\Exists;
-use Elastica\Filter\GeoBoundingBox;
-use Elastica\Filter\GeoDistance;
-use Elastica\Filter\GeoDistanceRange;
-use Elastica\Filter\GeohashCell;
-use Elastica\Filter\GeoPolygon;
-use Elastica\Filter\GeoShapePreIndexed;
-use Elastica\Filter\GeoShapeProvided;
-use Elastica\Filter\HasChild;
-use Elastica\Filter\HasParent;
-use Elastica\Filter\Ids;
-use Elastica\Filter\Indices;
-use Elastica\Filter\Limit;
-use Elastica\Filter\MatchAll;
-use Elastica\Filter\Missing;
-use Elastica\Filter\Nested;
-use Elastica\Filter\NumericRange;
-use Elastica\Filter\Prefix;
-use Elastica\Filter\Query as QueryFilter;
-use Elastica\Filter\Range;
-use Elastica\Filter\Regexp;
-use Elastica\Filter\Script;
-use Elastica\Filter\Term;
-use Elastica\Filter\Terms;
-use Elastica\Filter\Type;
-use Elastica\Query\AbstractQuery;
-use Elastica\QueryBuilder\DSL;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
+use Webonyx\Elastica3x\Filter\BoolAnd;
+use Webonyx\Elastica3x\Filter\BoolFilter;
+use Webonyx\Elastica3x\Filter\BoolNot;
+use Webonyx\Elastica3x\Filter\BoolOr;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\GeoBoundingBox;
+use Webonyx\Elastica3x\Filter\GeoDistance;
+use Webonyx\Elastica3x\Filter\GeoDistanceRange;
+use Webonyx\Elastica3x\Filter\GeohashCell;
+use Webonyx\Elastica3x\Filter\GeoPolygon;
+use Webonyx\Elastica3x\Filter\GeoShapePreIndexed;
+use Webonyx\Elastica3x\Filter\GeoShapeProvided;
+use Webonyx\Elastica3x\Filter\HasChild;
+use Webonyx\Elastica3x\Filter\HasParent;
+use Webonyx\Elastica3x\Filter\Ids;
+use Webonyx\Elastica3x\Filter\Indices;
+use Webonyx\Elastica3x\Filter\Limit;
+use Webonyx\Elastica3x\Filter\MatchAll;
+use Webonyx\Elastica3x\Filter\Missing;
+use Webonyx\Elastica3x\Filter\Nested;
+use Webonyx\Elastica3x\Filter\NumericRange;
+use Webonyx\Elastica3x\Filter\Prefix;
+use Webonyx\Elastica3x\Filter\Query as QueryFilter;
+use Webonyx\Elastica3x\Filter\Range;
+use Webonyx\Elastica3x\Filter\Regexp;
+use Webonyx\Elastica3x\Filter\Script;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Filter\Terms;
+use Webonyx\Elastica3x\Filter\Type;
+use Webonyx\Elastica3x\Query\AbstractQuery;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
 
 /**
  * elasticsearch filter DSL.
@@ -72,7 +72,7 @@ class Filter implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html
      *
-     * @return \Elastica\Filter\Bool
+     * @return \Webonyx\Elastica3x\Filter\Bool
      */
     public function bool()
     {
@@ -241,7 +241,7 @@ class Filter implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-ids-filter.html
      *
-     * @param string|\Elastica\Type $type
+     * @param string|\Webonyx\Elastica3x\Type $type
      * @param array                 $ids
      *
      * @return Ids
@@ -426,7 +426,7 @@ class Filter implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-script-filter.html
      *
-     * @param array|string|\Elastica\Script\Script $script
+     * @param array|string|\Webonyx\Elastica3x\Script\Script $script
      *
      * @return Script
      */

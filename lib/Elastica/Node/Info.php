@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Node;
+namespace Webonyx\Elastica3x\Node;
 
-use Elastica\Node as BaseNode;
-use Elastica\Request;
+use Webonyx\Elastica3x\Node as BaseNode;
+use Webonyx\Elastica3x\Request;
 
 /**
- * Elastica cluster node object.
+ * Webonyx\Elastica3x cluster node object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
@@ -16,7 +16,7 @@ class Info
     /**
      * Response.
      *
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
@@ -30,7 +30,7 @@ class Info
     /**
      * Node.
      *
-     * @var \Elastica\Node Node object
+     * @var \Webonyx\Elastica3x\Node Node object
      */
     protected $_node;
 
@@ -51,7 +51,7 @@ class Info
     /**
      * Create new info object for node.
      *
-     * @param \Elastica\Node $node   Node object
+     * @param \Webonyx\Elastica3x\Node $node   Node object
      * @param array          $params List of params to return. Can be: settings, os, process, jvm, thread_pool, network, transport, http
      */
     public function __construct(BaseNode $node, array $params = [])
@@ -164,7 +164,7 @@ class Info
     /**
      * Return node object.
      *
-     * @return \Elastica\Node Node object
+     * @return \Webonyx\Elastica3x\Node Node object
      */
     public function getNode()
     {
@@ -190,7 +190,7 @@ class Info
     /**
      * Returns response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {
@@ -202,7 +202,7 @@ class Info
      *
      * @param array $params Params to return (default none). Possible options: settings, os, process, jvm, thread_pool, network, transport, http, plugin
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function refresh(array $params = [])
     {

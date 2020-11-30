@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Exception\ResponseException;
-use Elastica\Status;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\Status;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class StatusTest extends BaseTest
 {
@@ -14,7 +14,7 @@ class StatusTest extends BaseTest
     {
         $index = $this->_createIndex();
         $status = new Status($index->getClient());
-        $this->assertInstanceOf('Elastica\Response', $status->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $status->getResponse());
     }
 
     /**

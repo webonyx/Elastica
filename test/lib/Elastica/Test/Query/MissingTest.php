@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Missing;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Missing;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class MissingTest extends BaseTest
 {
@@ -39,7 +39,7 @@ class MissingTest extends BaseTest
         $this->assertEquals('new_field_name', $query->getParam('field'));
 
         $returnValue = $query->setField('very_new_field_name');
-        $this->assertInstanceOf('Elastica\Query\Missing', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Missing', $returnValue);
     }
 
     /**
@@ -56,7 +56,7 @@ class MissingTest extends BaseTest
         $this->assertFalse($query->getParam('existence'));
 
         $returnValue = $query->setExistence(true);
-        $this->assertInstanceOf('Elastica\Query\Missing', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Missing', $returnValue);
     }
 
     /**
@@ -73,6 +73,6 @@ class MissingTest extends BaseTest
         $this->assertFalse($query->getParam('null_value'));
 
         $returnValue = $query->setNullValue(true);
-        $this->assertInstanceOf('Elastica\Query\Missing', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Missing', $returnValue);
     }
 }

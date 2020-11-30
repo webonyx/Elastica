@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
- * Elastica Request object.
+ * Webonyx\Elastica3x Request object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */
@@ -17,7 +17,7 @@ class Request extends Param
     const DELETE = 'DELETE';
 
     /**
-     * @var \Elastica\Connection
+     * @var \Webonyx\Elastica3x\Connection
      */
     protected $_connection;
 
@@ -30,7 +30,7 @@ class Request extends Param
      * @param array      $query      OPTIONAL Query params
      * @param Connection $connection
      *
-     * @return \Elastica\Request OPTIONAL Connection object
+     * @return \Webonyx\Elastica3x\Request OPTIONAL Connection object
      */
     public function __construct($path, $method = self::GET, $data = [], array $query = [], Connection $connection = null)
     {
@@ -131,7 +131,7 @@ class Request extends Param
     }
 
     /**
-     * @param \Elastica\Connection $connection
+     * @param \Webonyx\Elastica3x\Connection $connection
      *
      * @return $this
      */
@@ -147,7 +147,7 @@ class Request extends Param
      *
      * @throws Exception\InvalidException If no valid connection was setted
      *
-     * @return \Elastica\Connection
+     * @return \Webonyx\Elastica3x\Connection
      */
     public function getConnection()
     {
@@ -161,7 +161,7 @@ class Request extends Param
     /**
      * Sends request to server.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function send()
     {

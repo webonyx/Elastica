@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\ResultSet;
+namespace Webonyx\Elastica3x\Test\ResultSet;
 
-use Elastica\Query;
-use Elastica\Response;
-use Elastica\ResultSet;
-use Elastica\ResultSet\BuilderInterface;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\ResultSet\BuilderInterface;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * @group unit
@@ -31,8 +31,8 @@ class ProcessingBuilderTest extends BaseTest
     {
         parent::setUp();
 
-        $this->innerBuilder = $this->getMock('Elastica\\ResultSet\\BuilderInterface');
-        $this->processor = $this->getMock('Elastica\\ResultSet\\ProcessorInterface');
+        $this->innerBuilder = $this->getMock('Webonyx\Elastica3x\\ResultSet\\BuilderInterface');
+        $this->processor = $this->getMock('Webonyx\Elastica3x\\ResultSet\\ProcessorInterface');
 
         $this->builder = new ResultSet\ProcessingBuilder($this->innerBuilder, $this->processor);
     }

@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\Terms;
-use Elastica\Query;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Terms;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class TermsTest extends BaseTest
 {
@@ -77,7 +77,7 @@ class TermsTest extends BaseTest
         $this->assertEquals('bool', $filter->getParam('execution'));
 
         $returnValue = $filter->setExecution('bool');
-        $this->assertInstanceOf('Elastica\Filter\Terms', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Terms', $returnValue);
     }
 
     /**
@@ -94,7 +94,7 @@ class TermsTest extends BaseTest
         $this->assertEquals($expected, $filter->toArray());
 
         $returnValue = $filter->setTerms($field, $terms);
-        $this->assertInstanceOf('Elastica\Filter\Terms', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Terms', $returnValue);
     }
 
     /**
@@ -109,7 +109,7 @@ class TermsTest extends BaseTest
         $this->assertEquals($expected, $filter->toArray());
 
         $returnValue = $filter->addTerm('cyan');
-        $this->assertInstanceOf('Elastica\Filter\Terms', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Terms', $returnValue);
     }
 
     /**
@@ -128,7 +128,7 @@ class TermsTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testToArrayInvalidException()
     {

@@ -1,6 +1,6 @@
 <?php
 
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * These tests shuts down node/cluster, so can't be executed with rest testsuite
@@ -55,7 +55,7 @@ class ShutdownTest extends BaseTest
     /**
      * @group shutdown
      * @depends testNodeShutdown
-     * @expectedException \Elastica\Exception\Connection\HttpException
+     * @expectedException \Webonyx\Elastica3x\Exception\Connection\HttpException
      */
     public function testClusterShutdown()
     {

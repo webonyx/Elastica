@@ -1,37 +1,37 @@
 <?php
-namespace Elastica\QueryBuilder\DSL;
+namespace Webonyx\Elastica3x\QueryBuilder\DSL;
 
-use Elastica\Exception\DeprecatedException;
-use Elastica\Exception\NotImplementedException;
-use Elastica\Filter\AbstractFilter;
-use Elastica\Query\AbstractQuery;
-use Elastica\Query\BoolQuery;
-use Elastica\Query\Boosting;
-use Elastica\Query\Common;
-use Elastica\Query\ConstantScore;
-use Elastica\Query\DisMax;
-use Elastica\Query\Filtered;
-use Elastica\Query\FunctionScore;
-use Elastica\Query\Fuzzy;
-use Elastica\Query\GeoDistance;
-use Elastica\Query\HasChild;
-use Elastica\Query\HasParent;
-use Elastica\Query\Ids;
-use Elastica\Query\Match;
-use Elastica\Query\MatchAll;
-use Elastica\Query\MoreLikeThis;
-use Elastica\Query\MultiMatch;
-use Elastica\Query\Nested;
-use Elastica\Query\Prefix;
-use Elastica\Query\QueryString;
-use Elastica\Query\Range;
-use Elastica\Query\Regexp;
-use Elastica\Query\SimpleQueryString;
-use Elastica\Query\Term;
-use Elastica\Query\Terms;
-use Elastica\Query\TopChildren;
-use Elastica\Query\Wildcard;
-use Elastica\QueryBuilder\DSL;
+use Webonyx\Elastica3x\Exception\DeprecatedException;
+use Webonyx\Elastica3x\Exception\NotImplementedException;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
+use Webonyx\Elastica3x\Query\AbstractQuery;
+use Webonyx\Elastica3x\Query\BoolQuery;
+use Webonyx\Elastica3x\Query\Boosting;
+use Webonyx\Elastica3x\Query\Common;
+use Webonyx\Elastica3x\Query\ConstantScore;
+use Webonyx\Elastica3x\Query\DisMax;
+use Webonyx\Elastica3x\Query\Filtered;
+use Webonyx\Elastica3x\Query\FunctionScore;
+use Webonyx\Elastica3x\Query\Fuzzy;
+use Webonyx\Elastica3x\Query\GeoDistance;
+use Webonyx\Elastica3x\Query\HasChild;
+use Webonyx\Elastica3x\Query\HasParent;
+use Webonyx\Elastica3x\Query\Ids;
+use Webonyx\Elastica3x\Query\Match;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Query\MoreLikeThis;
+use Webonyx\Elastica3x\Query\MultiMatch;
+use Webonyx\Elastica3x\Query\Nested;
+use Webonyx\Elastica3x\Query\Prefix;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Query\Range;
+use Webonyx\Elastica3x\Query\Regexp;
+use Webonyx\Elastica3x\Query\SimpleQueryString;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Query\Terms;
+use Webonyx\Elastica3x\Query\TopChildren;
+use Webonyx\Elastica3x\Query\Wildcard;
+use Webonyx\Elastica3x\QueryBuilder\DSL;
 
 /**
  * elasticsearch query DSL.
@@ -72,7 +72,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html
      *
-     * @return \Elastica\Query\MultiMatch
+     * @return \Webonyx\Elastica3x\Query\MultiMatch
      */
     public function multi_match()
     {
@@ -84,7 +84,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html
      *
-     * @return \Elastica\Query\BoolQuery
+     * @return \Webonyx\Elastica3x\Query\BoolQuery
      */
     public function bool()
     {
@@ -154,7 +154,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-constant-score-query.html
      *
-     * @param null|\Elastica\Filter\AbstractFilter|array $filter
+     * @param null|\Webonyx\Elastica3x\Filter\AbstractFilter|array $filter
      *
      * @return ConstantScore
      */
@@ -188,7 +188,7 @@ class Query implements DSL
     /**
      * filtered query.
      *
-     * @deprecated Use bool() instead. Filtered query is deprecated since ES 2.0.0-beta1 and this method will be removed in further Elastica releases.
+     * @deprecated Use bool() instead. Filtered query is deprecated since ES 2.0.0-beta1 and this method will be removed in further Webonyx\Elastica3x releases.
      *
      * @param AbstractFilter $filter
      * @param AbstractQuery  $query
@@ -199,7 +199,7 @@ class Query implements DSL
      */
     public function filtered(AbstractQuery $query = null, $filter = null)
     {
-        trigger_error('Use bool() instead. Filtered query is deprecated since ES 2.0.0-beta1 and this method will be removed in further Elastica releases.', E_USER_DEPRECATED);
+        trigger_error('Use bool() instead. Filtered query is deprecated since ES 2.0.0-beta1 and this method will be removed in further Webonyx\Elastica3x releases.', E_USER_DEPRECATED);
 
         return new Filtered($query, $filter);
     }
@@ -268,7 +268,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-has-child-query.html
      *
-     * @param string|\Elastica\Query|\Elastica\Query\AbstractQuery $query
+     * @param string|\Webonyx\Elastica3x\Query|\Webonyx\Elastica3x\Query\AbstractQuery $query
      * @param string                                               $type  Parent document type
      *
      * @return HasChild
@@ -283,7 +283,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-has-parent-query.html
      *
-     * @param string|\Elastica\Query|\Elastica\Query\AbstractQuery $query
+     * @param string|\Webonyx\Elastica3x\Query|\Webonyx\Elastica3x\Query\AbstractQuery $query
      * @param string                                               $type  Parent document type
      *
      * @return HasParent
@@ -298,7 +298,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-ids-query.html
      *
-     * @param array|string|\Elastica\Type $type
+     * @param array|string|\Webonyx\Elastica3x\Type $type
      * @param array                       $ids
      *
      * @return Ids
@@ -346,11 +346,11 @@ class Query implements DSL
      * more_like_this_field query.
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-mlt-field-query.html
-     * @deprecated More Like This Field query is deprecated as of ES 1.4 and will be removed in ES 2.0. Use MoreLikeThis query instead. This method will be removed in further Elastica releases
+     * @deprecated More Like This Field query is deprecated as of ES 1.4 and will be removed in ES 2.0. Use MoreLikeThis query instead. This method will be removed in further Webonyx\Elastica3x releases
      */
     public function more_like_this_field()
     {
-        throw new DeprecatedException('More Like This Field query is deprecated as of ES 1.4 and will be removed in ES 2.0. Use MoreLikeThis query instead. This method will be removed in further Elastica releases');
+        throw new DeprecatedException('More Like This Field query is deprecated as of ES 1.4 and will be removed in ES 2.0. Use MoreLikeThis query instead. This method will be removed in further Webonyx\Elastica3x releases');
     }
 
     /**
@@ -533,7 +533,7 @@ class Query implements DSL
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-top-children-query.html
      *
-     * @param string|AbstractQuery|\Elastica\Query $query
+     * @param string|AbstractQuery|\Webonyx\Elastica3x\Query $query
      * @param string                               $type
      *
      * @return TopChildren

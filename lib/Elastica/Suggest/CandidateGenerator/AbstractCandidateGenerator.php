@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Suggest\CandidateGenerator;
+namespace Webonyx\Elastica3x\Suggest\CandidateGenerator;
 
-use Elastica\Param;
+use Webonyx\Elastica3x\Param;
 
 class AbstractCandidateGenerator extends Param
 {

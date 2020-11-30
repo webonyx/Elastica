@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Exception\QueryBuilderException;
-use Elastica\Query;
-use Elastica\QueryBuilder;
-use Elastica\Suggest;
+use Webonyx\Elastica3x\Exception\QueryBuilderException;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\QueryBuilder;
+use Webonyx\Elastica3x\Suggest;
 
 class QueryBuilderTest extends Base
 {
@@ -39,12 +39,12 @@ class QueryBuilderTest extends Base
         $qb = new QueryBuilder();
 
         // test one example QueryBuilder flow for each default DSL type
-        $this->assertInstanceOf('Elastica\Query\AbstractQuery', $qb->query()->match());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\AbstractQuery', $qb->query()->match());
         $this->hideDeprecated();
-        $this->assertInstanceOf('Elastica\Filter\AbstractFilter', $qb->filter()->bool());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\AbstractFilter', $qb->filter()->bool());
         $this->showDeprecated();
-        $this->assertInstanceOf('Elastica\Aggregation\AbstractAggregation', $qb->aggregation()->avg('name'));
-        $this->assertInstanceOf('Elastica\Suggest\AbstractSuggest', $qb->suggest()->term('name', 'field'));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Aggregation\AbstractAggregation', $qb->aggregation()->avg('name'));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Suggest\AbstractSuggest', $qb->suggest()->term('name', 'field'));
     }
 
     /**

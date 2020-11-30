@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Avg;
-use Elastica\Document;
-use Elastica\Query;
+use Webonyx\Elastica3x\Aggregation\Avg;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
 
 class AvgTest extends BaseAggregationTest
 {

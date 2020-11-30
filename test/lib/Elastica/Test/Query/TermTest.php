@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Term;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class TermTest extends BaseTest
 {

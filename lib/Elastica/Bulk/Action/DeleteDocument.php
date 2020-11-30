@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Bulk\Action;
+namespace Webonyx\Elastica3x\Bulk\Action;
 
-use Elastica\AbstractUpdateAction;
+use Webonyx\Elastica3x\AbstractUpdateAction;
 
 class DeleteDocument extends AbstractDocument
 {
@@ -11,7 +11,7 @@ class DeleteDocument extends AbstractDocument
     protected $_opType = self::OP_TYPE_DELETE;
 
     /**
-     * @param \Elastica\AbstractUpdateAction $action
+     * @param \Webonyx\Elastica3x\AbstractUpdateAction $action
      *
      * @return array
      */

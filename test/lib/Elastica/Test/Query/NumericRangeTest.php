@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\NumericRange;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\NumericRange;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class NumericRangeTest extends BaseTest
 {
@@ -13,7 +13,7 @@ class NumericRangeTest extends BaseTest
     {
         $rangeQuery = new NumericRange();
         $returnValue = $rangeQuery->addField('fieldName', ['to' => 'value']);
-        $this->assertInstanceOf('Elastica\Query\NumericRange', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\NumericRange', $returnValue);
     }
 
     /**

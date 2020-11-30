@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\Avg;
-use Elastica\Aggregation\Filters;
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Term;
-use Elastica\Query;
+use Webonyx\Elastica3x\Aggregation\Avg;
+use Webonyx\Elastica3x\Aggregation\Filters;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Query;
 
 class FiltersTest extends BaseAggregationTest
 {
@@ -28,7 +28,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddFilterInvalid()
     {
@@ -53,7 +53,7 @@ class FiltersTest extends BaseAggregationTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Aggregation\Filters\addFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Aggregation\Filters\addFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
@@ -144,7 +144,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Name must be a string
      */
     public function testWrongName()
@@ -157,7 +157,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Name must be a string
      */
     public function testWrongNameWithLegacyFilter()
@@ -170,7 +170,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Mix named and anonymous keys are not allowed
      */
     public function testMixNamedAndAnonymousFilters()
@@ -182,7 +182,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Mix named and anonymous keys are not allowed
      */
     public function testMixNamedAndAnonymousFiltersWithLegacyFilters()
@@ -196,7 +196,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Mix named and anonymous keys are not allowed
      */
     public function testMixAnonymousAndNamedFilters()
@@ -209,7 +209,7 @@ class FiltersTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Mix named and anonymous keys are not allowed
      */
     public function testMixAnonymousAndNamedFiltersWithLegacyFilters()

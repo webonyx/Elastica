@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\Boosting;
-use Elastica\Query\Term;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\Boosting;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class BoostingTest extends BaseTest
 {

@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test\Cluster\Health;
+namespace Webonyx\Elastica3x\Test\Cluster\Health;
 
-use Elastica\Cluster\Health\Index as HealthIndex;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Cluster\Health\Index as HealthIndex;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class IndexTest extends BaseTest
 {
     /**
-     * @var \Elastica\Cluster\Health\Index
+     * @var \Webonyx\Elastica3x\Cluster\Health\Index
      */
     protected $_index;
 
@@ -138,7 +138,7 @@ class IndexTest extends BaseTest
         $this->assertEquals(3, count($shards));
 
         foreach ($shards as $shard) {
-            $this->assertInstanceOf('Elastica\Cluster\Health\Shard', $shard);
+            $this->assertInstanceOf('Webonyx\Elastica3x\Cluster\Health\Shard', $shard);
         }
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
 /**
  * Class GlobalAggregation.

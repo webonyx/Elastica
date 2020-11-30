@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\Ids;
-use Elastica\Filter\Type;
-use Elastica\Query;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Ids;
+use Webonyx\Elastica3x\Filter\Type;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class IdsTest extends BaseTest
 {
@@ -224,9 +224,9 @@ class IdsTest extends BaseTest
      */
     public function testFilterTypeAndTypeCollision()
     {
-        // This test ensures that Elastica\Type and Elastica\Filter\Type
+        // This test ensures that Webonyx\Elastica3x\Type and Webonyx\Elastica3x\Filter\Type
         // do not collide when used together, which at one point
-        // happened because of a use statement in Elastica\Filter\Ids
+        // happened because of a use statement in Webonyx\Elastica3x\Filter\Ids
         // Test goal is to make sure a Fatal Error is not triggered
         $filterType = new Type();
         $filter = new Ids();
@@ -248,6 +248,6 @@ class IdsTest extends BaseTest
         $this->assertEquals(['foo', $type->getName()], $filter->getParam('type'));
 
         $returnValue = $filter->addType('bar');
-        $this->assertInstanceOf('Elastica\Filter\Ids', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Ids', $returnValue);
     }
 }

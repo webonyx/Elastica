@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\ResultSet;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class GuzzleTest extends BaseTest
 {
@@ -168,7 +168,7 @@ class GuzzleTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException Elastica\Exception\Connection\GuzzleException
+     * @expectedException Webonyx\Elastica3x\Exception\Connection\GuzzleException
      */
     public function testInvalidConnection()
     {

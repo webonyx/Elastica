@@ -1,18 +1,18 @@
 <?php
-namespace Elastica\Exception\Bulk\Response;
+namespace Webonyx\Elastica3x\Exception\Bulk\Response;
 
-use Elastica\Bulk\Response;
-use Elastica\Exception\BulkException;
+use Webonyx\Elastica3x\Bulk\Response;
+use Webonyx\Elastica3x\Exception\BulkException;
 
 class ActionException extends BulkException
 {
     /**
-     * @var \Elastica\Response
+     * @var \Webonyx\Elastica3x\Response
      */
     protected $_response;
 
     /**
-     * @param \Elastica\Bulk\Response $response
+     * @param \Webonyx\Elastica3x\Bulk\Response $response
      */
     public function __construct(Response $response)
     {
@@ -22,7 +22,7 @@ class ActionException extends BulkException
     }
 
     /**
-     * @return \Elastica\Bulk\Action
+     * @return \Webonyx\Elastica3x\Bulk\Action
      */
     public function getAction()
     {
@@ -30,7 +30,7 @@ class ActionException extends BulkException
     }
 
     /**
-     * @return \Elastica\Bulk\Response
+     * @return \Webonyx\Elastica3x\Bulk\Response
      */
     public function getResponse()
     {
@@ -38,7 +38,7 @@ class ActionException extends BulkException
     }
 
     /**
-     * @param \Elastica\Bulk\Response $response
+     * @param \Webonyx\Elastica3x\Bulk\Response $response
      *
      * @return string
      */

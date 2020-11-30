@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Node;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Node;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class NodeTest extends BaseTest
 {
@@ -16,7 +16,7 @@ class NodeTest extends BaseTest
         $name = reset($names);
 
         $node = new Node($name, $client);
-        $this->assertInstanceOf('Elastica\Node', $node);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Node', $node);
     }
 
     /**
@@ -32,7 +32,7 @@ class NodeTest extends BaseTest
 
         $info = $node->getInfo();
 
-        $this->assertInstanceOf('Elastica\Node\Info', $info);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Node\Info', $info);
     }
 
     /**
@@ -48,7 +48,7 @@ class NodeTest extends BaseTest
 
         $stats = $node->getStats();
 
-        $this->assertInstanceOf('Elastica\Node\Stats', $stats);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Node\Stats', $stats);
     }
 
     /**
@@ -75,6 +75,6 @@ class NodeTest extends BaseTest
      */
     public function testGetId()
     {
-        $node = new Node('Elastica', $this->_getClient());
+        $node = new Node('Webonyx\Elastica3x', $this->_getClient());
     }
 }

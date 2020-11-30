@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Type;
+namespace Webonyx\Elastica3x\Test\Type;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\QueryString;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\QueryString;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class MappingTest extends BaseTest
 {

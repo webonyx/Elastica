@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Limit;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Limit;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class LimitTest extends BaseTest
 {
@@ -23,7 +23,7 @@ class LimitTest extends BaseTest
         $filter = new Limit(10);
         $this->assertEquals(10, $filter->getParam('value'));
 
-        $this->assertInstanceOf('Elastica\Filter\Limit', $filter->setLimit(20));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Limit', $filter->setLimit(20));
         $this->assertEquals(20, $filter->getParam('value'));
     }
 

@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Term;
-use Elastica\Query\FunctionScore;
-use Elastica\Query\MatchAll;
-use Elastica\Script\Script;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Query\FunctionScore;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class FunctionScoreTest extends BaseTest
 {
@@ -47,7 +47,7 @@ class FunctionScoreTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\DeprecatedException
+     * @expectedException \Webonyx\Elastica3x\Exception\DeprecatedException
      */
     public function testSetFilterWithLegacyFilterDeprecated()
     {
@@ -62,7 +62,7 @@ class FunctionScoreTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddFunctionInvalid()
     {
@@ -87,14 +87,14 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddDecayFunctionInvalid()
     {
@@ -119,15 +119,15 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addDecayFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addDecayFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testScriptScoreFunctionInvalid()
     {
@@ -152,15 +152,15 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addScriptScoreFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addScriptScoreFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddFieldValueFactorFunctionInvalid()
     {
@@ -185,15 +185,15 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addFieldValueFactorFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFieldValueFactorFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddBoostFactorFunctionFunctionInvalid()
     {
@@ -218,17 +218,17 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addBoostFactorFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Query\FunctionScore::addBoostFactorFunction is deprecated. Use addWeightFunction instead. This method will be removed in further Elastica releases',
-                'Deprecated: Elastica\Query\FunctionScore::addWeightFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addBoostFactorFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Query\FunctionScore::addBoostFactorFunction is deprecated. Use addWeightFunction instead. This method will be removed in further Webonyx\Elastica3x releases',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addWeightFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddWeightFunctionFunctionInvalid()
     {
@@ -253,15 +253,15 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addWeightFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addWeightFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddRandomScoreFunctionInvalid()
     {
@@ -286,8 +286,8 @@ class FunctionScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\FunctionScore::addRandomScoreFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addRandomScoreFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\FunctionScore::addFunction passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
@@ -440,11 +440,11 @@ class FunctionScoreTest extends BaseTest
      */
     public function testAddBoostFactorFunction()
     {
-        $filter = new \Elastica\Query\Term(['price' => 4.5]);
+        $filter = new \Webonyx\Elastica3x\Query\Term(['price' => 4.5]);
         $query = new FunctionScore();
         $query->addWeightFunction(5.0, $filter);
 
-        $sameFilter = new \Elastica\Query\Term(['price' => 4.5]);
+        $sameFilter = new \Webonyx\Elastica3x\Query\Term(['price' => 4.5]);
         $sameQuery = new FunctionScore();
         $this->hideDeprecated();
         $sameQuery->addBoostFactorFunction(5.0, $sameFilter);
@@ -478,7 +478,7 @@ class FunctionScoreTest extends BaseTest
      */
     public function testWeight()
     {
-        $filter = new \Elastica\Query\Term(['price' => 4.5]);
+        $filter = new \Webonyx\Elastica3x\Query\Term(['price' => 4.5]);
         $query = new FunctionScore();
         $query->addWeightFunction(5.0, $filter);
 
@@ -548,7 +548,7 @@ class FunctionScoreTest extends BaseTest
      */
     public function testRandomScore()
     {
-        $filter = new \Elastica\Query\Term(['price' => 4.5]);
+        $filter = new \Webonyx\Elastica3x\Query\Term(['price' => 4.5]);
         $query = new FunctionScore();
         $query->addRandomScoreFunction(2, $filter);
 
@@ -624,7 +624,7 @@ class FunctionScoreTest extends BaseTest
      */
     public function testRandomScoreWeight()
     {
-        $filter = new \Elastica\Query\Term(['price' => 4.5]);
+        $filter = new \Webonyx\Elastica3x\Query\Term(['price' => 4.5]);
         $query = new FunctionScore();
         $query->addRandomScoreFunction(2, $filter, 2);
 
@@ -754,7 +754,7 @@ class FunctionScoreTest extends BaseTest
         $returnedValue = $query->setMinScore(0.8);
 
         $this->assertEquals($expected, $query->toArray());
-        $this->assertInstanceOf('Elastica\Query\FunctionScore', $returnedValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\FunctionScore', $returnedValue);
 
         $response = $this->_getIndexForTest()->search($query);
         $results = $response->getResults();

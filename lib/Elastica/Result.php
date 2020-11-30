@@ -1,8 +1,8 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
 /**
- * Elastica result item.
+ * Webonyx\Elastica3x result item.
  *
  * Stores all information from a result
  *

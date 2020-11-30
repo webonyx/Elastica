@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Connection\Strategy;
+namespace Webonyx\Elastica3x\Connection\Strategy;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Description of StrategyFactory.
@@ -13,9 +13,9 @@ class StrategyFactory
     /**
      * @param mixed|callable|string|StrategyInterface $strategyName
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\Connection\Strategy\StrategyInterface
+     * @return \Webonyx\Elastica3x\Connection\Strategy\StrategyInterface
      */
     public static function create($strategyName)
     {
@@ -28,8 +28,8 @@ class StrategyFactory
         }
 
         if (is_string($strategyName)) {
-            $requiredInterface = '\\Elastica\\Connection\\Strategy\\StrategyInterface';
-            $predefinedStrategy = '\\Elastica\\Connection\\Strategy\\'.$strategyName;
+            $requiredInterface = '\\Webonyx\Elastica3x\\Connection\\Strategy\\StrategyInterface';
+            $predefinedStrategy = '\\Webonyx\Elastica3x\\Connection\\Strategy\\'.$strategyName;
 
             if (class_exists($predefinedStrategy) && class_implements($predefinedStrategy, $requiredInterface)) {
                 return new $predefinedStrategy();

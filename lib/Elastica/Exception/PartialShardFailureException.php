@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Exception;
+namespace Webonyx\Elastica3x\Exception;
 
-use Elastica\JSON;
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\JSON;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 
 /**
  * Partial shard failure exception.
@@ -15,8 +15,8 @@ class PartialShardFailureException extends ResponseException
     /**
      * Construct Exception.
      *
-     * @param \Elastica\Request  $request
-     * @param \Elastica\Response $response
+     * @param \Webonyx\Elastica3x\Request  $request
+     * @param \Webonyx\Elastica3x\Response $response
      */
     public function __construct(Request $request, Response $response)
     {

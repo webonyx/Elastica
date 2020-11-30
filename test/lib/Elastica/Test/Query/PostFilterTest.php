@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Filter\Term;
-use Elastica\Query;
-use Elastica\Query\Match;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Match;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class PostFilterTest extends BaseTest
 {
@@ -38,7 +38,7 @@ class PostFilterTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query::setPostFilter() passing filter as array is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as array is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
@@ -57,14 +57,14 @@ class PostFilterTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testFilterInvalid()
     {

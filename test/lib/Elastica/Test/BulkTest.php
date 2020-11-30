@@ -1,14 +1,14 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Bulk;
-use Elastica\Bulk\Action;
-use Elastica\Bulk\Action\AbstractDocument;
-use Elastica\Document;
-use Elastica\Exception\Bulk\ResponseException;
-use Elastica\Exception\NotFoundException;
-use Elastica\Filter\Script;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Bulk;
+use Webonyx\Elastica3x\Bulk\Action;
+use Webonyx\Elastica3x\Bulk\Action\AbstractDocument;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\Bulk\ResponseException;
+use Webonyx\Elastica3x\Exception\NotFoundException;
+use Webonyx\Elastica3x\Filter\Script;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class BulkTest extends BaseTest
 {
@@ -43,19 +43,19 @@ class BulkTest extends BaseTest
 
         $actions = $bulk->getActions();
 
-        $this->assertInstanceOf('Elastica\Bulk\Action\IndexDocument', $actions[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action\IndexDocument', $actions[0]);
         $this->assertEquals('index', $actions[0]->getOpType());
         $this->assertSame($newDocument1, $actions[0]->getDocument());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action\IndexDocument', $actions[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action\IndexDocument', $actions[1]);
         $this->assertEquals('index', $actions[1]->getOpType());
         $this->assertSame($newDocument2, $actions[1]->getDocument());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action\CreateDocument', $actions[2]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action\CreateDocument', $actions[2]);
         $this->assertEquals('create', $actions[2]->getOpType());
         $this->assertSame($newDocument3, $actions[2]->getDocument());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action\IndexDocument', $actions[3]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action\IndexDocument', $actions[3]);
         $this->assertEquals('index', $actions[3]->getOpType());
         $this->assertSame($newDocument4, $actions[3]->getDocument());
 
@@ -88,13 +88,13 @@ class BulkTest extends BaseTest
 
         $response = $bulk->send();
 
-        $this->assertInstanceOf('Elastica\Bulk\ResponseSet', $response);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\ResponseSet', $response);
 
         $this->assertTrue($response->isOk());
         $this->assertFalse($response->hasError());
 
         foreach ($response as $i => $bulkResponse) {
-            $this->assertInstanceOf('Elastica\Bulk\Response', $bulkResponse);
+            $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Response', $bulkResponse);
             $this->assertTrue($bulkResponse->isOk());
             $this->assertFalse($bulkResponse->hasError());
             $this->assertSame($actions[$i], $bulkResponse->getAction());
@@ -258,29 +258,29 @@ class BulkTest extends BaseTest
         $this->assertInternalType('array', $actions);
         $this->assertEquals(5, count($actions));
 
-        $this->assertInstanceOf('Elastica\Bulk\Action', $actions[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action', $actions[0]);
         $this->assertEquals('index', $actions[0]->getOpType());
         $this->assertEquals($rawData[0]['index'], $actions[0]->getMetadata());
         $this->assertTrue($actions[0]->hasSource());
         $this->assertEquals($rawData[1], $actions[0]->getSource());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action', $actions[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action', $actions[1]);
         $this->assertEquals('delete', $actions[1]->getOpType());
         $this->assertEquals($rawData[2]['delete'], $actions[1]->getMetadata());
         $this->assertFalse($actions[1]->hasSource());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action', $actions[2]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action', $actions[2]);
         $this->assertEquals('delete', $actions[2]->getOpType());
         $this->assertEquals($rawData[3]['delete'], $actions[2]->getMetadata());
         $this->assertFalse($actions[2]->hasSource());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action', $actions[3]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action', $actions[3]);
         $this->assertEquals('create', $actions[3]->getOpType());
         $this->assertEquals($rawData[4]['create'], $actions[3]->getMetadata());
         $this->assertTrue($actions[3]->hasSource());
         $this->assertEquals($rawData[5], $actions[3]->getSource());
 
-        $this->assertInstanceOf('Elastica\Bulk\Action', $actions[4]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk\Action', $actions[4]);
         $this->assertEquals('delete', $actions[4]->getOpType());
         $this->assertEquals($rawData[6]['delete'], $actions[4]->getMetadata());
         $this->assertFalse($actions[4]->hasSource());
@@ -289,7 +289,7 @@ class BulkTest extends BaseTest
     /**
      * @group unit
      * @dataProvider invalidRawDataProvider
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testInvalidRawData($rawData, $failMessage)
     {
@@ -470,7 +470,7 @@ class BulkTest extends BaseTest
         $doc2 = $type->createDocument(2, ['name' => 'The Walrus']);
         $bulk = new Bulk($client);
         $bulk->setType($type);
-        $updateAction = new \Elastica\Bulk\Action\UpdateDocument($doc2);
+        $updateAction = new \Webonyx\Elastica3x\Bulk\Action\UpdateDocument($doc2);
         $bulk->addAction($updateAction);
         $response = $bulk->send();
 
@@ -484,7 +484,7 @@ class BulkTest extends BaseTest
         $this->assertEquals('The Walrus', $docData['name']);
 
         //test updating via script
-        $script = new \Elastica\Script\Script('ctx._source.name += param1;', ['param1' => ' was Paul'], null, 2);
+        $script = new \Webonyx\Elastica3x\Script\Script('ctx._source.name += param1;', ['param1' => ' was Paul'], null, 2);
         $doc2 = new Document();
         $script->setUpsert($doc2);
         $updateAction = Action\AbstractDocument::create($script, Action::OP_TYPE_UPDATE);
@@ -502,7 +502,7 @@ class BulkTest extends BaseTest
         $this->assertEquals('The Walrus was Paul', $doc2->name);
 
         //test upsert
-        $script = new \Elastica\Script\Script('ctx._scource.counter += count', ['count' => 1], null, 5);
+        $script = new \Webonyx\Elastica3x\Script\Script('ctx._scource.counter += count', ['count' => 1], null, 5);
         $doc = new Document('', ['counter' => 1]);
         $script->setUpsert($doc);
         $updateAction = Action\AbstractDocument::create($script, Action::OP_TYPE_UPDATE);
@@ -519,7 +519,7 @@ class BulkTest extends BaseTest
         $this->assertEquals(1, $doc->counter);
 
         //test doc_as_upsert
-        $doc = new \Elastica\Document(6, ['test' => 'test']);
+        $doc = new \Webonyx\Elastica3x\Document(6, ['test' => 'test']);
         $doc->setDocAsUpsert(true);
         $updateAction = Action\AbstractDocument::create($doc, Action::OP_TYPE_UPDATE);
         $bulk = new Bulk($client);
@@ -535,14 +535,14 @@ class BulkTest extends BaseTest
         $this->assertEquals('test', $doc->test);
 
         //test doc_as_upsert with set of documents (use of addDocuments)
-        $doc1 = new \Elastica\Document(7, ['test' => 'test1']);
+        $doc1 = new \Webonyx\Elastica3x\Document(7, ['test' => 'test1']);
         $doc1->setDocAsUpsert(true);
-        $doc2 = new \Elastica\Document(8, ['test' => 'test2']);
+        $doc2 = new \Webonyx\Elastica3x\Document(8, ['test' => 'test2']);
         $doc2->setDocAsUpsert(true);
         $docs = [$doc1, $doc2];
         $bulk = new Bulk($client);
         $bulk->setType($type);
-        $bulk->addDocuments($docs, \Elastica\Bulk\Action::OP_TYPE_UPDATE);
+        $bulk->addDocuments($docs, \Webonyx\Elastica3x\Bulk\Action::OP_TYPE_UPDATE);
         $response = $bulk->send();
 
         $this->assertTrue($response->isOk());
@@ -559,7 +559,7 @@ class BulkTest extends BaseTest
         $bulk = new Bulk($client);
         $bulk->setType($type);
         $doc3->setData('{"name" : "Paul it is"}');
-        $updateAction = new \Elastica\Bulk\Action\UpdateDocument($doc3);
+        $updateAction = new \Webonyx\Elastica3x\Bulk\Action\UpdateDocument($doc3);
         $bulk->addAction($updateAction);
         $response = $bulk->send();
 
@@ -616,7 +616,7 @@ class BulkTest extends BaseTest
         $metadata = $actions[0]->getMetadata();
         $this->assertEquals(5, $metadata[ '_retry_on_conflict' ]);
 
-        $script = new \Elastica\Script\Script('');
+        $script = new \Webonyx\Elastica3x\Script\Script('');
         $script->setRetryOnConflict(5);
 
         $bulk = new Bulk($client);
@@ -634,7 +634,7 @@ class BulkTest extends BaseTest
     public function testSetShardTimeout()
     {
         $bulk = new Bulk($this->_getClient());
-        $this->assertInstanceOf('Elastica\Bulk', $bulk->setShardTimeout(10));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk', $bulk->setShardTimeout(10));
     }
 
     /**
@@ -643,7 +643,7 @@ class BulkTest extends BaseTest
     public function testSetRequestParam()
     {
         $bulk = new Bulk($this->_getClient());
-        $this->assertInstanceOf('Elastica\Bulk', $bulk->setRequestParam('key', 'value'));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Bulk', $bulk->setRequestParam('key', 'value'));
     }
 
     /**

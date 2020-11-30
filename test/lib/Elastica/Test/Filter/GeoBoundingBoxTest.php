@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\GeoBoundingBox;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\GeoBoundingBox;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class GeoBoundingBoxTest extends BaseTest
 {
@@ -29,12 +29,12 @@ class GeoBoundingBoxTest extends BaseTest
         $this->assertEquals($expectedArray, $filter->getParam($key));
 
         $returnValue = $filter->addCoordinates($key, $coords);
-        $this->assertInstanceOf('Elastica\Filter\GeoBoundingBox', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\GeoBoundingBox', $returnValue);
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testAddCoordinatesInvalidException()
     {

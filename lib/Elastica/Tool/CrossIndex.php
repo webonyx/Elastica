@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Tool;
+namespace Webonyx\Elastica3x\Tool;
 
-use Elastica\Bulk;
-use Elastica\Index;
-use Elastica\Query\MatchAll;
-use Elastica\ScanAndScroll;
-use Elastica\Search;
-use Elastica\Type;
+use Webonyx\Elastica3x\Bulk;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\ScanAndScroll;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Type;
 
 /**
  * Functions to move documents and types between indices.
@@ -18,7 +18,7 @@ class CrossIndex
     /**
      * Type option.
      *
-     * type: string | string[] | \Elastica\Type | \Elastica\Type[] | null
+     * type: string | string[] | \Webonyx\Elastica3x\Type | \Webonyx\Elastica3x\Type[] | null
      * default: null (means all types)
      */
     const OPTION_TYPE = 'type';
@@ -26,15 +26,15 @@ class CrossIndex
     /**
      * Query option.
      *
-     * type: see \Elastica\Query::create()
-     * default: Elastica\Query\MatchAll
+     * type: see \Webonyx\Elastica3x\Query::create()
+     * default: Webonyx\Elastica3x\Query\MatchAll
      */
     const OPTION_QUERY = 'query';
 
     /**
      * Expiry time option.
      *
-     * type: string (see Elastica\ScanAndScroll)
+     * type: string (see Webonyx\Elastica3x\ScanAndScroll)
      * default: '1m'
      */
     const OPTION_EXPIRY_TIME = 'expiryTime';
@@ -42,7 +42,7 @@ class CrossIndex
     /**
      * Size per shard option.
      *
-     * type: int (see Elastica\ScanAndScroll)
+     * type: int (see Webonyx\Elastica3x\ScanAndScroll)
      * default: 1000
      */
     const OPTION_SIZE_PER_SHARD = 'sizePerShard';
@@ -52,11 +52,11 @@ class CrossIndex
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/guide/master/reindex.html
      *
-     * @param \Elastica\Index $oldIndex
-     * @param \Elastica\Index $newIndex
+     * @param \Webonyx\Elastica3x\Index $oldIndex
+     * @param \Webonyx\Elastica3x\Index $newIndex
      * @param array           $options  keys: CrossIndex::OPTION_* constants
      *
-     * @return \Elastica\Index The new index object
+     * @return \Webonyx\Elastica3x\Index The new index object
      */
     public static function reindex(
         Index $oldIndex,
@@ -112,13 +112,13 @@ class CrossIndex
     /**
      * Copies type mappings and documents from an old index to a new index.
      *
-     * @see \Elastica\Tool\CrossIndex::reindex()
+     * @see \Webonyx\Elastica3x\Tool\CrossIndex::reindex()
      *
-     * @param \Elastica\Index $oldIndex
-     * @param \Elastica\Index $newIndex
+     * @param \Webonyx\Elastica3x\Index $oldIndex
+     * @param \Webonyx\Elastica3x\Index $newIndex
      * @param array           $options  keys: CrossIndex::OPTION_* constants
      *
-     * @return \Elastica\Index The new index object
+     * @return \Webonyx\Elastica3x\Index The new index object
      */
     public static function copy(
         Index $oldIndex,

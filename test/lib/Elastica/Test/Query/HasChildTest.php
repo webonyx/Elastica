@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Query\HasChild;
-use Elastica\Query\Match;
-use Elastica\Query\MatchAll;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\HasChild;
+use Webonyx\Elastica3x\Query\Match;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class HasChildTest extends BaseTest
 {

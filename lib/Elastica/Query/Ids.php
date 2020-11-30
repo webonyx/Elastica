@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Type as ElasticaType;
+use Webonyx\Elastica3x\Type as Webonyx\Elastica3xType;
 
 /**
  * Ids Query.
@@ -17,7 +17,7 @@ class Ids extends AbstractQuery
     /**
      * Creates filter object.
      *
-     * @param string|\Elastica\Type $type Type to filter on
+     * @param string|\Webonyx\Elastica3x\Type $type Type to filter on
      * @param array                 $ids  List of ids
      */
     public function __construct($type = null, array $ids = [])
@@ -43,13 +43,13 @@ class Ids extends AbstractQuery
     /**
      * Adds one more type to query.
      *
-     * @param string|\Elastica\Type $type Type name or object
+     * @param string|\Webonyx\Elastica3x\Type $type Type name or object
      *
      * @return $this
      */
     public function addType($type)
     {
-        if ($type instanceof ElasticaType) {
+        if ($type instanceof Webonyx\Elastica3xType) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // A type can be 0, but cannot be empty
@@ -64,13 +64,13 @@ class Ids extends AbstractQuery
     /**
      * Set type.
      *
-     * @param array|string|\Elastica\Type $type Type name or object
+     * @param array|string|\Webonyx\Elastica3x\Type $type Type name or object
      *
      * @return $this
      */
     public function setType($type)
     {
-        if ($type instanceof ElasticaType) {
+        if ($type instanceof Webonyx\Elastica3xType) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // A type can be 0, but cannot be empty
@@ -103,7 +103,7 @@ class Ids extends AbstractQuery
     /**
      * Converts filter to array.
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      *
      * @return array Query array
      */

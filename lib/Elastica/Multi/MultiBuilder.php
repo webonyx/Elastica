@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Multi;
+namespace Webonyx\Elastica3x\Multi;
 
-use Elastica\Response;
-use Elastica\Search as BaseSearch;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\Search as BaseSearch;
 
 class MultiBuilder implements MultiBuilderInterface
 {
@@ -23,7 +23,7 @@ class MultiBuilder implements MultiBuilderInterface
      * @param Response   $childResponse
      * @param BaseSearch $search
      *
-     * @return \Elastica\ResultSet
+     * @return \Webonyx\Elastica3x\ResultSet
      */
     private function buildResultSet(Response $childResponse, BaseSearch $search)
     {
@@ -34,7 +34,7 @@ class MultiBuilder implements MultiBuilderInterface
      * @param Response     $response
      * @param BaseSearch[] $searches
      *
-     * @return \Elastica\ResultSet[]
+     * @return \Webonyx\Elastica3x\ResultSet[]
      */
     private function buildResultSets(Response $response, $searches)
     {

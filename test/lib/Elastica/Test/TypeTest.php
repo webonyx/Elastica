@@ -1,18 +1,18 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Exception\NotFoundException;
-use Elastica\Exception\ResponseException;
-use Elastica\Index;
-use Elastica\Query;
-use Elastica\Query\MatchAll;
-use Elastica\Query\SimpleQueryString;
-use Elastica\Script\Script;
-use Elastica\Search;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Exception\NotFoundException;
+use Webonyx\Elastica3x\Exception\ResponseException;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Query\SimpleQueryString;
+use Webonyx\Elastica3x\Script\Script;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class TypeTest extends BaseTest
 {
@@ -330,7 +330,7 @@ class TypeTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\NotFoundException
+     * @expectedException \Webonyx\Elastica3x\Exception\NotFoundException
      */
     public function testGetDocumentNotExist()
     {
@@ -346,7 +346,7 @@ class TypeTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\ResponseException
+     * @expectedException \Webonyx\Elastica3x\Exception\ResponseException
      */
     public function testGetDocumentNotExistingIndex()
     {
@@ -508,7 +508,7 @@ class TypeTest extends BaseTest
     }
 
     /**
-     * Test to see if Elastica_Type::getDocument() is properly using
+     * Test to see if Webonyx\Elastica3x_Type::getDocument() is properly using
      * the fields array when available instead of _source.
      *
      * @group functional
@@ -569,12 +569,12 @@ class TypeTest extends BaseTest
      * Test that Delete of index type throw deprecated exception.
      *
      * @group unit
-     * @expectedException \Elastica\Exception\DeprecatedException
+     * @expectedException \Webonyx\Elastica3x\Exception\DeprecatedException
      */
     public function testDeleteType()
     {
         $type = new Type(
-            $this->getMockBuilder('Elastica\Index')->disableOriginalConstructor()->getMock(),
+            $this->getMockBuilder('Webonyx\Elastica3x\Index')->disableOriginalConstructor()->getMock(),
             'test'
         );
 
@@ -730,7 +730,7 @@ class TypeTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testUpdateDocumentWithoutId()
     {
@@ -841,7 +841,7 @@ class TypeTest extends BaseTest
         $this->assertTrue($document->hasId());
 
         $foundDoc = $type->getDocument($document->getId());
-        $this->assertInstanceOf('Elastica\Document', $foundDoc);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Document', $foundDoc);
         $this->assertEquals($document->getId(), $foundDoc->getId());
         $data = $foundDoc->getData();
         $this->assertArrayHasKey('name', $data);
@@ -850,7 +850,7 @@ class TypeTest extends BaseTest
 
     /**
      * @group functional
-     * @expectedException \Elastica\Exception\RuntimeException
+     * @expectedException \Webonyx\Elastica3x\Exception\RuntimeException
      */
     public function testAddDocumentWithoutSerializer()
     {
@@ -897,7 +897,7 @@ class TypeTest extends BaseTest
         $index = $this->_getClient()->getIndex('foo');
         $type = $index->getType('user');
         $ret = $type->setSerializer('get_object_vars');
-        $this->assertInstanceOf('Elastica\Type', $ret);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Type', $ret);
     }
 
     /**

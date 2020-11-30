@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\SignificantTerms;
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Terms as TermsFilter;
-use Elastica\Query;
-use Elastica\Query\Terms;
+use Webonyx\Elastica3x\Aggregation\SignificantTerms;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Terms as TermsFilter;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Terms;
 
 class SignificantTermsTest extends BaseAggregationTest
 {
@@ -27,7 +27,7 @@ class SignificantTermsTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetBackgroundFilterInvalid()
     {
@@ -52,7 +52,7 @@ class SignificantTermsTest extends BaseAggregationTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Aggregation\SignificantTerms::setBackgroundFilter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Aggregation\SignificantTerms::setBackgroundFilter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.',
             ]
         );
     }

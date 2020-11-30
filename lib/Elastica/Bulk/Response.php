@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Bulk;
+namespace Webonyx\Elastica3x\Bulk;
 
-use Elastica\Response as BaseResponse;
+use Webonyx\Elastica3x\Response as BaseResponse;
 
 class Response extends BaseResponse
 {
     /**
-     * @var \Elastica\Bulk\Action
+     * @var \Webonyx\Elastica3x\Bulk\Action
      */
     protected $_action;
 
@@ -17,7 +17,7 @@ class Response extends BaseResponse
 
     /**
      * @param array|string          $responseData
-     * @param \Elastica\Bulk\Action $action
+     * @param \Webonyx\Elastica3x\Bulk\Action $action
      * @param string                $opType
      */
     public function __construct($responseData, Action $action, $opType)
@@ -29,7 +29,7 @@ class Response extends BaseResponse
     }
 
     /**
-     * @return \Elastica\Bulk\Action
+     * @return \Webonyx\Elastica3x\Bulk\Action
      */
     public function getAction()
     {

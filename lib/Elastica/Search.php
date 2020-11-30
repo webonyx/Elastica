@@ -1,13 +1,13 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Filter\AbstractFilter;
-use Elastica\ResultSet\BuilderInterface;
-use Elastica\ResultSet\DefaultBuilder;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
+use Webonyx\Elastica3x\ResultSet\BuilderInterface;
+use Webonyx\Elastica3x\ResultSet\DefaultBuilder;
 
 /**
- * Elastica search object.
+ * Webonyx\Elastica3x search object.
  *
  * @author   Nicolas Ruflin <spam@ruflin.com>
  */
@@ -61,7 +61,7 @@ class Search
     protected $_types = [];
 
     /**
-     * @var \Elastica\Query
+     * @var \Webonyx\Elastica3x\Query
      */
     protected $_query;
 
@@ -73,14 +73,14 @@ class Search
     /**
      * Client object.
      *
-     * @var \Elastica\Client
+     * @var \Webonyx\Elastica3x\Client
      */
     protected $_client;
 
     /**
      * Constructs search object.
      *
-     * @param \Elastica\Client $client  Client object
+     * @param \Webonyx\Elastica3x\Client $client  Client object
      * @param BuilderInterface $builder
      */
     public function __construct(Client $client, BuilderInterface $builder = null)
@@ -92,9 +92,9 @@ class Search
     /**
      * Adds a index to the list.
      *
-     * @param \Elastica\Index|string $index Index object or string
+     * @param \Webonyx\Elastica3x\Index|string $index Index object or string
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -132,9 +132,9 @@ class Search
     /**
      * Adds a type to the current search.
      *
-     * @param \Elastica\Type|string $type Type name or object
+     * @param \Webonyx\Elastica3x\Type|string $type Type name or object
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -170,14 +170,14 @@ class Search
     }
 
     /**
-     * @param string|array|\Elastica\Query|\Elastica\Suggest|\Elastica\Query\AbstractQuery $query
+     * @param string|array|\Webonyx\Elastica3x\Query|\Webonyx\Elastica3x\Suggest|\Webonyx\Elastica3x\Query\AbstractQuery $query
      *
      * @return $this
      */
     public function setQuery($query)
     {
         if ($query instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Search::setQuery() passing AbstractFilter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
+            trigger_error('Deprecated: Webonyx\Elastica3x\Search::setQuery() passing AbstractFilter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
         }
 
         $this->_query = Query::create($query);
@@ -254,7 +254,7 @@ class Search
     /**
      * @param string $key
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return mixed
      */
@@ -278,7 +278,7 @@ class Search
     /**
      * @param string $key
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return bool
      */
@@ -307,7 +307,7 @@ class Search
     /**
      * Return client object.
      *
-     * @return \Elastica\Client Client object
+     * @return \Webonyx\Elastica3x\Client Client object
      */
     public function getClient()
     {
@@ -365,7 +365,7 @@ class Search
     }
 
     /**
-     * @param \Elastica\Type|string $type
+     * @param \Webonyx\Elastica3x\Type|string $type
      *
      * @return bool
      */
@@ -379,7 +379,7 @@ class Search
     }
 
     /**
-     * @return \Elastica\Query
+     * @return \Webonyx\Elastica3x\Query
      */
     public function getQuery()
     {
@@ -393,7 +393,7 @@ class Search
     /**
      * Creates new search object.
      *
-     * @param \Elastica\SearchableInterface $searchObject
+     * @param \Webonyx\Elastica3x\SearchableInterface $searchObject
      *
      * @return Search
      */
@@ -440,9 +440,9 @@ class Search
      * @param mixed     $query
      * @param int|array $options OPTIONAL Limit or associative array of options (option=>value)
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\ResultSet
+     * @return \Webonyx\Elastica3x\ResultSet
      */
     public function search($query = '', $options = null)
     {
@@ -497,7 +497,7 @@ class Search
 
     /**
      * @param array|int                    $options
-     * @param string|array|\Elastica\Query $query
+     * @param string|array|\Webonyx\Elastica3x\Query $query
      *
      * @return $this
      */
@@ -537,7 +537,7 @@ class Search
     /**
      * Returns the Scroll Iterator.
      *
-     * @see Elastica\Scroll
+     * @see Webonyx\Elastica3x\Scroll
      *
      * @param string $expiryTime
      *
@@ -551,7 +551,7 @@ class Search
     /**
      * Returns the ScanAndScroll Iterator.
      *
-     * @see Elastica\ScanAndScroll
+     * @see Webonyx\Elastica3x\ScanAndScroll
      *
      * @param string $expiryTime
      * @param int    $sizePerShard

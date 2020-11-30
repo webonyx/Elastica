@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Log;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Log;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 use Psr\Log\LogLevel;
 
 class LogTest extends BaseTest

@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -32,7 +32,7 @@ class GeoBoundingBox extends AbstractFilter
      * @param string $key         Key
      * @param array  $coordinates Array with top left coordinate as first and bottom right coordinate as second element
      *
-     * @throws \Elastica\Exception\InvalidException If $coordinates doesn't have two elements
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If $coordinates doesn't have two elements
      *
      * @return $this
      */

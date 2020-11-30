@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\AbstractGeoShape;
-use Elastica\Query\BoolQuery;
-use Elastica\Query\GeoShapeProvided;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\AbstractGeoShape;
+use Webonyx\Elastica3x\Query\BoolQuery;
+use Webonyx\Elastica3x\Query\GeoShapeProvided;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class GeoShapeProvidedTest extends BaseTest
 {
@@ -98,6 +98,6 @@ class GeoShapeProvidedTest extends BaseTest
         $gsp = new GeoShapeProvided('location', [[25.0, 75.0], [75.0, 25.0]]);
         $gsp->setRelation(AbstractGeoShape::RELATION_INTERSECT);
         $this->assertEquals(AbstractGeoShape::RELATION_INTERSECT, $gsp->getRelation());
-        $this->assertInstanceOf('Elastica\Query\GeoShapeProvided', $gsp->setRelation(AbstractGeoShape::RELATION_INTERSECT));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\GeoShapeProvided', $gsp->setRelation(AbstractGeoShape::RELATION_INTERSECT));
     }
 }

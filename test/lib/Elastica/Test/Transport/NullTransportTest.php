@@ -1,14 +1,14 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Connection;
-use Elastica\Query;
-use Elastica\Request;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Transport\NullTransport;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Transport\NullTransport;
 
 /**
- * Elastica Null Transport Test.
+ * Webonyx\Elastica3x Null Transport Test.
  *
  * @author James Boehmer <james.boehmer@jamesboehmer.com>
  */
@@ -68,7 +68,7 @@ class NullTransportTest extends BaseTest
         $transport = new NullTransport();
         $response = $transport->exec($request, $params);
 
-        $this->assertInstanceOf('\Elastica\Response', $response);
+        $this->assertInstanceOf('\Webonyx\Elastica3x\Response', $response);
 
         $data = $response->getData();
         $this->assertEquals($params, $data['params']);
@@ -85,10 +85,10 @@ class NullTransportTest extends BaseTest
 
         $request = new Request('/test');
         $params = ['name' => 'ruflin'];
-        $transport = new \Elastica\Transport\Null();
+        $transport = new \Webonyx\Elastica3x\Transport\Null();
         $response = $transport->exec($request, $params);
 
-        $this->assertInstanceOf('\Elastica\Response', $response);
+        $this->assertInstanceOf('\Webonyx\Elastica3x\Response', $response);
 
         $data = $response->getData();
         $this->assertEquals($params, $data['params']);

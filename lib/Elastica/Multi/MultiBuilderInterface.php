@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Multi;
+namespace Webonyx\Elastica3x\Multi;
 
-use Elastica\Response;
-use Elastica\Search as BaseSearch;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\Search as BaseSearch;
 
 interface MultiBuilderInterface
 {

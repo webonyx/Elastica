@@ -1,10 +1,10 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
- * Elastica result set.
+ * Webonyx\Elastica3x result set.
  *
  * List of all hits that are returned for a search on elasticsearch
  * Result set implements iterator
@@ -50,7 +50,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     /**
      * Results.
      *
-     * @deprecated Accessing this property in an extended class is deprecated. The property will become private in 4.0. Modify results by implementing BuilderInterface and passing a new Builder to your \Elastica\Search instances.
+     * @deprecated Accessing this property in an extended class is deprecated. The property will become private in 4.0. Modify results by implementing BuilderInterface and passing a new Builder to your \Webonyx\Elastica3x\Search instances.
      *
      * @var Result[] Results
      */
@@ -110,7 +110,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     /**
      * Returns all Documents.
      *
-     * @return array Documents \Elastica\Document
+     * @return array Documents \Webonyx\Elastica3x\Document
      */
     public function getDocuments()
     {
@@ -270,7 +270,7 @@ class ResultSet implements \Iterator, \Countable, \ArrayAccess
     /**
      * Returns the current object of the set.
      *
-     * @return \Elastica\Result|bool Set object or false if not valid (no more entries)
+     * @return \Webonyx\Elastica3x\Result|bool Set object or false if not valid (no more entries)
      */
     public function current()
     {

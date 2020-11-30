@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Connection;
-use Elastica\Transport\AbstractTransport;
-use Elastica\Transport\Http;
+use Webonyx\Elastica3x\Connection;
+use Webonyx\Elastica3x\Transport\AbstractTransport;
+use Webonyx\Elastica3x\Transport\Http;
 
 class AbstractTransportTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,7 +21,7 @@ class AbstractTransportTest extends \PHPUnit_Framework_TestCase
             [['type' => 'Http']],
             [['type' => new Http()]],
             [new Http()],
-            ['Elastica\Test\Transport\DummyTransport'],
+            ['Webonyx\Elastica3x\Test\Transport\DummyTransport'],
         ];
     }
 
@@ -34,7 +34,7 @@ class AbstractTransportTest extends \PHPUnit_Framework_TestCase
         $connection = new Connection();
         $params = [];
         $transport = AbstractTransport::create($transport, $connection, $params);
-        $this->assertInstanceOf('Elastica\Transport\AbstractTransport', $transport);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Transport\AbstractTransport', $transport);
         $this->assertSame($connection, $transport->getConnection());
     }
 
@@ -49,7 +49,7 @@ class AbstractTransportTest extends \PHPUnit_Framework_TestCase
     /**
      * @group unit
      * @dataProvider getInvalidDefinitions
-     * @expectedException Elastica\Exception\InvalidException
+     * @expectedException Webonyx\Elastica3x\Exception\InvalidException
      * @expectedExceptionMessage Invalid transport
      */
     public function testThrowsExecptionOnInvalidTransportDefinition($transport)

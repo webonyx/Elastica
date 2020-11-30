@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class AbstractGeoShapeTest extends BaseTest
 {
@@ -10,7 +10,7 @@ class AbstractGeoShapeTest extends BaseTest
      */
     public function testDeprecated()
     {
-        $reflection = new \ReflectionClass('Elastica\Filter\AbstractGeoShape');
+        $reflection = new \ReflectionClass('Webonyx\Elastica3x\Filter\AbstractGeoShape');
         $this->assertFileDeprecated($reflection->getFileName(), 'Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html');
     }
 }

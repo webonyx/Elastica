@@ -1,14 +1,14 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Filter\Exists;
-use Elastica\Filter\Ids;
-use Elastica\Filter\Term;
-use Elastica\Index;
-use Elastica\Query\ConstantScore;
-use Elastica\Query\MatchAll;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Filter\Ids;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query\ConstantScore;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ConstantScoreTest extends BaseTest
 {
@@ -23,7 +23,7 @@ class ConstantScoreTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testConstructInvalid()
     {
@@ -45,15 +45,15 @@ class ConstantScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\ConstantScore passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
-                'Deprecated: Elastica\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\ConstantScore passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testSetFilterInvalid()
     {
@@ -78,7 +78,7 @@ class ConstantScoreTest extends BaseTest
 
         $errorsCollector->assertOnlyDeprecatedErrors(
             [
-                'Deprecated: Elastica\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
+                'Deprecated: Webonyx\Elastica3x\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.',
             ]
         );
     }
@@ -87,7 +87,7 @@ class ConstantScoreTest extends BaseTest
     {
         return [
             [
-                new \Elastica\Query\Term(['foo', 'bar']),
+                new \Webonyx\Elastica3x\Query\Term(['foo', 'bar']),
                 [
                     'constant_score' => [
                         'filter' => [
@@ -189,7 +189,7 @@ class ConstantScoreTest extends BaseTest
         $query = new ConstantScore();
 
         $boost = 1.2;
-        $filter = new \Elastica\Query\Ids();
+        $filter = new \Webonyx\Elastica3x\Query\Ids();
         $filter->setIds([1]);
         $query->setFilter($filter);
         $query->setBoost($boost);
@@ -234,7 +234,7 @@ class ConstantScoreTest extends BaseTest
      */
     public function testConstruct()
     {
-        $filter = new \Elastica\Query\Ids();
+        $filter = new \Webonyx\Elastica3x\Query\Ids();
         $filter->setIds([1]);
 
         $query = new ConstantScore($filter);

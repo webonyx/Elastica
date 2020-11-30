@@ -1,25 +1,25 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Bulk\Action;
-use Elastica\Bulk\Action\AbstractDocument as AbstractDocumentAction;
-use Elastica\Bulk\Response as BulkResponse;
-use Elastica\Bulk\ResponseSet;
-use Elastica\Exception\Bulk\ResponseException as BulkResponseException;
-use Elastica\Exception\InvalidException;
-use Elastica\Script\AbstractScript;
+use Webonyx\Elastica3x\Bulk\Action;
+use Webonyx\Elastica3x\Bulk\Action\AbstractDocument as AbstractDocumentAction;
+use Webonyx\Elastica3x\Bulk\Response as BulkResponse;
+use Webonyx\Elastica3x\Bulk\ResponseSet;
+use Webonyx\Elastica3x\Exception\Bulk\ResponseException as BulkResponseException;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Script\AbstractScript;
 
 class Bulk
 {
     const DELIMITER = "\n";
 
     /**
-     * @var \Elastica\Client
+     * @var \Webonyx\Elastica3x\Client
      */
     protected $_client;
 
     /**
-     * @var \Elastica\Bulk\Action[]
+     * @var \Webonyx\Elastica3x\Bulk\Action[]
      */
     protected $_actions = [];
 
@@ -39,7 +39,7 @@ class Bulk
     protected $_requestParams = [];
 
     /**
-     * @param \Elastica\Client $client
+     * @param \Webonyx\Elastica3x\Client $client
      */
     public function __construct(Client $client)
     {
@@ -47,7 +47,7 @@ class Bulk
     }
 
     /**
-     * @param string|\Elastica\Index $index
+     * @param string|\Webonyx\Elastica3x\Index $index
      *
      * @return $this
      */
@@ -79,7 +79,7 @@ class Bulk
     }
 
     /**
-     * @param string|\Elastica\Type $type
+     * @param string|\Webonyx\Elastica3x\Type $type
      *
      * @return $this
      */
@@ -129,7 +129,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Bulk\Action $action
+     * @param \Webonyx\Elastica3x\Bulk\Action $action
      *
      * @return $this
      */
@@ -141,7 +141,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Bulk\Action[] $actions
+     * @param \Webonyx\Elastica3x\Bulk\Action[] $actions
      *
      * @return $this
      */
@@ -155,7 +155,7 @@ class Bulk
     }
 
     /**
-     * @return \Elastica\Bulk\Action[]
+     * @return \Webonyx\Elastica3x\Bulk\Action[]
      */
     public function getActions()
     {
@@ -163,7 +163,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Document $document
+     * @param \Webonyx\Elastica3x\Document $document
      * @param string             $opType
      *
      * @return $this
@@ -176,7 +176,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Document[] $documents
+     * @param \Webonyx\Elastica3x\Document[] $documents
      * @param string               $opType
      *
      * @return $this
@@ -191,7 +191,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Script\AbstractScript $script
+     * @param \Webonyx\Elastica3x\Script\AbstractScript $script
      * @param string                          $opType
      *
      * @return $this
@@ -204,7 +204,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Document[] $scripts
+     * @param \Webonyx\Elastica3x\Document[] $scripts
      * @param string               $opType
      *
      * @return $this
@@ -219,7 +219,7 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Script\AbstractScript|\Elastica\Document|array $data
+     * @param \Webonyx\Elastica3x\Script\AbstractScript|\Webonyx\Elastica3x\Document|array $data
      * @param string                                                   $opType
      *
      * @return $this
@@ -246,7 +246,7 @@ class Bulk
     /**
      * @param array $data
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class Bulk
     }
 
     /**
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      */
     public function send()
     {
@@ -360,12 +360,12 @@ class Bulk
     }
 
     /**
-     * @param \Elastica\Response $response
+     * @param \Webonyx\Elastica3x\Response $response
      *
-     * @throws \Elastica\Exception\Bulk\ResponseException
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\Bulk\ResponseException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      */
     protected function _processResponse(Response $response)
     {

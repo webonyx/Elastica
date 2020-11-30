@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 abstract class AbstractSimpleAggregation extends AbstractAggregation
 {
@@ -20,7 +20,7 @@ abstract class AbstractSimpleAggregation extends AbstractAggregation
     /**
      * Set a script for this aggregation.
      *
-     * @param string|\Elastica\Script\AbstractScript $script
+     * @param string|\Webonyx\Elastica3x\Script\AbstractScript $script
      *
      * @return $this
      */

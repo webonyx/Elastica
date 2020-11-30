@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Fuzzy query.
@@ -69,7 +69,7 @@ class Fuzzy extends AbstractQuery
     /**
      * Deprecated method of setting a field.
      *
-     * @deprecated Use setField and setFieldOption instead. This method will be removed in further Elastica releases
+     * @deprecated Use setField and setFieldOption instead. This method will be removed in further Webonyx\Elastica3x releases
      *
      * @param $fieldName
      * @param $args
@@ -78,7 +78,7 @@ class Fuzzy extends AbstractQuery
      */
     public function addField($fieldName, $args)
     {
-        trigger_error('Query\Fuzzy::addField is deprecated. Use setField and setFieldOption instead. This method will be removed in further Elastica releases', E_USER_DEPRECATED);
+        trigger_error('Query\Fuzzy::addField is deprecated. Use setField and setFieldOption instead. This method will be removed in further Webonyx\Elastica3x releases', E_USER_DEPRECATED);
 
         if (!array_key_exists('value', $args)) {
             throw new InvalidException('Fuzzy query can only support a single field.');

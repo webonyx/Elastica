@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Query\Exists;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query\Exists;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class ExistsTest extends BaseTest
 {
@@ -29,7 +29,7 @@ class ExistsTest extends BaseTest
         $this->assertEquals($field, $query->getParam('field'));
 
         $newField = 'hello world';
-        $this->assertInstanceOf('Elastica\Query\Exists', $query->setField($newField));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Query\Exists', $query->setField($newField));
 
         $this->assertEquals($newField, $query->getParam('field'));
     }

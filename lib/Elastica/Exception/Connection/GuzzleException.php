@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Exception\Connection;
+namespace Webonyx\Elastica3x\Exception\Connection;
 
-use Elastica\Exception\ConnectionException;
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\Exception\ConnectionException;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 use GuzzleHttp\Exception\TransferException;
 
 /**
@@ -20,8 +20,8 @@ class GuzzleException extends ConnectionException
 
     /**
      * @param \GuzzleHttp\Exception\TransferException $guzzleException
-     * @param \Elastica\Request                       $request
-     * @param \Elastica\Response                      $response
+     * @param \Webonyx\Elastica3x\Request                       $request
+     * @param \Webonyx\Elastica3x\Response                      $response
      */
     public function __construct(TransferException $guzzleException, Request $request = null, Response $response = null)
     {

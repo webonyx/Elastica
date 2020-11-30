@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Cluster;
+namespace Webonyx\Elastica3x\Cluster;
 
-use Elastica\Client;
-use Elastica\Cluster\Health\Index;
-use Elastica\Request;
+use Webonyx\Elastica3x\Client;
+use Webonyx\Elastica3x\Cluster\Health\Index;
+use Webonyx\Elastica3x\Request;
 
 /**
  * Elastic cluster health.
@@ -15,7 +15,7 @@ use Elastica\Request;
 class Health
 {
     /**
-     * @var \Elastica\Client Client object.
+     * @var \Webonyx\Elastica3x\Client Client object.
      */
     protected $_client;
 
@@ -25,7 +25,7 @@ class Health
     protected $_data;
 
     /**
-     * @param \Elastica\Client $client The Elastica client.
+     * @param \Webonyx\Elastica3x\Client $client The Webonyx\Elastica3x client.
      */
     public function __construct(Client $client)
     {
@@ -171,7 +171,7 @@ class Health
     /**
      * Gets the status of the indices.
      *
-     * @return \Elastica\Cluster\Health\Index[]
+     * @return \Webonyx\Elastica3x\Cluster\Health\Index[]
      */
     public function getIndices()
     {

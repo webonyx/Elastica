@@ -1,15 +1,15 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Filter\BoolFilter;
-use Elastica\Filter\Term;
-use Elastica\Index;
-use Elastica\Query;
-use Elastica\Query\MoreLikeThis;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\BoolFilter;
+use Webonyx\Elastica3x\Filter\Term;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\MoreLikeThis;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class MoreLikeThisTest extends BaseTest
 {
@@ -170,7 +170,7 @@ class MoreLikeThisTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\DeprecatedException
+     * @expectedException \Webonyx\Elastica3x\Exception\DeprecatedException
      */
     public function testSetIds()
     {
@@ -193,7 +193,7 @@ class MoreLikeThisTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\DeprecatedException
+     * @expectedException \Webonyx\Elastica3x\Exception\DeprecatedException
      */
     public function testSetLikeText()
     {
@@ -229,7 +229,7 @@ class MoreLikeThisTest extends BaseTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\DeprecatedException
+     * @expectedException \Webonyx\Elastica3x\Exception\DeprecatedException
      */
     public function testSetPercentTermsToMatch()
     {

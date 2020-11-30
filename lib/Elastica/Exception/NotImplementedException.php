@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Exception;
+namespace Webonyx\Elastica3x\Exception;
 
 /**
  * Not implemented exception.

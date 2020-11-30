@@ -1,7 +1,7 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Class to handle params.
@@ -150,7 +150,7 @@ class Param implements ArrayableInterface, \Countable
      *
      * @param string $key Key to return
      *
-     * @throws \Elastica\Exception\InvalidException If requested key is not set
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If requested key is not set
      *
      * @return mixed Key value
      */

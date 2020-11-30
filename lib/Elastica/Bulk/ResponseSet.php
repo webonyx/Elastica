@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Bulk;
+namespace Webonyx\Elastica3x\Bulk;
 
-use Elastica\Response as BaseResponse;
+use Webonyx\Elastica3x\Response as BaseResponse;
 
 class ResponseSet extends BaseResponse implements \Iterator, \Countable
 {
     /**
-     * @var \Elastica\Bulk\Response[]
+     * @var \Webonyx\Elastica3x\Bulk\Response[]
      */
     protected $_bulkResponses = [];
 
@@ -16,8 +16,8 @@ class ResponseSet extends BaseResponse implements \Iterator, \Countable
     protected $_position = 0;
 
     /**
-     * @param \Elastica\Response        $response
-     * @param \Elastica\Bulk\Response[] $bulkResponses
+     * @param \Webonyx\Elastica3x\Response        $response
+     * @param \Webonyx\Elastica3x\Bulk\Response[] $bulkResponses
      */
     public function __construct(BaseResponse $response, array $bulkResponses)
     {
@@ -27,7 +27,7 @@ class ResponseSet extends BaseResponse implements \Iterator, \Countable
     }
 
     /**
-     * @return \Elastica\Bulk\Response[]
+     * @return \Webonyx\Elastica3x\Bulk\Response[]
      */
     public function getBulkResponses()
     {
@@ -95,7 +95,7 @@ class ResponseSet extends BaseResponse implements \Iterator, \Countable
     }
 
     /**
-     * @return bool|\Elastica\Bulk\Response
+     * @return bool|\Webonyx\Elastica3x\Bulk\Response
      */
     public function current()
     {

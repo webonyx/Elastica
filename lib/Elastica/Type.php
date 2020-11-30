@@ -1,16 +1,16 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\DeprecatedException;
-use Elastica\Exception\InvalidException;
-use Elastica\Exception\NotFoundException;
-use Elastica\Exception\RuntimeException;
-use Elastica\ResultSet\BuilderInterface;
-use Elastica\Script\AbstractScript;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Exception\DeprecatedException;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\NotFoundException;
+use Webonyx\Elastica3x\Exception\RuntimeException;
+use Webonyx\Elastica3x\ResultSet\BuilderInterface;
+use Webonyx\Elastica3x\Script\AbstractScript;
+use Webonyx\Elastica3x\Type\Mapping;
 
 /**
- * Elastica type object.
+ * Webonyx\Elastica3x type object.
  *
  * elasticsearch has for every types as a substructure. This object
  * represents a type inside a context
@@ -23,7 +23,7 @@ class Type implements SearchableInterface
     /**
      * Index.
      *
-     * @var \Elastica\Index Index object
+     * @var \Webonyx\Elastica3x\Index Index object
      */
     protected $_index;
 
@@ -42,7 +42,7 @@ class Type implements SearchableInterface
     /**
      * Creates a new type object inside the given index.
      *
-     * @param \Elastica\Index $index Index Object
+     * @param \Webonyx\Elastica3x\Index $index Index Object
      * @param string          $name  Type name
      */
     public function __construct(Index $index, $name)
@@ -54,9 +54,9 @@ class Type implements SearchableInterface
     /**
      * Adds the given document to the search index.
      *
-     * @param \Elastica\Document $doc Document with data
+     * @param \Webonyx\Elastica3x\Document $doc Document with data
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function addDocument(Document $doc)
     {
@@ -135,12 +135,12 @@ class Type implements SearchableInterface
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-update.html
      *
-     * @param \Elastica\Document|\Elastica\Script\AbstractScript $data    Document with update data
+     * @param \Webonyx\Elastica3x\Document|\Webonyx\Elastica3x\Script\AbstractScript $data    Document with update data
      * @param array                                              $options array of query params to use for query. For possible options check es api
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function updateDocument($data, array $options = [])
     {
@@ -166,9 +166,9 @@ class Type implements SearchableInterface
     /**
      * Uses _bulk to send documents to the server.
      *
-     * @param array|\Elastica\Document[] $docs Array of Elastica\Document
+     * @param array|\Webonyx\Elastica3x\Document[] $docs Array of Webonyx\Elastica3x\Document
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      */
@@ -184,9 +184,9 @@ class Type implements SearchableInterface
     /**
      * Uses _bulk to send documents to the server.
      *
-     * @param array|\Elastica\Document[] $docs Array of Elastica\Document
+     * @param array|\Webonyx\Elastica3x\Document[] $docs Array of Webonyx\Elastica3x\Document
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      */
@@ -204,7 +204,7 @@ class Type implements SearchableInterface
      *
      * @param objects[] $objects
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      */
@@ -232,10 +232,10 @@ class Type implements SearchableInterface
      * @param string $id      Document id
      * @param array  $options Options for the get request.
      *
-     * @throws \Elastica\Exception\NotFoundException
-     * @throws \Elastica\Exception\ResponseException
+     * @throws \Webonyx\Elastica3x\Exception\NotFoundException
+     * @throws \Webonyx\Elastica3x\Exception\ResponseException
      *
-     * @return \Elastica\Document
+     * @return \Webonyx\Elastica3x\Document
      */
     public function getDocument($id, $options = [])
     {
@@ -289,9 +289,9 @@ class Type implements SearchableInterface
     /**
      * Sets value type mapping for this type.
      *
-     * @param \Elastica\Type\Mapping|array $mapping Elastica\Type\MappingType object or property array with all mappings
+     * @param \Webonyx\Elastica3x\Type\Mapping|array $mapping Webonyx\Elastica3x\Type\MappingType object or property array with all mappings
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function setMapping($mapping)
     {
@@ -324,7 +324,7 @@ class Type implements SearchableInterface
     /**
      * Create search object.
      *
-     * @param string|array|\Elastica\Query $query   Array with all query data inside or a Elastica\Query object
+     * @param string|array|\Webonyx\Elastica3x\Query $query   Array with all query data inside or a Webonyx\Elastica3x\Query object
      * @param int|array                    $options OPTIONAL Limit or associative array of options (option=>value)
      * @param BuilderInterface             $builder
      *
@@ -341,12 +341,12 @@ class Type implements SearchableInterface
     /**
      * Do a search on this type.
      *
-     * @param string|array|\Elastica\Query $query   Array with all query data inside or a Elastica\Query object
+     * @param string|array|\Webonyx\Elastica3x\Query $query   Array with all query data inside or a Webonyx\Elastica3x\Query object
      * @param int|array                    $options OPTIONAL Limit or associative array of options (option=>value)
      *
-     * @return \Elastica\ResultSet with all results inside
+     * @return \Webonyx\Elastica3x\ResultSet with all results inside
      *
-     * @see \Elastica\SearchableInterface::search
+     * @see \Webonyx\Elastica3x\SearchableInterface::search
      */
     public function search($query = '', $options = null)
     {
@@ -358,11 +358,11 @@ class Type implements SearchableInterface
     /**
      * Count docs by query.
      *
-     * @param string|array|\Elastica\Query $query Array with all query data inside or a Elastica\Query object
+     * @param string|array|\Webonyx\Elastica3x\Query $query Array with all query data inside or a Webonyx\Elastica3x\Query object
      *
      * @return int number of documents matching the query
      *
-     * @see \Elastica\SearchableInterface::count
+     * @see \Webonyx\Elastica3x\SearchableInterface::count
      */
     public function count($query = '')
     {
@@ -374,7 +374,7 @@ class Type implements SearchableInterface
     /**
      * Returns index client.
      *
-     * @return \Elastica\Index Index object
+     * @return \Webonyx\Elastica3x\Index Index object
      */
     public function getIndex()
     {
@@ -382,9 +382,9 @@ class Type implements SearchableInterface
     }
 
     /**
-     * @param \Elastica\Document $document
+     * @param \Webonyx\Elastica3x\Document $document
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      */
     public function deleteDocument(Document $document)
     {
@@ -407,9 +407,9 @@ class Type implements SearchableInterface
     /**
      * Uses _bulk to delete documents from the server.
      *
-     * @param array|\Elastica\Document[] $docs Array of Elastica\Document
+     * @param array|\Webonyx\Elastica3x\Document[] $docs Array of Webonyx\Elastica3x\Document
      *
-     * @return \Elastica\Bulk\ResponseSet
+     * @return \Webonyx\Elastica3x\Bulk\ResponseSet
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html
      */
@@ -431,9 +431,9 @@ class Type implements SearchableInterface
      * @param array      $options
      *
      * @throws \InvalidArgumentException
-     * @throws \Elastica\Exception\NotFoundException
+     * @throws \Webonyx\Elastica3x\Exception\NotFoundException
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function deleteById($id, array $options = [])
     {
@@ -460,7 +460,7 @@ class Type implements SearchableInterface
      * @param array       $ids
      * @param string|bool $routing Optional routing key for all ids
      *
-     * @return \Elastica\Response Response  object
+     * @return \Webonyx\Elastica3x\Response Response  object
      */
     public function deleteIds(array $ids, $routing = false)
     {
@@ -470,10 +470,10 @@ class Type implements SearchableInterface
     /**
      * Deletes entries in the db based on a query.
      *
-     * @param \Elastica\Query|string $query   Query object
+     * @param \Webonyx\Elastica3x\Query|string $query   Query object
      * @param array                  $options Optional params
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-delete-by-query.html
      */
@@ -493,13 +493,13 @@ class Type implements SearchableInterface
     /**
      * Deletes the index type.
      *
-     * @deprecated It is no longer possible to delete the mapping for a type. Instead you should delete the index and recreate it with the new mappings. This method will be removed in further Elastica releases.
+     * @deprecated It is no longer possible to delete the mapping for a type. Instead you should delete the index and recreate it with the new mappings. This method will be removed in further Webonyx\Elastica3x releases.
      *
-     * @throws DeprecatedException It is no longer possible to delete the mapping for a type. Instead you should delete the index and recreate it with the new mappings. This method will be removed in further Elastica releases.
+     * @throws DeprecatedException It is no longer possible to delete the mapping for a type. Instead you should delete the index and recreate it with the new mappings. This method will be removed in further Webonyx\Elastica3x releases.
      */
     public function delete()
     {
-        throw new DeprecatedException('It is no longer possible to delete the mapping for a type. Instead you should delete the index and recreate it with the new mappings. This method will be removed in further Elastica releases.');
+        throw new DeprecatedException('It is no longer possible to delete the mapping for a type. Instead you should delete the index and recreate it with the new mappings. This method will be removed in further Webonyx\Elastica3x releases.');
     }
 
     /**
@@ -510,7 +510,7 @@ class Type implements SearchableInterface
      * @param array  $data   OPTIONAL Arguments as array
      * @param array  $query  OPTIONAL Query params
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function request($path, $method, $data = [], array $query = [])
     {
@@ -522,9 +522,9 @@ class Type implements SearchableInterface
     /**
      * Sets the serializer callable used in addObject.
      *
-     * @see \Elastica\Type::addObject
+     * @see \Webonyx\Elastica3x\Type::addObject
      *
-     * @param array|string $serializer @see \Elastica\Type::_serializer
+     * @param array|string $serializer @see \Webonyx\Elastica3x\Type::_serializer
      *
      * @return $this
      */

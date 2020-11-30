@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Query\AbstractQuery;
+use Webonyx\Elastica3x\Query\AbstractQuery;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -30,7 +30,7 @@ class Nested extends AbstractFilter
     /**
      * Sets nested query.
      *
-     * @param \Elastica\Query\AbstractQuery $query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $query
      *
      * @return $this
      */
@@ -42,7 +42,7 @@ class Nested extends AbstractFilter
     /**
      * Sets nested filter.
      *
-     * @param \Elastica\Filter\AbstractFilter $filter
+     * @param \Webonyx\Elastica3x\Filter\AbstractFilter $filter
      *
      * @return $this
      */

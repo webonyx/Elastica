@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Node;
+namespace Webonyx\Elastica3x\Node;
 
-use Elastica\Node as BaseNode;
-use Elastica\Request;
+use Webonyx\Elastica3x\Node as BaseNode;
+use Webonyx\Elastica3x\Request;
 
 /**
- * Elastica cluster node object.
+ * Webonyx\Elastica3x cluster node object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
@@ -16,7 +16,7 @@ class Stats
     /**
      * Response.
      *
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
@@ -30,14 +30,14 @@ class Stats
     /**
      * Node.
      *
-     * @var \Elastica\Node Node object
+     * @var \Webonyx\Elastica3x\Node Node object
      */
     protected $_node;
 
     /**
      * Create new stats for node.
      *
-     * @param \Elastica\Node $node Elastica node object
+     * @param \Webonyx\Elastica3x\Node $node Webonyx\Elastica3x node object
      */
     public function __construct(BaseNode $node)
     {
@@ -81,7 +81,7 @@ class Stats
     /**
      * Returns node object.
      *
-     * @return \Elastica\Node Node object
+     * @return \Webonyx\Elastica3x\Node Node object
      */
     public function getNode()
     {
@@ -91,7 +91,7 @@ class Stats
     /**
      * Returns response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {
@@ -101,7 +101,7 @@ class Stats
     /**
      * Reloads all nodes information. Has to be called if informations changed.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function refresh()
     {

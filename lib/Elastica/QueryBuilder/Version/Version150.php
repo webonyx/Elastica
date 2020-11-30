@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\QueryBuilder\Version;
+namespace Webonyx\Elastica3x\QueryBuilder\Version;
 
 /**
  * elasticsearch 1.5 DSL.
@@ -8,7 +8,7 @@ namespace Elastica\QueryBuilder\Version;
  *
  * @author Igor Denisenko <im.denisenko@yahoo.com>
  *
- * @deprecated deprecated in favor of Elastica\QueryBuilder\Version\Latest
+ * @deprecated deprecated in favor of Webonyx\Elastica3x\QueryBuilder\Version\Latest
  */
 class Version150 extends Version140
 {

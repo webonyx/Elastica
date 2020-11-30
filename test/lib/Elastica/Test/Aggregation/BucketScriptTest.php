@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\BucketScript;
-use Elastica\Aggregation\Histogram;
-use Elastica\Aggregation\Max;
-use Elastica\Document;
-use Elastica\Query;
+use Webonyx\Elastica3x\Aggregation\BucketScript;
+use Webonyx\Elastica3x\Aggregation\Histogram;
+use Webonyx\Elastica3x\Aggregation\Max;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
 
 class BucketScriptTest extends BaseAggregationTest
 {
@@ -91,7 +91,7 @@ class BucketScriptTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testToArrayInvalidBucketsPath()
     {
@@ -101,7 +101,7 @@ class BucketScriptTest extends BaseAggregationTest
 
     /**
      * @group unit
-     * @expectedException \Elastica\Exception\InvalidException
+     * @expectedException \Webonyx\Elastica3x\Exception\InvalidException
      */
     public function testToArrayInvalidScript()
     {

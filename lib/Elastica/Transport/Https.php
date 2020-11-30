@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Transport;
+namespace Webonyx\Elastica3x\Transport;
 
 /**
- * Elastica Http Transport object.
+ * Webonyx\Elastica3x Http Transport object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */

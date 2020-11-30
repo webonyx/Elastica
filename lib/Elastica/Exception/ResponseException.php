@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Exception;
+namespace Webonyx\Elastica3x\Exception;
 
-use Elastica\Request;
-use Elastica\Response;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Response;
 
 /**
  * Response exception.
@@ -12,20 +12,20 @@ use Elastica\Response;
 class ResponseException extends \RuntimeException implements ExceptionInterface
 {
     /**
-     * @var \Elastica\Request Request object
+     * @var \Webonyx\Elastica3x\Request Request object
      */
     protected $_request;
 
     /**
-     * @var \Elastica\Response Response object
+     * @var \Webonyx\Elastica3x\Response Response object
      */
     protected $_response;
 
     /**
      * Construct Exception.
      *
-     * @param \Elastica\Request  $request
-     * @param \Elastica\Response $response
+     * @param \Webonyx\Elastica3x\Request  $request
+     * @param \Webonyx\Elastica3x\Response $response
      */
     public function __construct(Request $request, Response $response)
     {
@@ -37,7 +37,7 @@ class ResponseException extends \RuntimeException implements ExceptionInterface
     /**
      * Returns request object.
      *
-     * @return \Elastica\Request Request object
+     * @return \Webonyx\Elastica3x\Request Request object
      */
     public function getRequest()
     {
@@ -47,7 +47,7 @@ class ResponseException extends \RuntimeException implements ExceptionInterface
     /**
      * Returns response object.
      *
-     * @return \Elastica\Response Response object
+     * @return \Webonyx\Elastica3x\Response Response object
      */
     public function getResponse()
     {

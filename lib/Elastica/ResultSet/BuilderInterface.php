@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\ResultSet;
+namespace Webonyx\Elastica3x\ResultSet;
 
-use Elastica\Query;
-use Elastica\Response;
-use Elastica\ResultSet;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\ResultSet;
 
 interface BuilderInterface
 {

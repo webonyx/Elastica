@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Connection\Strategy;
+namespace Webonyx\Elastica3x\Test\Connection\Strategy;
 
-use Elastica\Connection\Strategy\StrategyFactory;
-use Elastica\Test\Base;
+use Webonyx\Elastica3x\Connection\Strategy\StrategyFactory;
+use Webonyx\Elastica3x\Test\Base;
 
 /**
  * Description of StrategyFactoryTest.
@@ -21,7 +21,7 @@ class StrategyFactoryTest extends Base
 
         $strategy = StrategyFactory::create($callback);
 
-        $this->assertInstanceOf('Elastica\Connection\Strategy\CallbackStrategy', $strategy);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\Strategy\CallbackStrategy', $strategy);
     }
 
     /**
@@ -33,7 +33,7 @@ class StrategyFactoryTest extends Base
 
         $strategy = StrategyFactory::create($strategyName);
 
-        $this->assertInstanceOf('Elastica\Connection\Strategy\Simple', $strategy);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\Strategy\Simple', $strategy);
     }
 
     /**
@@ -51,7 +51,7 @@ class StrategyFactoryTest extends Base
      */
     public function testCreateByClassName()
     {
-        $strategyName = '\\Elastica\Test\Connection\Strategy\\EmptyStrategy';
+        $strategyName = '\\Webonyx\Elastica3x\Test\Connection\Strategy\\EmptyStrategy';
 
         $strategy = StrategyFactory::create($strategyName);
 
@@ -76,9 +76,9 @@ class StrategyFactoryTest extends Base
     {
         // create collision
         if (!class_exists('Simple')) {
-            class_alias('Elastica\Util', 'Simple');
+            class_alias('Webonyx\Elastica3x\Util', 'Simple');
         }
         $strategy = StrategyFactory::create('Simple');
-        $this->assertInstanceOf('Elastica\Connection\Strategy\Simple', $strategy);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\Strategy\Simple', $strategy);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
 /**
  * Geo polygon query.
@@ -39,7 +39,7 @@ class GeoPolygon extends AbstractQuery
     /**
      * Converts query to array.
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      *
      * @return array
      */

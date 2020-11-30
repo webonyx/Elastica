@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Query;
+namespace Webonyx\Elastica3x\Test\Query;
 
-use Elastica\Document;
-use Elastica\Query\MatchAll;
-use Elastica\Search;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query\MatchAll;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class MatchAllTest extends BaseTest
 {

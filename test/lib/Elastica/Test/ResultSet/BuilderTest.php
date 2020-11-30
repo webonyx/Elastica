@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\ResultSet;
+namespace Webonyx\Elastica3x\Test\ResultSet;
 
-use Elastica\Query;
-use Elastica\Response;
-use Elastica\ResultSet\DefaultBuilder;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\ResultSet\DefaultBuilder;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * @group unit

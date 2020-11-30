@@ -1,18 +1,18 @@
 <?php
-namespace Elastica\Test\Multi;
+namespace Webonyx\Elastica3x\Test\Multi;
 
-use Elastica\Document;
-use Elastica\Multi\Search as MultiSearch;
-use Elastica\Query;
-use Elastica\Query\Range;
-use Elastica\Query\Term;
-use Elastica\Search;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Multi\Search as MultiSearch;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Range;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 class SearchTest extends BaseTest
 {
     /**
-     * @return \Elastica\Type
+     * @return \Webonyx\Elastica3x\Type
      */
     protected function _createType()
     {
@@ -48,7 +48,7 @@ class SearchTest extends BaseTest
         $client = $this->_getClient();
         $multiSearch = new MultiSearch($client);
 
-        $this->assertInstanceOf('Elastica\Multi\Search', $multiSearch);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\Search', $multiSearch);
         $this->assertSame($client, $multiSearch->getClient());
     }
 
@@ -159,12 +159,12 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         foreach ($multiResultSet as $resultSet) {
-            $this->assertInstanceOf('Elastica\ResultSet', $resultSet);
+            $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSet);
         }
 
         $resultSets = $multiResultSet->getResultSets();
@@ -172,13 +172,13 @@ class SearchTest extends BaseTest
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertCount(2, $resultSets[0]);
         $this->assertSame($query1, $resultSets[0]->getQuery());
         $this->assertEquals(3, $resultSets[0]->getTotalHits());
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertCount(3, $resultSets[1]);
         $this->assertSame($query2, $resultSets[1]->getQuery());
         $this->assertEquals(6, $resultSets[1]->getTotalHits());
@@ -190,22 +190,22 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertCount(0, $resultSets[0]);
         $this->assertSame($query1, $resultSets[0]->getQuery());
         $this->assertEquals(3, $resultSets[0]->getTotalHits());
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertCount(0, $resultSets[1]);
         $this->assertSame($query2, $resultSets[1]->getQuery());
         $this->assertEquals(6, $resultSets[1]->getTotalHits());
@@ -254,29 +254,29 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         foreach ($multiResultSet as $resultSet) {
-            $this->assertInstanceOf('Elastica\ResultSet', $resultSet);
+            $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSet);
         }
 
-        $this->assertInstanceOf('Elastica\ResultSet', $multiResultSet['search1']);
-        $this->assertInstanceOf('Elastica\ResultSet', $multiResultSet['search2']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $multiResultSet['search1']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $multiResultSet['search2']);
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey('search1', $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets['search1']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets['search1']);
         $this->assertCount(2, $resultSets['search1']);
         $this->assertSame($query1, $resultSets['search1']->getQuery());
         $this->assertEquals(3, $resultSets['search1']->getTotalHits());
 
         $this->assertArrayHasKey('search2', $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets['search2']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets['search2']);
         $this->assertCount(3, $resultSets['search2']);
         $this->assertSame($query2, $resultSets['search2']->getQuery());
         $this->assertEquals(6, $resultSets['search2']->getTotalHits());
@@ -288,22 +288,22 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey('search1', $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets['search1']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets['search1']);
         $this->assertCount(0, $resultSets['search1']);
         $this->assertSame($query1, $resultSets['search1']->getQuery());
         $this->assertEquals(3, $resultSets['search1']->getTotalHits());
 
         $this->assertArrayHasKey('search2', $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets['search2']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets['search2']);
         $this->assertCount(0, $resultSets['search2']);
         $this->assertSame($query2, $resultSets['search2']->getQuery());
         $this->assertEquals(6, $resultSets['search2']->getTotalHits());
@@ -337,18 +337,18 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $resultSets = $multiResultSet->getResultSets();
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertSame($searchGood->getQuery(), $resultSets[0]->getQuery());
         $this->assertSame(6, $resultSets[0]->getTotalHits());
         $this->assertCount(6, $resultSets[0]);
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertSame($searchBad->getQuery(), $resultSets[1]->getQuery());
         $this->assertSame(0, $resultSets[1]->getTotalHits());
         $this->assertCount(0, $resultSets[1]);
@@ -386,18 +386,18 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $resultSets = $multiResultSet->getResultSets();
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey('search1', $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets['search1']);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets['search1']);
         $this->assertSame($searchGood->getQuery(), $resultSets['search1']->getQuery());
         $this->assertSame(6, $resultSets['search1']->getTotalHits());
         $this->assertCount(6, $resultSets['search1']);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertSame($searchBad->getQuery(), $resultSets[0]->getQuery());
         $this->assertSame(0, $resultSets[0]->getTotalHits());
         $this->assertCount(0, $resultSets[0]);
@@ -446,22 +446,22 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertCount(0, $resultSets[0]);
         $this->assertSame($query1, $resultSets[0]->getQuery());
         $this->assertEquals(3, $resultSets[0]->getTotalHits());
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertCount(0, $resultSets[1]);
         $this->assertSame($query2, $resultSets[1]->getQuery());
         $this->assertEquals(6, $resultSets[1]->getTotalHits());
@@ -470,22 +470,22 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertCount(2, $resultSets[0]);
         $this->assertSame($query1, $resultSets[0]->getQuery());
         $this->assertEquals(3, $resultSets[0]->getTotalHits());
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertCount(0, $resultSets[1]);
         $this->assertSame($query2, $resultSets[1]->getQuery());
         $this->assertEquals(6, $resultSets[1]->getTotalHits());
@@ -530,22 +530,22 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertCount(0, $resultSets[0]);
         $this->assertSame($query1, $resultSets[0]->getQuery());
         $this->assertEquals(3, $resultSets[0]->getTotalHits());
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertCount(0, $resultSets[1]);
         $this->assertSame($query2, $resultSets[1]->getQuery());
         $this->assertEquals(6, $resultSets[1]->getTotalHits());
@@ -554,22 +554,22 @@ class SearchTest extends BaseTest
 
         $multiResultSet = $multiSearch->search();
 
-        $this->assertInstanceOf('Elastica\Multi\ResultSet', $multiResultSet);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Multi\ResultSet', $multiResultSet);
         $this->assertCount(2, $multiResultSet);
-        $this->assertInstanceOf('Elastica\Response', $multiResultSet->getResponse());
+        $this->assertInstanceOf('Webonyx\Elastica3x\Response', $multiResultSet->getResponse());
 
         $resultSets = $multiResultSet->getResultSets();
 
         $this->assertInternalType('array', $resultSets);
 
         $this->assertArrayHasKey(0, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[0]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[0]);
         $this->assertCount(2, $resultSets[0]);
         $this->assertSame($query1, $resultSets[0]->getQuery());
         $this->assertEquals(3, $resultSets[0]->getTotalHits());
 
         $this->assertArrayHasKey(1, $resultSets);
-        $this->assertInstanceOf('Elastica\ResultSet', $resultSets[1]);
+        $this->assertInstanceOf('Webonyx\Elastica3x\ResultSet', $resultSets[1]);
         $this->assertCount(0, $resultSets[1]);
         $this->assertSame($query2, $resultSets[1]->getQuery());
         $this->assertEquals(6, $resultSets[1]->getTotalHits());

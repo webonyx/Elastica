@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Rescore;
+namespace Webonyx\Elastica3x\Rescore;
 
-use Elastica\Param;
+use Webonyx\Elastica3x\Param;
 
 /**
  * Abstract rescore object. Should be extended by all rescorers.

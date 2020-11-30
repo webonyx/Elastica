@@ -1,13 +1,13 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Index;
-use Elastica\Percolator;
-use Elastica\Query;
-use Elastica\Query\Term;
-use Elastica\Test\Base as BaseTest;
-use Elastica\Type;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Percolator;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Query\Term;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Type;
 
 class PercolatorTest extends BaseTest
 {

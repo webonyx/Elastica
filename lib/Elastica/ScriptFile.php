@@ -1,12 +1,12 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Script\ScriptFile as BaseScriptFile;
+use Webonyx\Elastica3x\Script\ScriptFile as BaseScriptFile;
 
 /**
  * Kept for BC reasons.
  *
- * @deprecated Use \Elastica\Script\ScriptFile instead.
+ * @deprecated Use \Webonyx\Elastica3x\Script\ScriptFile instead.
  */
 class ScriptFile extends BaseScriptFile
 {

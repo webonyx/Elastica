@@ -1,15 +1,15 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Filter\AbstractFilter;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Filter\AbstractFilter;
 
-trigger_error('Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Elastica releases.', E_USER_DEPRECATED);
+trigger_error('Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Webonyx\Elastica3x releases.', E_USER_DEPRECATED);
 
 /**
  * Filtered query. Needs a query and a filter.
  *
- * @deprecated Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Elastica releases.
+ * @deprecated Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Webonyx\Elastica3x releases.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  *
@@ -20,8 +20,8 @@ class Filtered extends AbstractQuery
     /**
      * Constructs a filtered query.
      *
-     * @param \Elastica\Query\AbstractQuery $query  OPTIONAL Query object
-     * @param \Elastica\Query\AbstractQuery $filter OPTIONAL Filter object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $query  OPTIONAL Query object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $filter OPTIONAL Filter object
      */
     public function __construct(AbstractQuery $query = null, $filter = null)
     {
@@ -29,7 +29,7 @@ class Filtered extends AbstractQuery
 
         if (null !== $filter) {
             if ($filter instanceof AbstractFilter) {
-                trigger_error('Deprecated: Elastica\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+                trigger_error('Deprecated: Webonyx\Elastica3x\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
             } elseif (!($filter instanceof AbstractQuery)) {
                 throw new InvalidException('Filter must be instance of AbstractQuery');
             }
@@ -41,7 +41,7 @@ class Filtered extends AbstractQuery
     /**
      * Sets a query.
      *
-     * @param \Elastica\Query\AbstractQuery $query Query object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $query Query object
      *
      * @return $this
      */
@@ -53,7 +53,7 @@ class Filtered extends AbstractQuery
     /**
      * Sets the filter.
      *
-     * @param \Elastica\Query\AbstractQuery $filter Filter object
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery $filter Filter object
      *
      * @return $this
      */
@@ -61,7 +61,7 @@ class Filtered extends AbstractQuery
     {
         if (null !== $filter) {
             if ($filter instanceof AbstractFilter) {
-                trigger_error('Deprecated: Elastica\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+                trigger_error('Deprecated: Webonyx\Elastica3x\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
             } elseif (!($filter instanceof AbstractQuery)) {
                 throw new InvalidException('Filter must be instance of AbstractQuery');
             }
@@ -73,7 +73,7 @@ class Filtered extends AbstractQuery
     /**
      * Gets the filter.
      *
-     * @return \Elastica\Query\AbstractQuery|\Elastica\Filter\AbstractFilter
+     * @return \Webonyx\Elastica3x\Query\AbstractQuery|\Webonyx\Elastica3x\Filter\AbstractFilter
      */
     public function getFilter()
     {
@@ -83,7 +83,7 @@ class Filtered extends AbstractQuery
     /**
      * Gets the query.
      *
-     * @return \Elastica\Query\AbstractQuery
+     * @return \Webonyx\Elastica3x\Query\AbstractQuery
      */
     public function getQuery()
     {
@@ -95,7 +95,7 @@ class Filtered extends AbstractQuery
      *
      * @return array Query array
      *
-     * @see \Elastica\Query\AbstractQuery::toArray()
+     * @see \Webonyx\Elastica3x\Query\AbstractQuery::toArray()
      */
     public function toArray()
     {

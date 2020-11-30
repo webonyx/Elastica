@@ -1,12 +1,12 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Document;
-use Elastica\Filter\Nested;
-use Elastica\Query\Terms;
-use Elastica\Search;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Filter\Nested;
+use Webonyx\Elastica3x\Query\Terms;
+use Webonyx\Elastica3x\Search;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class NestedTest extends BaseTest
 {
@@ -132,6 +132,6 @@ class NestedTest extends BaseTest
         $this->assertFalse($filter->setJoin(false)->getParam('join'));
 
         $returnValue = $filter->setJoin(true);
-        $this->assertInstanceOf('Elastica\Filter\Nested', $returnValue);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Nested', $returnValue);
     }
 }

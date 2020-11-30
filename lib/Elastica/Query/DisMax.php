@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * DisMax query.
@@ -15,16 +15,16 @@ class DisMax extends AbstractQuery
     /**
      * Adds a query to the current object.
      *
-     * @param \Elastica\Query\AbstractQuery|array $args Query
+     * @param \Webonyx\Elastica3x\Query\AbstractQuery|array $args Query
      *
-     * @throws \Elastica\Exception\InvalidException If not valid query
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If not valid query
      *
      * @return $this
      */
     public function addQuery($args)
     {
         if (!is_array($args) && !($args instanceof AbstractQuery)) {
-            throw new InvalidException('Invalid parameter. Has to be array or instance of Elastica\Query\AbstractQuery');
+            throw new InvalidException('Invalid parameter. Has to be array or instance of Webonyx\Elastica3x\Query\AbstractQuery');
         }
 
         return $this->addParam('queries', $args);

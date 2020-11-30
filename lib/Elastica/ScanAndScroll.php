@@ -1,5 +1,5 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
 /**
  * Scan and Scroll Iterator.

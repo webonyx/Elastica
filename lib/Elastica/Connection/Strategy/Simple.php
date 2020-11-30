@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Connection\Strategy;
+namespace Webonyx\Elastica3x\Connection\Strategy;
 
-use Elastica\Exception\ClientException;
+use Webonyx\Elastica3x\Exception\ClientException;
 
 /**
  * Description of SimpleStrategy.
@@ -11,11 +11,11 @@ use Elastica\Exception\ClientException;
 class Simple implements StrategyInterface
 {
     /**
-     * @param array|\Elastica\Connection[] $connections
+     * @param array|\Webonyx\Elastica3x\Connection[] $connections
      *
-     * @throws \Elastica\Exception\ClientException
+     * @throws \Webonyx\Elastica3x\Exception\ClientException
      *
-     * @return \Elastica\Connection
+     * @return \Webonyx\Elastica3x\Connection
      */
     public function getConnection($connections)
     {

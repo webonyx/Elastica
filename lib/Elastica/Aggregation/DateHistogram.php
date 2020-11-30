@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Aggregation;
+namespace Webonyx\Elastica3x\Aggregation;
 
-use Elastica\Exception\DeprecatedException;
+use Webonyx\Elastica3x\Exception\DeprecatedException;
 
 /**
  * Class DateHistogram.
@@ -13,7 +13,7 @@ class DateHistogram extends Histogram
     /**
      * Set pre-rounding based on interval.
      *
-     * @deprecated Option "pre_zone" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "time_zone" instead
+     * @deprecated Option "pre_zone" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "time_zone" instead
      *
      * @param string $preZone
      *
@@ -21,13 +21,13 @@ class DateHistogram extends Histogram
      */
     public function setPreZone($preZone)
     {
-        throw new DeprecatedException('Option "pre_zone" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "time_zone" instead.');
+        throw new DeprecatedException('Option "pre_zone" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "time_zone" instead.');
     }
 
     /**
      * Set post-rounding based on interval.
      *
-     * @deprecated Option "post_zone" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "time_zone" instead.
+     * @deprecated Option "post_zone" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "time_zone" instead.
      *
      * @param string $postZone
      *
@@ -35,7 +35,7 @@ class DateHistogram extends Histogram
      */
     public function setPostZone($postZone)
     {
-        throw new DeprecatedException('Option "post_zone" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "time_zone" instead.');
+        throw new DeprecatedException('Option "post_zone" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "time_zone" instead.');
     }
 
     /**
@@ -53,7 +53,7 @@ class DateHistogram extends Histogram
     /**
      * Set pre-zone adjustment for larger time intervals (day and above).
      *
-     * @deprecated Option "pre_zone_adjust_large_interval" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "time_zone" instead.
+     * @deprecated Option "pre_zone_adjust_large_interval" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "time_zone" instead.
      *
      * @param string $adjust
      *
@@ -61,7 +61,7 @@ class DateHistogram extends Histogram
      */
     public function setPreZoneAdjustLargeInterval($adjust)
     {
-        throw new DeprecatedException('Option "pre_zone_adjust_large_interval" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "time_zone" instead.');
+        throw new DeprecatedException('Option "pre_zone_adjust_large_interval" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "time_zone" instead.');
     }
 
     /**
@@ -79,7 +79,7 @@ class DateHistogram extends Histogram
     /**
      * Set the offset for pre-rounding.
      *
-     * @deprecated Option "pre_offset" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "offset" instead.
+     * @deprecated Option "pre_offset" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "offset" instead.
      *
      * @param string $offset "1d", for example
      *
@@ -87,13 +87,13 @@ class DateHistogram extends Histogram
      */
     public function setPreOffset($offset)
     {
-        throw new DeprecatedException('Option "pre_offset" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "offset" instead.');
+        throw new DeprecatedException('Option "pre_offset" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "offset" instead.');
     }
 
     /**
      * Set the offset for post-rounding.
      *
-     * @deprecated Option "post_offset" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "offset" instead.
+     * @deprecated Option "post_offset" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "offset" instead.
      *
      * @param string $offset "1d", for example
      *
@@ -101,7 +101,7 @@ class DateHistogram extends Histogram
      */
     public function setPostOffset($offset)
     {
-        throw new DeprecatedException('Option "post_offset" is deprecated as of ES 1.5 and will be removed in further Elastica releases. Use "offset" instead.');
+        throw new DeprecatedException('Option "post_offset" is deprecated as of ES 1.5 and will be removed in further Webonyx\Elastica3x releases. Use "offset" instead.');
     }
 
     /**

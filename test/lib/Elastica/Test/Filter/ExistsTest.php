@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Filter;
+namespace Webonyx\Elastica3x\Test\Filter;
 
-use Elastica\Filter\Exists;
-use Elastica\Test\DeprecatedClassBase as BaseTest;
+use Webonyx\Elastica3x\Filter\Exists;
+use Webonyx\Elastica3x\Test\DeprecatedClassBase as BaseTest;
 
 class ExistsTest extends BaseTest
 {
@@ -42,7 +42,7 @@ class ExistsTest extends BaseTest
         $this->assertEquals($field, $filter->getParam('field'));
 
         $newField = 'hello world';
-        $this->assertInstanceOf('Elastica\Filter\Exists', $filter->setField($newField));
+        $this->assertInstanceOf('Webonyx\Elastica3x\Filter\Exists', $filter->setField($newField));
 
         $this->assertEquals($newField, $filter->getParam('field'));
     }

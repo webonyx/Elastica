@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Script;
+namespace Webonyx\Elastica3x\Script;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Script objects, containing script internals.
@@ -86,9 +86,9 @@ class Script extends AbstractScript
     }
 
     /**
-     * @param string|array|\Elastica\Script $data
+     * @param string|array|\Webonyx\Elastica3x\Script $data
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return self
      */
@@ -112,7 +112,7 @@ class Script extends AbstractScript
     /**
      * @param array $data
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return self
      */

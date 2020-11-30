@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Connection\Strategy;
+namespace Webonyx\Elastica3x\Test\Connection\Strategy;
 
-use Elastica\Connection\Strategy\CallbackStrategy;
-use Elastica\Test\Base;
+use Webonyx\Elastica3x\Connection\Strategy\CallbackStrategy;
+use Webonyx\Elastica3x\Test\Base;
 
 /**
  * Description of CallbackStrategyTest.
@@ -42,11 +42,11 @@ class CallbackStrategyTest extends Base
         $this->assertTrue($isValid);
 
         // static method as string
-        $isValid = CallbackStrategy::isValid('Elastica\Test\Connection\Strategy\CallbackStrategyTestHelper::getFirstConnectionStatic');
+        $isValid = CallbackStrategy::isValid('Webonyx\Elastica3x\Test\Connection\Strategy\CallbackStrategyTestHelper::getFirstConnectionStatic');
         $this->assertTrue($isValid);
 
         // static method as array
-        $isValid = CallbackStrategy::isValid(['Elastica\Test\Connection\Strategy\CallbackStrategyTestHelper', 'getFirstConnectionStatic']);
+        $isValid = CallbackStrategy::isValid(['Webonyx\Elastica3x\Test\Connection\Strategy\CallbackStrategyTestHelper', 'getFirstConnectionStatic']);
         $this->assertTrue($isValid);
 
         // object method
@@ -92,6 +92,6 @@ class CallbackStrategyTest extends Base
 
         $strategy = $client->getConnectionStrategy();
 
-        $this->assertInstanceOf('Elastica\Connection\Strategy\CallbackStrategy', $strategy);
+        $this->assertInstanceOf('Webonyx\Elastica3x\Connection\Strategy\CallbackStrategy', $strategy);
     }
 }

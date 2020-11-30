@@ -1,8 +1,8 @@
 <?php
-namespace Elastica\Test\Transport;
+namespace Webonyx\Elastica3x\Test\Transport;
 
-use Elastica\Request;
-use Elastica\Transport\AbstractTransport;
+use Webonyx\Elastica3x\Request;
+use Webonyx\Elastica3x\Transport\AbstractTransport;
 
 class DummyTransport extends AbstractTransport
 {

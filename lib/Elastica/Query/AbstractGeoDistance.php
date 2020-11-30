@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Query;
+namespace Webonyx\Elastica3x\Query;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 /**
  * Geo distance query.
@@ -82,7 +82,7 @@ abstract class AbstractGeoDistance extends AbstractQuery
     /**
      * @param array|string $location
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
@@ -152,7 +152,7 @@ abstract class AbstractGeoDistance extends AbstractQuery
     }
 
     /**
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array|string
      */
@@ -182,9 +182,9 @@ abstract class AbstractGeoDistance extends AbstractQuery
     }
 
     /**
-     * @see \Elastica\Param::toArray()
+     * @see \Webonyx\Elastica3x\Param::toArray()
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array
      */

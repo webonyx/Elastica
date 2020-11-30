@@ -1,10 +1,10 @@
 <?php
-namespace Elastica\Test\Aggregation;
+namespace Webonyx\Elastica3x\Test\Aggregation;
 
-use Elastica\Aggregation\GeoCentroid;
-use Elastica\Document;
-use Elastica\Query;
-use Elastica\Type\Mapping;
+use Webonyx\Elastica3x\Aggregation\GeoCentroid;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Type\Mapping;
 
 class GeoCentroidTest extends BaseAggregationTest
 {

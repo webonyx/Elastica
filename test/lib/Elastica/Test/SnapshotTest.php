@@ -1,9 +1,9 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
-use Elastica\Document;
-use Elastica\Index;
-use Elastica\Snapshot;
+use Webonyx\Elastica3x\Document;
+use Webonyx\Elastica3x\Index;
+use Webonyx\Elastica3x\Snapshot;
 
 class SnapshotTest extends Base
 {
@@ -55,7 +55,7 @@ class SnapshotTest extends Base
         $this->assertEquals($location, $response['settings']['location']);
 
         // attempt to retrieve a repository which does not exist
-        $this->setExpectedException('Elastica\Exception\NotFoundException');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\NotFoundException');
         $this->_snapshot->getRepository('foobar');
     }
 
@@ -106,7 +106,7 @@ class SnapshotTest extends Base
         $this->assertTrue($response->isOk());
 
         // ensure that the snapshot has been deleted
-        $this->setExpectedException('Elastica\Exception\NotFoundException');
+        $this->setExpectedException('Webonyx\Elastica3x\Exception\NotFoundException');
         $this->_snapshot->getSnapshot($repositoryName, $snapshotName);
     }
 }

@@ -1,11 +1,11 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Exception\InvalidException;
-use Elastica\Transport\AbstractTransport;
+use Webonyx\Elastica3x\Exception\InvalidException;
+use Webonyx\Elastica3x\Transport\AbstractTransport;
 
 /**
- * Elastica connection instance to an elasticasearch node.
+ * Webonyx\Elastica3x connection instance to an elasticasearch node.
  *
  * @author   Nicolas Ruflin <spam@ruflin.com>
  */
@@ -243,9 +243,9 @@ class Connection extends Param
     /**
      * Returns an instance of the transport type.
      *
-     * @throws \Elastica\Exception\InvalidException If invalid transport type
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException If invalid transport type
      *
-     * @return \Elastica\Transport\AbstractTransport Transport object
+     * @return \Webonyx\Elastica3x\Transport\AbstractTransport Transport object
      */
     public function getTransportObject()
     {
@@ -303,7 +303,7 @@ class Connection extends Param
      *
      * @param string $key Config key
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return array|string Config value
      */
@@ -322,7 +322,7 @@ class Connection extends Param
     }
 
     /**
-     * @param \Elastica\Connection|array $params Params to create a connection
+     * @param \Webonyx\Elastica3x\Connection|array $params Params to create a connection
      *
      * @throws Exception\InvalidException
      *

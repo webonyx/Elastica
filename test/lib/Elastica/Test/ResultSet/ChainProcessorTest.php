@@ -1,11 +1,11 @@
 <?php
-namespace Elastica\Test\Transformer;
+namespace Webonyx\Elastica3x\Test\Transformer;
 
-use Elastica\Query;
-use Elastica\Response;
-use Elastica\ResultSet;
-use Elastica\ResultSet\ChainProcessor;
-use Elastica\Test\Base as BaseTest;
+use Webonyx\Elastica3x\Query;
+use Webonyx\Elastica3x\Response;
+use Webonyx\Elastica3x\ResultSet;
+use Webonyx\Elastica3x\ResultSet\ChainProcessor;
+use Webonyx\Elastica3x\Test\Base as BaseTest;
 
 /**
  * @group unit
@@ -15,8 +15,8 @@ class ChainProcessorTest extends BaseTest
     public function testProcessor()
     {
         $processor = new ChainProcessor([
-            $processor1 = $this->getMock('Elastica\\ResultSet\\ProcessorInterface'),
-            $processor2 = $this->getMock('Elastica\\ResultSet\\ProcessorInterface'),
+            $processor1 = $this->getMock('Webonyx\Elastica3x\\ResultSet\\ProcessorInterface'),
+            $processor2 = $this->getMock('Webonyx\Elastica3x\\ResultSet\\ProcessorInterface'),
         ]);
         $resultSet = new ResultSet(new Response(''), new Query(), []);
 

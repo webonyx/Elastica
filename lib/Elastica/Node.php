@@ -1,11 +1,11 @@
 <?php
-namespace Elastica;
+namespace Webonyx\Elastica3x;
 
-use Elastica\Node\Info;
-use Elastica\Node\Stats;
+use Webonyx\Elastica3x\Node\Info;
+use Webonyx\Elastica3x\Node\Stats;
 
 /**
- * Elastica cluster node object.
+ * Webonyx\Elastica3x cluster node object.
  *
  * @author Nicolas Ruflin <spam@ruflin.com>
  */
@@ -14,7 +14,7 @@ class Node
     /**
      * Client.
      *
-     * @var \Elastica\Client
+     * @var \Webonyx\Elastica3x\Client
      */
     protected $_client;
 
@@ -33,14 +33,14 @@ class Node
     /**
      * Node stats.
      *
-     * @var \Elastica\Node\Stats|null Node Stats
+     * @var \Webonyx\Elastica3x\Node\Stats|null Node Stats
      */
     protected $_stats;
 
     /**
      * Node info.
      *
-     * @var \Elastica\Node\Info|null Node info
+     * @var \Webonyx\Elastica3x\Node\Info|null Node info
      */
     protected $_info;
 
@@ -48,7 +48,7 @@ class Node
      * Create a new node object.
      *
      * @param string           $id     Node id or name
-     * @param \Elastica\Client $client Node object
+     * @param \Webonyx\Elastica3x\Client $client Node object
      */
     public function __construct($id, Client $client)
     {
@@ -93,7 +93,7 @@ class Node
     /**
      * Returns the current client object.
      *
-     * @return \Elastica\Client Client
+     * @return \Webonyx\Elastica3x\Client Client
      */
     public function getClient()
     {
@@ -105,7 +105,7 @@ class Node
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-stats.html
      *
-     * @return \Elastica\Node\Stats Node stats
+     * @return \Webonyx\Elastica3x\Node\Stats Node stats
      */
     public function getStats()
     {
@@ -121,7 +121,7 @@ class Node
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-info.html
      *
-     * @return \Elastica\Node\Info Node info object
+     * @return \Webonyx\Elastica3x\Node\Info Node info object
      */
     public function getInfo()
     {
@@ -148,7 +148,7 @@ class Node
      *
      * @param string $delay OPTIONAL Delay after which node is shut down (default = 1s)
      *
-     * @return \Elastica\Response
+     * @return \Webonyx\Elastica3x\Response
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-nodes-shutdown.html
      */

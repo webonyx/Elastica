@@ -1,5 +1,5 @@
 <?php
-namespace Elastica\Test;
+namespace Webonyx\Elastica3x\Test;
 
 /**
  * Errors collector for testing.

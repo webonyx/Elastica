@@ -1,7 +1,7 @@
 <?php
-namespace Elastica\Filter;
+namespace Webonyx\Elastica3x\Filter;
 
-use Elastica\Exception\InvalidException;
+use Webonyx\Elastica3x\Exception\InvalidException;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -39,7 +39,7 @@ class BoolFilter extends AbstractFilter
     /**
      * Adds should filter.
      *
-     * @param array|\Elastica\Filter\AbstractFilter $args Filter data
+     * @param array|\Webonyx\Elastica3x\Filter\AbstractFilter $args Filter data
      *
      * @return $this
      */
@@ -51,7 +51,7 @@ class BoolFilter extends AbstractFilter
     /**
      * Adds must filter.
      *
-     * @param array|\Elastica\Filter\AbstractFilter $args Filter data
+     * @param array|\Webonyx\Elastica3x\Filter\AbstractFilter $args Filter data
      *
      * @return $this
      */
@@ -63,7 +63,7 @@ class BoolFilter extends AbstractFilter
     /**
      * Adds mustNot filter.
      *
-     * @param array|\Elastica\Filter\AbstractFilter $args Filter data
+     * @param array|\Webonyx\Elastica3x\Filter\AbstractFilter $args Filter data
      *
      * @return $this
      */
@@ -76,16 +76,16 @@ class BoolFilter extends AbstractFilter
      * Adds general filter based on type.
      *
      * @param string                                $type Filter type
-     * @param array|\Elastica\Filter\AbstractFilter $args Filter data
+     * @param array|\Webonyx\Elastica3x\Filter\AbstractFilter $args Filter data
      *
-     * @throws \Elastica\Exception\InvalidException
+     * @throws \Webonyx\Elastica3x\Exception\InvalidException
      *
      * @return $this
      */
     protected function _addFilter($type, $args)
     {
         if (!is_array($args) && !($args instanceof AbstractFilter)) {
-            throw new InvalidException('Invalid parameter. Has to be array or instance of Elastica\Filter');
+            throw new InvalidException('Invalid parameter. Has to be array or instance of Webonyx\Elastica3x\Filter');
         }
 
         if (is_array($args)) {
@@ -109,7 +109,7 @@ class BoolFilter extends AbstractFilter
     /**
      * Converts bool filter to array.
      *
-     * @see \Elastica\Filter\AbstractFilter::toArray()
+     * @see \Webonyx\Elastica3x\Filter\AbstractFilter::toArray()
      *
      * @return array Filter array
      */
