@@ -1,7 +1,7 @@
 <?php
 namespace Webonyx\Elastica3x\Query;
 
-use Webonyx\Elastica3x\Type as Webonyx\Elastica3xType;
+use Webonyx\Elastica3x\Type;
 
 /**
  * Ids Query.
@@ -49,7 +49,7 @@ class Ids extends AbstractQuery
      */
     public function addType($type)
     {
-        if ($type instanceof Webonyx\Elastica3xType) {
+        if ($type instanceof Type) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // A type can be 0, but cannot be empty
@@ -70,7 +70,7 @@ class Ids extends AbstractQuery
      */
     public function setType($type)
     {
-        if ($type instanceof Webonyx\Elastica3xType) {
+        if ($type instanceof Type) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // A type can be 0, but cannot be empty

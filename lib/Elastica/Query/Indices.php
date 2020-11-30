@@ -1,7 +1,7 @@
 <?php
 namespace Webonyx\Elastica3x\Query;
 
-use Webonyx\Elastica3x\Index as Webonyx\Elastica3xIndex;
+use Webonyx\Elastica3x\Index;
 
 /**
  * Class Indices.
@@ -45,7 +45,7 @@ class Indices extends AbstractQuery
      */
     public function addIndex($index)
     {
-        if ($index instanceof Webonyx\Elastica3xIndex) {
+        if ($index instanceof Index) {
             $index = $index->getName();
         }
 

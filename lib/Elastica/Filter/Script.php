@@ -1,8 +1,6 @@
 <?php
 namespace Webonyx\Elastica3x\Filter;
 
-use Webonyx\Elastica3x;
-
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
 /**
@@ -43,7 +41,7 @@ class Script extends AbstractFilter
      */
     public function setScript($script)
     {
-        return $this->setParam('script', Webonyx\Elastica3x\Script\Script::create($script));
+        return $this->setParam('script', \Webonyx\Elastica3x\Script\Script::create($script));
     }
 
     /**

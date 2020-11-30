@@ -1,7 +1,7 @@
 <?php
 namespace Webonyx\Elastica3x\Filter;
 
-use Webonyx\Elastica3x\Type as Webonyx\Elastica3xType;
+use Webonyx\Elastica3x\Type;
 
 trigger_error('Deprecated: Filters are deprecated. Use queries in filter context. See https://www.elastic.co/guide/en/elasticsearch/reference/2.0/query-dsl-filters.html', E_USER_DEPRECATED);
 
@@ -48,7 +48,7 @@ class Ids extends AbstractFilter
      */
     public function addType($type)
     {
-        if ($type instanceof Webonyx\Elastica3xType) {
+        if ($type instanceof Type) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // TODO: Shouldn't this throw an exception?
@@ -68,7 +68,7 @@ class Ids extends AbstractFilter
      */
     public function setType($type)
     {
-        if ($type instanceof Webonyx\Elastica3xType) {
+        if ($type instanceof Type) {
             $type = $type->getName();
         } elseif (empty($type) && !is_numeric($type)) {
             // TODO: Shouldn't this throw an exception or let handling of invalid params to ES?
