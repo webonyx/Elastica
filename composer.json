@@ -1,5 +1,5 @@
 {
-    "name": "ruflin/elastica",
+    "name": "webonyx/elastica-3.x",
     "description": "Elasticsearch Client",
     "keywords": ["search","client"],
     "homepage": "http://elastica.io/",
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Elastica\\": "lib/Elastica/"
+            "Webonyx/Elastica3x\\": "lib/Elastica/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Elastica\\Test\\": "test/lib/Elastica/Test/"
+            "Webonyx\\Elastica3x\\Test\\": "test/lib/Elastica/Test/"
         }
     },
     "extra": {
